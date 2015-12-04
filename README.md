@@ -1,6 +1,6 @@
 This is the home of the Sitecore Commerce Connect StarterKit
 
-**For download of binary packages and documentation** go to [Releases] (https://github.com/Sitecore/Commerce-Connect-StarterKit/releases)  by following the link
+For download of binary packages and documentation go to [Releases] (https://github.com/Sitecore/Commerce-Connect-StarterKit/releases)  by following the link
 
 For information have a look at the [Wiki] (https://github.com/Sitecore/Commerce-Connect-StarterKit/wiki) 
 
