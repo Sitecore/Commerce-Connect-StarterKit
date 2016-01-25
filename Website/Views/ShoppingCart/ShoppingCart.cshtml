@@ -1,0 +1,108 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using System.Web.Optimization
+@using Sitecore.Commerce.StarterKit
+<div class="wrap-content-checkout" id="cartContainer">
+    <h3 data-bind="visible: cartLines().length == 0" style="display: none;">No products in cart.</h3>
+    <div class="col-md-12" id="cartSection" data-bind="visible: cartLines().length > 0" style="display: none;">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="cart-header">
+                        <th class="del-row">@Texts.Remove</th>
+                        <th class="hidden-sm hidden-xs">&nbsp;</th>
+                        <th>Product details</th>
+                        <th>Unit price</th>
+                        <th>Quantity</th>
+                        <th class="text-right">Total</th>
+                    </tr>
+                </thead>
+
+                <tbody data-bind="template: {foreach: cartLines, beforeRemove: hideLineElement, afterRender: slideLineDown}">
+                    <tr style="display:none">
+                        <td class="cart-delete"><a pid="remove" class="delete-item" data-bind="click: removeLine" href="#"><span class="glyphicon glyphicon-remove-circle"></span></a></td>
+                        <td class="cart-image hidden-sm hidden-xs" pid="image">
+                            <a data-bind="attr:{'href' : productUrl}"><img class="img-responsive" data-bind="attr: {src: image}" alt="a" /></a>
+                        </td>
+
+                        <td class="cart-info">
+                            <a data-bind="attr:{'href' : productUrl}"><h5 pid="displayName" data-bind="text: productName"></h5></a>
+                            <span class="cart-variable"></span>
+                            <span pid="color"></span>
+                        </td>
+
+                        <td class="cart-price">
+                            <dl>
+                                <dt>
+                                    <span pid="price" data-bind="text: unitPrice"></span>
+                                </dt>
+                                @*<dt data-bind="visible: shouldShowDiscountOffers">
+                            <span>@discountLabel</span>
+                            <span pid="discountLabel" data-bind="text: discountOfferNames"></span>
+                        </dt>*@
+                            </dl>
+                        </td>
+                        <td class="cart-quantity text-center" style="width: 10%;">
+                            <input pid="quantity" type="number" class="form-control form-control-quantity" min="1" max="100" placeholder="1" data-bind="value: quantity">
+                        </td>
+                        <td class="cart-total">
+                            <dl>
+                                <dt>
+                                    <span pid="total" data-bind="text: totalLineSum"></span>
+                                </dt>
+                                @*<dt data-bind="visible: shouldShowSavings">
+                            <span>@savingsLabel </span>
+                            <span pid="discount" data-bind="text: lineItemDiscount"></span>
+                        </dt>*@
+                            </dl>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- curt summery-->
+  <div data-bind="visible: cartLines().length > 0" id="summarySection" style="display: none;">
+    <div class="col-md-12">
+      @* MKL: We have two "Totals" so this will be removed until taxes and payment info added.
+  <h3>Shopping Cart Total</h3>
+        *@
+    </div>
+    @*<div class="col-md-12 summary">
+                <span class="text">@paymentTotalLabel</span>
+                <span class="amount" data-bind="text: subTotal" />
+            </div>
+            <div class="col-md-12 summary">
+                <span class="text">@vatLabel</span>
+                <span class="amount" data-bind="text: taxTotal" />
+            </div>*@
+    <div class="col-md-12 total">
+      <span class="text">TOTAL:</span>
+      <span class="amount" data-bind="text: totalSum" />
+    </div>
+
+    @*<div class="col-md-12 discounttotal">
+                <span>@totalSavingsLabel </span>
+                <span id="OrderLevelDiscount" data-bind="text: discount" />
+            </div>*@
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6 chk-prev"><a class="btn btn-info" href="/Products">@Texts.BackToShopping</a></div>
+      <div class="col-md-6 col-sm-6 col-xs-6 chk-next" data-bind="visible: cartLines().length > 0" style="display: none;"><a href="/Checkout" class="btn btn-success">Checkout</a></div>
+    </div>
+  </div>
+</div>
+
+@*@Scripts.Render("~/bundles/obec/cart")*@
+@Scripts.Render("~/Scripts/cart.js")

@@ -1,0 +1,81 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using System.Web.Optimization
+@using Sitecore.Mvc
+@using Sitecore.Commerce.StarterKit.Helpers
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>@ViewBag.Title - Sitecore OBEC</title>
+    @* @MetadataManager.GetTags() *@
+
+    <!-- Bootstrap -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+
+    <script src="~/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+    <script src="~/Scripts/MicrosoftAjax.js"></script>
+    <script src="~/Scripts/MicrosoftMvcAjax.js"></script>
+    <script src="~/Scripts/MicrosoftMvcValidation.js"></script>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/starterkit")
+    @* @scripts.render("~ />Scripts/modernizr")
+
+      @Scripts.Render("~/Scripts/jqueryval") *@
+
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/bootstrap-theme")
+
+    @Scripts.Render("~/Scripts/knockout-2.2.1.js")
+
+    @Styles.Render("~/Content/starterkit.css")
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">
+  
+        </script>
+
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+  @Html.Sitecore().AnalyticsVisitorIdentification()
+  <div class="wrap-topbar">
+    <div class="container">
+      @Html.Sitecore().Placeholder("top")
+    </div>
+  </div>
+    <div class="maincontent container">
+        @Html.Sitecore().Placeholder("navigation")
+        <div class="wrap-main-content">
+            @Html.Sitecore().Placeholder("content")
+        </div>
+    </div>
+  <footer>
+    <div class="container">
+      @Html.Sitecore().Placeholder("bottom")
+    </div>
+  </footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+</body>
+</html>

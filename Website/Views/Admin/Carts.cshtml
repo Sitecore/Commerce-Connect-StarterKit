@@ -1,0 +1,86 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using System.Web.Optimization
+<h2>Carts</h2>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span6">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="userIdsSelect">User ID</label>
+                    <div class="controls">
+                        <input id="userIdsSelect" data-bind="value: selectedUserId" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="cartStatusesSelect">Cart Status</label>
+                    <div class="controls">
+                        <input id="cartStatusesSelect" data-bind="value: selectedCartStatus"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="customerIdsSelect">Customer ID</label>
+                    <div class="controls">
+                        <input id="customerIdsSelect" data-bind="value: selectedCustomerId" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="cartNamesSelect">Cart Name</label>
+                    <div class="controls">
+                        <input id="cartNamesSelect" data-bind="value: selectedCartName" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button id="applyFilterButton" class="btn btn-small btn-primary" data-bind="click: applyFilter">Filter</button>
+                        <button class="btn btn-small btn-primary" data-bind="click: clearAll">Clear all filters</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <table id="cartsTable" class="table">
+            <thead>
+                <tr>
+                    <th>Cart ID</th>
+                    <th>User ID</th>
+                    <th>Customer ID</th>
+                    <th>Cart Name</th>
+                    <th>Cart Type</th>
+                    <th>Status</th>
+                    <th>Is Locked</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: carts, visible: carts().length > 0">
+                <tr>
+                    <td data-bind="text: ExternalId"></td>
+                    <td data-bind="text: UserId"></td>
+                    <td data-bind="text: CustomerId"></td>
+                    <td data-bind="text: CartName"></td>
+                    <td data-bind="text: CartType"></td>
+                    <td data-bind="text: CartStatus"></td>
+                    <td data-bind="text: IsLocked"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row-fluid">
+
+    <div class="span4">
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/obec/carts")

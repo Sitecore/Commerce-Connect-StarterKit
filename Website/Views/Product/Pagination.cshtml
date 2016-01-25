@@ -1,0 +1,66 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using Sitecore.Text
+
+@model Sitecore.Commerce.StarterKit.Models.ProductPagingModel
+
+@{
+    const int PageSteps = 3;
+    
+    List<int> pages = new List<int>();
+
+    for (int i = Model.PageIndex - PageSteps; i <= Model.PageIndex + PageSteps; i++)
+    {
+        if (i < 0) {continue;}
+
+        if (i == Model.PageIndex || i * Model.PageSize < Model.TotalCount)
+        {
+            pages.Add(i);
+        }
+    }
+
+    var previousPageUrl = new UrlString(Request.RawUrl);
+    previousPageUrl["page"] = (Model.PageIndex - 1).ToString();
+
+    var nextPageUrl = new UrlString(Request.RawUrl);
+    nextPageUrl["page"] = (Model.PageIndex + 1).ToString();
+
+}
+
+<div id="C06-Pagination" class="row">
+    <div class="col-md-12">
+        <div class="pagination-container">
+            <ul class="pagination">
+                
+                <li class="@(!pages.Contains(Model.PageIndex - 1) ? "disabled" : string.Empty)">
+                    <a href="@previousPageUrl.ToString()">«</a>
+                </li>
+
+                @foreach (int page in pages)
+                {
+                    var url = new UrlString(Request.RawUrl);
+
+                    url["page"] = page.ToString();
+
+                    <li class="@(Model.PageIndex == page ? "active" : string.Empty)">
+                        <a href="@url.ToString()">@(page + 1)</a>
+                    </li>
+                }
+
+                <li class="@(!pages.Contains(Model.PageIndex + 1) ? "disabled" : string.Empty)">
+                    <a href="@nextPageUrl.ToString()">»</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

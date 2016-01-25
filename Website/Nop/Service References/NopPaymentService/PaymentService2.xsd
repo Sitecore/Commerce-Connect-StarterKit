@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Nop.Plugin.Sitecore.Commerce.Payments.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Nop.Plugin.Sitecore.Commerce.Payments.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ResponseModelOfArrayOfPaymentMethodModelQBnDdvBq">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseModelOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Nop.Plugin.Sitecore.Commerce.Payments.Models" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPaymentMethodModel" Namespace="http://schemas.datacontract.org/2004/07/Nop.Plugin.Sitecore.Commerce.Payments.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ArrayOfPaymentMethodModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseModelOfArrayOfPaymentMethodModelQBnDdvBq" nillable="true" type="tns:ResponseModelOfArrayOfPaymentMethodModelQBnDdvBq" />
+  <xs:complexType name="ResponseModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseModel" nillable="true" type="tns:ResponseModel" />
+  <xs:complexType name="ArrayOfPaymentMethodModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethodModel" nillable="true" type="tns:PaymentMethodModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentMethodModel" nillable="true" type="tns:ArrayOfPaymentMethodModel" />
+  <xs:complexType name="PaymentMethodModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShopName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentMethodModel" nillable="true" type="tns:PaymentMethodModel" />
+</xs:schema>

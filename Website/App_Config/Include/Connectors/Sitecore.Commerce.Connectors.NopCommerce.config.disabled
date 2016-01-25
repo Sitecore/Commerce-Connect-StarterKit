@@ -1,0 +1,464 @@
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <pipelines>
+      <commerce.carts.loadCart>
+        <!-- Loads cart from NopCommerce e-commerce system. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.LoadCart.LoadCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Carts.LoadCart.LoadCartFromEaState, Sitecore.Commerce']"/>
+      </commerce.carts.loadCart>
+
+      <commerce.carts.saveCart>
+        <!-- Saves cart to NopCommerce e-commerce system. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.Common.SaveCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Carts.Common.SaveCartToEaState, Sitecore.Commerce']"/>
+      </commerce.carts.saveCart>
+
+      <commerce.carts.deleteCart>
+        <!-- Deletes cart from NopCommerce e-commerce system. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.DeleteCart.DeleteCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Common.TriggerPageEventForRequestCart, Sitecore.Commerce']"/>
+      </commerce.carts.deleteCart>
+
+      <commerce.carts.addCartLines>
+        <!-- Adds cart lines to cart on NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.AddCartLines.AddLinesToCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Carts.AddCartLines.AddLinesToCart, Sitecore.Commerce']"/>
+      </commerce.carts.addCartLines>
+
+      <commerce.carts.updateCartLines>
+        <!-- Updates cart lines quantity in cart on NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.UpdateCartLines.UpdateLinesOnCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Carts.UpdateCartLines.UpdateLinesOnCart, Sitecore.Commerce']"/>
+      </commerce.carts.updateCartLines>
+
+      <commerce.carts.removeCartLines>
+        <!-- Removes cart lines from cart on NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Pipelines.Carts.Common.CheckIfLocked, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+        <processor type="Sitecore.Commerce.Pipelines.Carts.Common.RunSaveCart, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.RemoveCartLines.RemoveLinesFromCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Carts.RemoveCartLines.RemoveLinesFromCart, Sitecore.Commerce']"/>
+      </commerce.carts.removeCartLines>
+
+      <commerce.carts.getCarts>
+        <!-- Gets all carts from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.GetCarts.GetCarts, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Carts.GetCarts.BuildQuery, Sitecore.Commerce']"/>
+      </commerce.carts.getCarts>
+
+      <!-- Add shipping info to NopCommerce e-commerce system side. -->
+      <commerce.carts.addShippingInfo>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.AddShippingInfo.AddShippingInfoToCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Carts.AddShippingInfo.AddShippingInfoToCart, Sitecore.Commerce']"/>
+      </commerce.carts.addShippingInfo>
+
+      <commerce.carts.removeShippingInfo>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.RemoveShippingInfo.RemoveShippingInfoFromCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Carts.RemoveShippingInfo.RemoveShippingInfoFromCart, Sitecore.Commerce']"/>
+      </commerce.carts.removeShippingInfo>
+
+      <!-- Add payment info to NopCommerce e-commerce system side. -->
+      <commerce.carts.addPaymentInfo>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.AddPaymentInfo.AddPaymentInfoToCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Carts.AddPaymentInfo.AddPaymentInfoToCart, Sitecore.Commerce']"/>
+      </commerce.carts.addPaymentInfo>
+
+      <!-- Remove payment info from NopCommerce e-commerce system side. -->
+      <commerce.carts.removePaymentInfo>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.RemovePaymentInfo.RemovePaymentInfoToCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Carts.RemovePaymentInfo.RemovePaymentInfoFromCart, Sitecore.Commerce']"/>
+      </commerce.carts.removePaymentInfo>
+
+      <commerce.carts.addParties>
+        <processor type="Sitecore.Commerce.Pipelines.Carts.Common.RunSaveCart, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.AddParties.AddPartiesToCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Carts.AddParties.AddPartiesToCart, Sitecore.Commerce']"/>
+      </commerce.carts.addParties>
+      
+      <commerce.carts.mergeCart>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.MergeCart.MergeCart, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Carts.MergeCart.MergeCart, Sitecore.Commerce']"/>
+      </commerce.carts.mergeCart>
+
+      <commerce.wishLists.getWishList>
+        <!-- Gets wishlist from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Wishlists.GetWishlist.GetWishlist, Sitecore.Commerce.Connectors.NopCommerce" />
+      </commerce.wishLists.getWishList>
+
+      <commerce.wishLists.getWishLists>
+        <!-- Gets wishlists from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Wishlists.GetWishlists.GetWishlists, Sitecore.Commerce.Connectors.NopCommerce" />
+      </commerce.wishLists.getWishLists>
+
+      <commerce.wishLists.createWishList>
+        <!-- Creates wishlist on NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Wishlists.CreateWishlist.CreateWishlist, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.WishLists.CreateWishList.TriggerWishListCreatedPageEvent, Sitecore.Commerce']" />
+      </commerce.wishLists.createWishList>
+
+      <commerce.wishLists.deleteWishList>
+        <!-- Deletes wishlists from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Wishlists.DeleteWishlist.DeleteWishlist, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.WishLists.DeleteWishList.TriggerWishListDeletedPageEvent, Sitecore.Commerce']" />
+      </commerce.wishLists.deleteWishList>
+
+      <commerce.wishLists.addLinesToWishList>
+        <!-- Add lines to wishlist from NopCommerce e-commerce system side. -->
+		<processor type="Sitecore.Commerce.Pipelines.WishLists.AddLinesToWishList.TriggerLinesAddedToWishListPageEvent, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Wishlists.AddLinesToWishlist.AddLinesToWishlist, Sitecore.Commerce.Connectors.NopCommerce"/>
+      </commerce.wishLists.addLinesToWishList>
+
+      <commerce.wishLists.removeWishListLines>
+        <processor type="Sitecore.Commerce.Pipelines.WishLists.RemoveWishListLines.TriggerLinesRemovedFromWishListPageEvent, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+		<!-- Remove lines from wishlist from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.WishLists.RemoveWishlistLines.RemoveWishlistLines, Sitecore.Commerce.Connectors.NopCommerce" />
+      </commerce.wishLists.removeWishListLines>
+
+      <commerce.wishLists.updateWishListLines>
+        <processor type="Sitecore.Commerce.Pipelines.WishLists.UpdateWishListLines.TriggerLinesUpdatedOnWishListPageEvent, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+		<!-- Update lines of wishlist from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.WishLists.UpdateLinesOnWishlist.UpdateLinesOnWishlist, Sitecore.Commerce.Connectors.NopCommerce" />
+      </commerce.wishLists.updateWishListLines>
+
+      <commerce.prices.getCartTotal>
+        <!-- Gets cart total from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Prices.GetCartTotal.GetPricesForCart, Sitecore.Commerce.Connectors.NopCommerce" />
+      </commerce.prices.getCartTotal>
+
+      <commerce.prices.getProductPrices>
+        <!-- Gets product prices from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Prices.GetProductPrices.GetProductPrices, Sitecore.Commerce.Connectors.NopCommerce" />
+      </commerce.prices.getProductPrices>
+
+      <commerce.prices.getProductBulkPrices>
+        <!-- Gets prices for several products from NopCommerce e-commerce system side at once. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Prices.GetProductPrices.GetProductBulkPrices, Sitecore.Commerce.Connectors.NopCommerce" />
+      </commerce.prices.getProductBulkPrices>
+
+      <commerce.synchronizeProducts.getExternalCommerceSystemProductList>
+        <!-- Gets list of products from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.GetExternalCommerceSystemProductList.GetExternalCommerceSystemProductList, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.GetExternalCommerceSystemProductList.GetExternalCommerceSystemProductList']" />
+      </commerce.synchronizeProducts.getExternalCommerceSystemProductList>
+
+      <commerce.synchronizeProducts.synchronizeProductEntity>
+        <!-- Gets product item  from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductEntity.ReadExternalCommerceSystemProduct, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductEntity.ReadExternalCommerceSystemProduct, Sitecore.Commerce']">
+          <param desc="productClassificationGroupName">NopCommerce Categories</param>
+          <param desc="productClassificationGroupExternalId">0</param>
+        </processor>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductEntity.SaveProductToExternalCommerceSystem, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductEntity.SaveProductToExternalCommerceSystem, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductEntity>
+
+      <commerce.synchronizeProducts.synchronizeManufacturers>
+        <!-- Gets all manufacturers from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeManufacturers.ReadExternalCommerceSystemManufacturers, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeManufacturers.ReadExternalCommerceSystemManufacturers, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeManufacturers>
+
+      <commerce.synchronizeProducts.synchronizeClassifications>
+        <!-- Gets all classifications from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeClassifications.ReadExternalCommerceSystemClassifications, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeClassifications.ReadExternalCommerceSystemClassifications, Sitecore.Commerce']">
+          <param desc="productClassificationGroupName">NopCommerce Categories</param>
+          <param desc="productClassificationGroupExternalId">0</param>
+        </processor>
+      </commerce.synchronizeProducts.synchronizeClassifications>
+
+      <commerce.synchronizeProducts.synchronizeProductManufacturers>
+        <!-- Gets product manufacturers from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductManufacturers.ReadExternalCommerceSystemProductManufacturers, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductManufacturers.ReadExternalCommerceSystemProductManufacturers, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductManufacturers>
+
+      <commerce.synchronizeProducts.synchronizeProductClassifications>
+        <!-- Gets product manufacturers from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductClassifications.ReadExternalCommerceSystemProductClassifications, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductClassifications.ReadExternalCommerceSystemProductClassifications, Sitecore.Commerce']">
+          <param desc="productClassificationGroupName">NopCommerce Categories</param>
+          <param desc="productClassificationGroupExternalId">0</param>
+        </processor>
+      </commerce.synchronizeProducts.synchronizeProductClassifications>
+
+      <commerce.synchronizeProducts.synchronizeDivisions>
+        <!-- Gets all divisions from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeDivisions.ReadExternalCommerceSystemDivisions, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeDivisions.ReadExternalCommerceSystemDivisions, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeDivisions>
+
+      <commerce.synchronizeProducts.synchronizeResources>
+        <!-- Gets all resources from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeResources.ReadExternalCommerceSystemResources, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeResources.SaveResourcesToSitecore, Sitecore.Commerce']"/>
+      </commerce.synchronizeProducts.synchronizeResources>
+
+      <commerce.synchronizeProducts.synchronizeProductDivisions>
+        <!-- Gets product divisions from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductDivisions.ReadExternalCommerceSystemProductDivisions, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductDivisions.ReadExternalCommerceSystemProductDivisions, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductDivisions>
+
+      <commerce.synchronizeProducts.synchronizeProductRelations>
+        <!-- Gets product relations from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductRelations.ReadExternalCommerceSystemCrossSales, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductRelations.ReadExternalCommerceSystemVariants, Sitecore.Commerce.Connectors.NopCommerce']"/>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductRelations.ReadExternalCommerceSystemVariants, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductRelations.ReadExternalCommerceSystemProductRelations, Sitecore.Commerce.Connectors.NopCommerce']"/>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductRelations.ReadExternalCommerceSystemProductRelations, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductRelations.ReadExternalCommerceSystemProductRelations, Sitecore.Commerce']"/>
+      </commerce.synchronizeProducts.synchronizeProductRelations>
+
+      <commerce.synchronizeProducts.synchronizeTypes>
+        <!-- Gets all types from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeTypes.ReadExternalCommerceSystemTypes, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeTypes.ReadExternalCommerceSystemTypes, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeTypes>
+
+      <commerce.synchronizeProducts.synchronizeProductTypes>
+        <!-- Gets product types from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductTypes.ReadExternalCommerceSystemProductTypes, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductTypes.ReadExternalCommerceSystemProductTypes, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductTypes>
+
+      <commerce.synchronizeProducts.synchronizeProductResources>
+        <!-- Gets product resources from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductResources.ReadExternalCommerceSystemProductMainImage, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductResources.ReadExternalCommerceSystemProductAlternateImages, Sitecore.Commerce.Connectors.NopCommerce']" />
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductResources.ReadExternalCommerceSystemProductAlternateImages, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductResources.ReadExternalCommerceSystemProductDownloads, Sitecore.Commerce.Connectors.NopCommerce']" />
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductResources.ReadExternalCommerceSystemProductDownloads, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductResources.ReadExternalCommerceSystemProductResources, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductResources>
+
+      <commerce.synchronizeProducts.synchronizeGlobalSpecifications>
+        <!-- Gets global specifications from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeGlobalSpecifications.ReadExternalCommerceSystemGlobalSpecifications, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeGlobalSpecifications.ReadExternalCommerceSystemGlobalSpecifications, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeGlobalSpecifications>
+
+      <commerce.synchronizeProducts.synchronizeProductGlobalSpecifications>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.SynchronizeProductGlobalSpecifications.ReadExternalCommerceSystemProductGlobalSpecifications, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductGlobalSpecifications.ReadExternalCommerceSystemProductGlobalSpecifications, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductGlobalSpecifications>
+
+      <commerce.inventory.getStockInformation>
+        <!-- Gets stock information from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetStockInformation.GetStockInformation, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Inventory.GetStockInformation.GetStockInformation, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.inventory.getStockInformation>
+
+      <commerce.inventory.stockStatusForIndexing>
+        <!-- Gets stock information for indexing from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetStockInformation.StockStatusForIndexing, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Inventory.GetStockInformation.StockStatusForIndexing, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+          <param desc="The name of the NOP site to query for stock status.">StarterKit</param>
+        </processor>
+      </commerce.inventory.stockStatusForIndexing>
+
+      <commerce.inventory.getPreOrderableInformation>
+        <!-- Gets pre-orderable stock information for several products from NopCommerce e-commerce system side at once. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetOrderableInformation.GetPreOrderableInformation, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Inventory.GetOrderableInformation.GetPreOrderableInformation, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.inventory.getPreOrderableInformation>
+
+      <commerce.inventory.getBackOrderableInformation>
+        <!-- Gets back-orderable stock information for several products from NopCommerce e-commerce system side at once. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetOrderableInformation.GetBackOrderableInformation, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Inventory.GetOrderableInformation.GetBackOrderableInformation, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.inventory.getBackOrderableInformation>
+
+      <commerce.inventory.getBackInStockInformation>
+        <!-- Gets back-in-stock information from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetStockInformation.GetBackInStockInformation, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Inventory.GetStockInformation.GetBackInStockInformation, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.inventory.getBackInStockInformation>
+
+      <commerce.customers.createUser>
+        <!-- Creates a user in NopCommerce prior to the e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.CreateUser, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Customers.CreateUser.CreateUserInSitecore, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.createUser>
+
+      <commerce.customers.createCustomer>
+        <!-- Creates a customer in NopCommerce prior to NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.CreateCustomer, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Customers.CreateCustomer.CreateCustomerInSitecore, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.createCustomer>
+
+      <commerce.customers.addParties>
+        <processor type="Sitecore.Commerce.Pipelines.Customers.AddPartiesToExternalSystem, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+        <processor type="Sitecore.Commerce.Pipelines.Customers.AddPartiesToSitecore, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.AddParties, Sitecore.Commerce.Connectors.NopCommerce">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.addParties>
+
+      <commerce.customers.getParties>
+        <processor type="Sitecore.Commerce.Pipelines.Customers.GetPartiesFromSitecore, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+        <processor type="Sitecore.Commerce.Pipelines.Customers.GetPartiesFromExternalSystem, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.GetParties, Sitecore.Commerce.Connectors.NopCommerce">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.getParties>
+
+      <commerce.customers.removeParties>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.RemoveParties, Sitecore.Commerce.Connectors.NopCommerce"
+                     patch:before="processor[@type='Sitecore.Commerce.Pipelines.Customers.AddPartiesToSitecore, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.removeParties>
+
+      <commerce.customers.updateParties>
+        <processor type="Sitecore.Commerce.Pipelines.Customers.UpdatePartiesInExternalSystem, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+		<processor type="Sitecore.Commerce.Pipelines.Customers.UpdatePartiesInSitecore, Sitecore.Commerce">
+          <patch:delete/>
+        </processor>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.UpdateParties, Sitecore.Commerce.Connectors.NopCommerce"
+                     patch:before="processor[@type='Sitecore.Commerce.Pipelines.Customers.AddPartiesToSitecore, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.updateParties>
+
+      <commerce.customers.addCustomerParties>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.AddCustomerParties, Sitecore.Commerce.Connectors.NopCommerce"
+                     patch:before="processor[@type='Sitecore.Commerce.Pipelines.Customers.AddPartiesToSitecore, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.addCustomerParties>
+
+      <commerce.customers.removeCustomerParties>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.RemoveCustomerParties, Sitecore.Commerce.Connectors.NopCommerce"
+                     patch:before="processor[@type='Sitecore.Commerce.Pipelines.Customers.AddPartiesToSitecore, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.removeCustomerParties>
+
+      <commerce.customers.updateCustomerParties>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.UpdateCustomerParties, Sitecore.Commerce.Connectors.NopCommerce"
+                     patch:before="processor[@type='Sitecore.Commerce.Pipelines.Customers.AddPartiesToSitecore, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.updateCustomerParties>
+
+      <commerce.payments.getPaymentOptions>
+        <!-- Gets payment options from configuration.
+            Allows system know what payment options are being supported. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Payments.GetPaymentOptions.GetPaymentOptions, Sitecore.Commerce.Connectors.NopCommerce" >
+          <paymentOptions hint="raw:AddPaymentOption">
+            <paymentOption value="0" name="None" />
+            <paymentOption value="1" name="PayCard" />
+            <paymentOption value="4" name="OnlinePayment" />
+          </paymentOptions>
+        </processor>
+      </commerce.payments.getPaymentOptions>
+
+      <commerce.payments.getPaymentMethods>
+        <!-- Gets all payment methods from NopCommerce e-commerce system side by 'store name' and 'payment option type'. 
+              Mapping allows to understand which methods correspond certain payment option type and select only them. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Payments.GetPaymentMethods.GetPaymentMethods, Sitecore.Commerce.Connectors.NopCommerce" >
+          <mapping hint="raw:Map">
+            <map paymentOptionValue="0" systemName="Payments.CashOnDelivery" methodName="Cash On Delivery (COD)" />
+            <map paymentOptionValue="0" systemName="Payments.Manual" methodName="Credit Card" />
+            <map paymentOptionValue="0" systemName="Payments.AuthorizeNet" methodName="Credit Card" />
+            <map paymentOptionValue="0" systemName="Payments.PayPalDirect" methodName="Credit Card" />
+            <map paymentOptionValue="0" systemName="Payments.GoogleCheckout" methodName="Google Checkout" />
+            <map paymentOptionValue="0" systemName="Payments.PayPalStandard" methodName="PayPal Standard" />
+            <map paymentOptionValue="1" systemName="Payments.Manual" methodName="Credit Card" />
+            <map paymentOptionValue="1" systemName="Payments.AuthorizeNet" methodName="Credit Card" />
+            <map paymentOptionValue="1" systemName="Payments.PayPalDirect" methodName="Credit Card" />
+            <map paymentOptionValue="4" systemName="Payments.GoogleCheckout" methodName="Google Checkout" />
+            <map paymentOptionValue="4" systemName="Payments.PayPalStandard" methodName="PayPal Standard" />
+          </mapping>
+        </processor>
+      </commerce.payments.getPaymentMethods>
+
+      <commerce.shipping.getShippingOptions>
+        <!-- Gets shipping options from configuration.
+            Allows system know what shipping options are being supported. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Shipping.GetShippingOptions.GetShippingOptions, Sitecore.Commerce.Connectors.NopCommerce" >
+          <shippingOptions hint="raw:AddShippingOption">
+            <shippingOption value="0" name="None" />
+            <shippingOption value="1" name="ShipToAddress" />
+            <shippingOption value="2" name="PickupFromStore" />
+          </shippingOptions>
+        </processor>
+      </commerce.shipping.getShippingOptions>
+
+      <commerce.shipping.getShippingMethods>
+        <!-- Gets all shipping methods from NopCommerce e-commerce system side. 
+              Mapping allows to understand which methods correspond certain shipping option type and select only them. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Shipping.GetShippingMethods.GetShippingMethods, Sitecore.Commerce.Connectors.NopCommerce" >
+          <mapping hint="raw:Map">
+            <map shippingOptionValue="0" systemName="Shipping.FixedRate" methodName="By Ground" />
+            <map shippingOptionValue="0" systemName="Shipping.FixedRate" methodName="By Air" />
+            <map shippingOptionValue="0" systemName="Shipping.FixedRate" methodName="In-Store Pickup" />
+            <map shippingOptionValue="1" systemName="Shipping.FixedRate" methodName="By Ground" />
+            <map shippingOptionValue="1" systemName="Shipping.FixedRate" methodName="By Air" />
+            <map shippingOptionValue="2" systemName="Shipping.FixedRate" methodName="In-Store Pickup" />
+          </mapping>
+        </processor>
+      </commerce.shipping.getShippingMethods>
+      
+      
+      <!-- Oeders -->
+
+      <commerce.orders.submitVisitorOrder>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Orders.SubmitOrder.SubmitOrder, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Orders.Common.TriggerOrderGoal, Sitecore.Commerce']" />
+      </commerce.orders.submitVisitorOrder>
+      
+      <commerce.orders.getVisitorOrder>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Orders.GetOrder.GetOrder, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Orders.GetVisitorOrder.TriggerVisitorViewedOrderDetailsPageEvent, Sitecore.Commerce']" />
+      </commerce.orders.getVisitorOrder>
+
+      <commerce.orders.getVisitorOrders>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Orders.GetOrders.GetOrders, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Orders.GetVisitorOrders.TriggerVisitorViewedOrderHistoryPageEvent, Sitecore.Commerce']" />
+      </commerce.orders.getVisitorOrders>
+    
+      <commerce.orders.visitorCancelOrder>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Orders.CancelOrder.CancelOrder, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Orders.VisitorCancelOrder.TriggerVisitorCancelOrderPageEvent, Sitecore.Commerce']" />
+      </commerce.orders.visitorCancelOrder>
+    
+      <!-- - - - -->
+    </pipelines>
+  </sitecore>
+</configuration>

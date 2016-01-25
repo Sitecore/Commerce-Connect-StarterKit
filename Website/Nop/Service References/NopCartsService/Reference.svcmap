@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1bac2470-4b28-4070-bb82-9874cc62c9c5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Obec.Carts/Remote/CartsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CartsService.wsdl" MetadataType="Wsdl" ID="7378ff0a-d1ec-4819-a4d9-633848552381" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Carts/Remote/CartsService.svc?wsdl" />
+    <MetadataFile FileName="CartsService3.xsd" MetadataType="Schema" ID="3d7b6845-5026-4ef0-a996-d8b566d0a112" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Carts/Remote/CartsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CartsService.xsd" MetadataType="Schema" ID="f8c33dc6-32e3-4405-bbf9-8554b791e8fc" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Carts/Remote/CartsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CartsService.disco" MetadataType="Disco" ID="ebddda68-1d13-4bd6-9539-d0f1f8387a68" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Carts/Remote/CartsService.svc?disco" />
+    <MetadataFile FileName="CartsService1.xsd" MetadataType="Schema" ID="a02cc89c-642b-4ddc-88c0-bd5e5e2c47e9" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Carts/Remote/CartsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CartsService2.xsd" MetadataType="Schema" ID="b6f04591-cf41-4ce7-9f30-a34609ac3263" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Carts/Remote/CartsService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

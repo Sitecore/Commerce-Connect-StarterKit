@@ -1,0 +1,53 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using System.Web.Optimization
+@using Sitecore.Commerce.StarterKit
+
+<div id="B02-Basket" class="basket">
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default btn-wishlist" onclick="window.location.href = '/Wishlist' ">Wishlist <span class="badge" style="background-color: #cccccc; color: #333333;">0</span></button>
+        <button type="button" class="btn btn-default toggle-cart" onclick="window.location.href = '/Cart' ">Shopping cart <span class="badge" style="background-color:  #cccccc; color: #333333;" data-bind="text: totalQuantity">0</span> <span class="caret"></span></button>
+        <button type="button" id="rsf-btn-checkout" onclick=" window.location.href = '/Checkout' " class="btn btn-success">@Texts.Checkout</button>
+    </div>
+
+    <div class="minicart hide-cart hidden-sm hidden-xs">
+        <div class="minicart-content" data-bind="foreach: miniCartItems, visible:miniCartItems().length">
+            <div class="minicart-item" data-bind="attr: {'data-ajax-lineitemid': externalCartlineId}">
+                <img height="100" width="100" class="img-responsive" alt="a" data-bind="attr:{src: image, alt: displayName}">
+                <div class="minicart-info">
+                    <h5><a style="display: inline-block; width: 200px;" data-bind="text: displayName, attr:{ href:productUrl}"></a></h5>
+                    <p>
+                        @Texts.Quantity <strong data-bind="text: quantity"></strong>
+                    </p>
+                    <p>
+                        @Texts.Price <strong data-bind="text: unitPrice"></strong>
+                    </p>
+                </div>
+                <span class="minicart-delete">
+                    <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+            <div class="minicart-itemspacer"></div>
+        </div>
+        <div class="minicart-footer">
+            <a class="btn btn-primary" href="/Cart">@Texts.GoToCart</a>
+            <span class="minicart-total">@Texts.Total <span data-bind="text: total"></span></span>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/obec/cartwidget")
+
+<script type="text/javascript">
+    initMiniShoppingCart("B02-Basket");
+</script>

@@ -1,0 +1,48 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using Sitecore.Commerce.StarterKit.Models
+@model IEnumerable<ShippingInfoModel>
+@Html.Hidden("stepNumber", 3)
+@Html.Hidden("stepAction", Url.Action("ShippingMethod"))
+
+@{
+    var shippInfo = Model.FirstOrDefault(m => m.Selected);
+    int optionTypeId = shippInfo != null ? shippInfo.OptionType : 0;
+}
+
+<h4>Step 3 : Shipping Method</h4>
+<hr />
+<div class="row">
+  <div class="col-md-3">
+    <select class="form-control shippingoption-control">
+      @foreach (var shippingInfo in Model)
+      {
+        <option value="@shippingInfo.OptionType" @(shippingInfo.Selected ? "selected" : "")>@shippingInfo.OptionName</option>
+      }
+    </select>
+  </div>
+</div>
+<br />
+<div class="method-row">
+    <div class="form-group" id="shippingMethods">
+        @Html.Action("ShippingMethodList", new { id = optionTypeId })
+    </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-md-4">
+    <button type="submit" name="changeStep" value="@ChangeStepType.Previous" class="btn btn-default">Previous</button>
+  </div>
+  <div class="col-md-4">
+    <button type="submit" name="changeStep" value="@ChangeStepType.Next" class="btn btn-success">Next</button>
+  </div>
+</div>

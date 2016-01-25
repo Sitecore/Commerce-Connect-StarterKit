@@ -1,0 +1,12 @@
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <eaStateCartRepository type="Sitecore.Commerce.EfCarts.Data.Carts.EfCartRepository, Sitecore.Commerce.EfCarts"
+      patch:instead="eaStateCartRepository">
+      <param type="Sitecore.Commerce.EfCarts.Data.Carts.CartDbContextFactory, Sitecore.Commerce.EfCarts">
+        <param>CartDatabaseConnectionStringOrName</param>
+      </param>
+      <param type="Sitecore.Commerce.EfCarts.Data.Carts.AutomapperMapper, Sitecore.Commerce.EfCarts" />
+      <param ref="entityFactory" />
+    </eaStateCartRepository>
+  </sitecore>
+</configuration>

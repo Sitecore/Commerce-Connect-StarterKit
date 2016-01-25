@@ -1,0 +1,36 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@model Sitecore.Commerce.StarterKit.Models.LoginModel
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    @using (Html.BeginForm())
+    {
+      @Html.AntiForgeryToken()
+      @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+      <div class="form-group">
+        @Html.LabelFor(m => m.UserName)
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+      </div>
+      <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+      </div>
+      <button type="submit" class="btn btn-primary">Log in</button>
+    }
+  </div>
+</div>
+<div class="row" style="margin-top: 20px;">
+  <div class="col-md-6 col-md-offset-3">
+    <a href="/register">Register</a> if you don't have an account.
+  </div>
+</div>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Sitecore.Obec.Products.Tests", "Nop.Plugin.Sitecore.Obec.Products.Tests\Nop.Plugin.Sitecore.Obec.Products.Tests.csproj", "{FEB4D8A3-7243-42F8-8FA3-EE50A16A732B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Sitecore.Obec.Products", "Nop.Plugin.Sitecore.Obec.Products.csproj", "{D12B4B3A-0D3B-4503-8993-E2E67E25220A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEB4D8A3-7243-42F8-8FA3-EE50A16A732B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEB4D8A3-7243-42F8-8FA3-EE50A16A732B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEB4D8A3-7243-42F8-8FA3-EE50A16A732B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEB4D8A3-7243-42F8-8FA3-EE50A16A732B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D12B4B3A-0D3B-4503-8993-E2E67E25220A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12B4B3A-0D3B-4503-8993-E2E67E25220A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12B4B3A-0D3B-4503-8993-E2E67E25220A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D12B4B3A-0D3B-4503-8993-E2E67E25220A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

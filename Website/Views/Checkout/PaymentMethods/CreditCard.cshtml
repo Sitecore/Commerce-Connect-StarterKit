@@ -1,0 +1,93 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using Sitecore.Commerce.StarterKit.Models
+@model CreditCardModel
+
+@Html.Hidden("stepNumber", 5)
+@Html.Hidden("stepAction", Url.Action("PaymentInformation"))
+
+<h4>Step 5 : Payment Information</h4>
+<hr />
+
+<div class="info">
+  <div class="row">
+    <div class="col-md-4">
+      @Html.LabelFor(m => m.CreditCardType, new { @class = "control-label" }):
+    </div>
+    <div class="col-md-4">
+      @Html.DropDownListFor(m => m.CreditCardType, Model.CreditCardTypes, new { @class = "form-control" })
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      @Html.LabelFor(m => m.CardholderName, new { @class = "control-label" }):
+    </div>
+    <div class="col-md-4">
+      @Html.TextBoxFor(model => model.CardholderName, new { @class = "form-control" })
+    </div>
+    <div class="col-md-4 text-danger">
+      @Html.ValidationMessageFor(m => m.CardholderName)
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      @Html.LabelFor(m => m.CardNumber, new { @class = "control-label" }):
+    </div>
+    <div class="col-md-4">
+      @Html.TextBoxFor(model => model.CardNumber, new { autocomplete = "off",  @class = "form-control", maxlength = 22 })
+    </div>
+    <div class="col-md-4 text-danger">
+      @Html.ValidationMessageFor(m => m.CardNumber)
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <label class="control-label" for="ExpireMonth" title="">Expiration date</label>:
+    </div>
+    <div class="col-md-2">
+      <select id="ExpireMonth" name="ExpireMonth" class="form-control">
+        @for (int i = 1; i < 13; i++)
+        {
+          <option value="@i" @(Model.ExpireMonth.Equals(i.ToString()) ? "selected" : "")>@i</option>
+        }
+      </select>
+    </div>
+    <div class="col-md-2">
+      <select id="ExpireYear" name="ExpireYear" class="form-control">
+        @for (int i = DateTime.Now.Year; i < DateTime.Now.Year + 15; i++)
+        {
+          <option value="@i" @(Model.ExpireYear.Equals(i.ToString())?"selected":"")>@i</option>
+        }
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      @Html.LabelFor(m => m.CardCode, new { @class = "control-label" }):
+    </div>
+    <div class="col-md-4">
+      <input autocomplete="off" id="CardCode" maxlength="4" name="CardCode" class="form-control" style="Width: 60px;" type="password" value="@Model.CardCode">
+    </div>
+    <div class="col-md-4 text-danger">
+      @Html.ValidationMessageFor(m => m.CardCode)
+    </div>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-md-4">
+      <button type="submit" name="changeStep" value="@ChangeStepType.Previous" class="btn btn-default" data-loading-text="Loading...">Previous</button>
+  </div>
+  <div class="col-md-4">
+      <button type="submit" name="changeStep" value="@ChangeStepType.Next" class="btn btn-success" data-loading-text="Loading...">Next</button>
+  </div>
+</div>

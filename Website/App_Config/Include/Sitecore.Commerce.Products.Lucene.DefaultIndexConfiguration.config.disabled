@@ -1,0 +1,42 @@
+﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <contentSearch>
+      <indexConfigurations>
+        <defaultLuceneIndexConfiguration type="Sitecore.ContentSearch.LuceneProvider.LuceneIndexConfiguration, Sitecore.ContentSearch.LuceneProvider">
+          <exclude hint="list:ExcludeTemplate">
+            <ProductRepositoryTemplateId>{F599BF48-D6FE-40DC-9F78-CF2D56BFB657}</ProductRepositoryTemplateId>
+            <ProductTemplateId>{47D1A39E-3B4B-4428-A9F8-B446256C9581}</ProductTemplateId>
+            <DivisionTemplateId>{C715D20B-2E73-4046-9B87-749A11C27C5C}</DivisionTemplateId>
+            <DivisionsTemplateId>{BF890455-A0AE-4502-8619-C952594605CB}</DivisionsTemplateId>
+            <IdentificationTypeTemplateId>{0A5FEAA1-1B35-441A-9CC0-8FC259A15213}</IdentificationTypeTemplateId>
+            <IdentificationTypesTemplateId>{29FE9B4E-BDA0-420F-97CA-CE1421CD9CC8}</IdentificationTypesTemplateId>
+            <LookupValueTemplateId>{B95D069C-7867-4140-816D-6B204949B522}</LookupValueTemplateId>
+            <LookupValuesTemplateId>{AB6FEECE-AFA4-49B8-B96D-F15E28EAEFCD}</LookupValuesTemplateId>
+            <ManufacturerTemplateId>{8ECDC0A6-3A85-4F89-8F49-8A53AA75595E}</ManufacturerTemplateId>
+            <ManufacturersTemplateId>{6ADDBD3C-6A82-4361-A361-6C89B4CB05B2}</ManufacturersTemplateId>
+            <ProductClassificationTemplateId>{D5B1659A-83E7-485F-AD9A-555EECB564BF}</ProductClassificationTemplateId>
+            <ProductClassificationGroupTemplateId>{CF8FEC2C-96FC-46C8-8A49-7BF908482F4B}</ProductClassificationGroupTemplateId>
+            <ProductClassificationsTemplateId>{89C74115-3E03-4D1D-BD99-29AAFCF9A649}</ProductClassificationsTemplateId>
+            <ProductClassificationsSpecificationTemplateId>{9CA86513-C986-4BF3-9F9C-9791AA7EA352}</ProductClassificationsSpecificationTemplateId>
+            <ProductGlobalSpecificationTemplateId>{157C6369-DB59-4299-8238-365D964C0965}</ProductGlobalSpecificationTemplateId>
+            <ProductRelationTemplateId>{93703013-77B6-48B5-8338-C29A5D15A1A6}</ProductRelationTemplateId>
+            <ProductRelationsTemplateId>{6E5FBB20-2D51-4B63-8563-65E6E8C61DFD}</ProductRelationsTemplateId>
+            <ProductResourceTemplateId>{0D52EB5C-A153-4688-A217-151A17DE321E}</ProductResourceTemplateId>
+            <ProductResourcesTemplateId>{FBCA6069-D6C5-493E-83D7-C4A079E2717F}</ProductResourcesTemplateId>
+            <ProductSpecificationTemplateId>{687EBD28-8C90-4203-8527-A809D9B99680}</ProductSpecificationTemplateId>
+            <ProductSpecificationsTemplateId>{A1441A78-21AC-483C-89A6-D46521818B94}</ProductSpecificationsTemplateId>
+            <ProductTypeTemplateId>{2FC31CAD-946F-4944-9A98-3DA167BEBC34}</ProductTypeTemplateId>
+            <ProductTypeSpecificationTemplateId>{C696BEC3-0414-4A3D-A4FE-3583A7AE051D}</ProductTypeSpecificationTemplateId>
+            <ProductTypesTemplateId>{26D1E614-5AE9-4E58-90AB-6CF9B9B6F938}</ProductTypesTemplateId>
+            <ProductsTemplateId>{4D21AD2A-BA49-4DFC-9DB9-C299C7FB7F6E}</ProductsTemplateId>
+            <ResourceFolderTemplateId>{A0A1342A-6339-445C-94A1-31CB7756AA0B}</ResourceFolderTemplateId>
+            <SpecificationTemplateId>{284F5F48-7D2E-48D3-B3F5-C8F45549A2A0}</SpecificationTemplateId>
+            <SpecificationLookupTemplateId>{64EE9778-10D3-492A-A52E-D229CE8B9FAD}</SpecificationLookupTemplateId>
+            <SpecificationLookupsTemplateId>{A8A3D56B-BCA0-4877-B137-86992F341D81}</SpecificationLookupsTemplateId>
+            <SynchronizationTemplateId>{240334A5-CFE8-4450-BB85-253D620CBA02}</SynchronizationTemplateId>
+          </exclude>
+        </defaultLuceneIndexConfiguration>
+      </indexConfigurations>
+    </contentSearch>
+  </sitecore>
+</configuration>

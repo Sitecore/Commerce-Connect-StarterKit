@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7FDC777B-555F-4884-BD1A-6F08204B7663}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sitecore.Commerce.Connectors.NopCommerce</RootNamespace>
+    <AssemblyName>Sitecore.Commerce.Connectors.NopCommerce</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Analytics">
+      <HintPath>..\bin\Sitecore.Analytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\bin\Sitecore.Kernel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Commerce">
+      <HintPath>..\bin\Sitecore.Commerce.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pipelines\Carts\MergeCart\MergeCart.cs" />
+    <Compile Include="Pipelines\Carts\GetCarts\FindCart.cs" />
+    <Compile Include="Pipelines\Orders\SubmitOrder\SubmitOrder.cs" />
+    <Compile Include="Pipelines\Orders\CancelOrder\CancelOrder.cs" />
+    <Compile Include="ShippingInfoExtensions.cs" />
+    <Compile Include="PartyExtensions.cs" />
+    <Compile Include="OrderExtensions.cs" />
+    <Compile Include="Pipelines\Orders\GetOrders\GetOrders.cs" />
+    <Compile Include="Pipelines\Orders\GetOrder\GetOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pipelines\Wishlists\UpdateLinesOnWishlist\UpdateLinesOnWishlist.cs" />
+    <Compile Include="Pipelines\Wishlists\AddLinesToWishlist\AddLinesToWishlist.cs" />
+    <Compile Include="Pipelines\Wishlists\CreateWishlist\CreateWishlist.cs" />
+    <Compile Include="Pipelines\Wishlists\DeleteWishlist\DeleteWishlist.cs" />
+    <Compile Include="Pipelines\Wishlists\GetWishlists\GetWishlists.cs" />
+    <Compile Include="Pipelines\Wishlists\RemoveWishlistLines\RemoveWishlistLines.cs" />
+    <Compile Include="Service References\NopOrdersService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WishlistExtensions.cs" />
+    <Compile Include="CartExtensions.cs" />
+    <Compile Include="Entities\Payments\NopPaymentOptionType.cs" />
+    <Compile Include="InventoryExtensions.cs" />
+    <Compile Include="Pipelines\Carts\AddCartLines\AddLinesToCart.cs" />
+    <Compile Include="Pipelines\Carts\AddParties\AddPartiesToCart.cs" />
+    <Compile Include="Pipelines\Carts\AddPaymentInfo\AddPaymentInfoToCart.cs" />
+    <Compile Include="Pipelines\Carts\AddShippingInfo\AddShippingInfoToCart.cs" />
+    <Compile Include="Pipelines\Carts\Common\ChangeLinesProcessor.cs" />
+    <Compile Include="Pipelines\Carts\DeleteCart\DeleteCart.cs" />
+    <Compile Include="Pipelines\Carts\GetCarts\GetCarts.cs" />
+    <Compile Include="Pipelines\Carts\LoadCart\LoadCart.cs" />
+    <Compile Include="Pipelines\Carts\RemoveParties\RemovePartiesFromCart.cs" />
+    <Compile Include="Pipelines\Carts\RemovePaymentInfo\RemovePaymentInfoFromCart.cs" />
+    <Compile Include="Pipelines\Carts\RemoveShippingInfo\RemoveShippingInfoFromCart.cs" />
+    <Compile Include="Pipelines\Common\NopProcessor.cs" />
+    <Compile Include="Pipelines\Carts\RemoveCartLines\RemoveLinesFromCart.cs" />
+    <Compile Include="Pipelines\Carts\Common\SaveCart.cs" />
+    <Compile Include="Pipelines\Carts\UpdateCartLines\UpdateLinesOnCart.cs" />
+    <Compile Include="Pipelines\Common\NopProductProcessor.cs" />
+    <Compile Include="Pipelines\Common\ReadExternalCommerceSystemProcessor.cs" />
+    <Compile Include="Pipelines\Customers\AddCustomerParties.cs" />
+    <Compile Include="Pipelines\Customers\AddParties.cs" />
+    <Compile Include="Pipelines\Customers\CreateCustomer.cs" />
+    <Compile Include="Pipelines\Customers\CreateUser.cs" />
+    <Compile Include="Pipelines\Customers\GetParties.cs" />
+    <Compile Include="Pipelines\Customers\RemoveParties.cs" />
+    <Compile Include="Pipelines\Customers\RemoveCustomerParties.cs" />
+    <Compile Include="Pipelines\Customers\UpdateParties.cs" />
+    <Compile Include="Pipelines\Customers\UpdateCustomerParties.cs" />
+    <Compile Include="Pipelines\Inventory\GetStockInformation\GetBackInStockInformation.cs" />
+    <Compile Include="Pipelines\Inventory\GetStockInformation\GetStockInformation.cs" />
+    <Compile Include="Pipelines\Inventory\GetOrderableInformation\GetBackOrderableInformation.cs" />
+    <Compile Include="Pipelines\Inventory\GetOrderableInformation\GetPreOrderableInformation.cs" />
+    <Compile Include="Pipelines\Inventory\GetStockInformation\StockStatusForIndexing.cs" />
+    <Compile Include="Pipelines\Payments\GetPaymentMethods\GetPaymentMethods.cs" />
+    <Compile Include="Pipelines\Payments\GetPaymentOptions\GetPaymentOptions.cs" />
+    <Compile Include="Pipelines\Prices\GetCartTotal\GetPricesForCart.cs" />
+    <Compile Include="Pipelines\Prices\GetProductPrices\GetProductBulkPrices.cs" />
+    <Compile Include="Pipelines\Prices\GetProductPrices\GetProductPrices.cs" />
+    <Compile Include="Pipelines\Products\GetExternalCommerceSystemProductList\GetExternalCommerceSystemProductList.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeClassifications\ReadExternalCommerceSystemClassifications.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeDivisions\ReadExternalCommerceSystemDivisions.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeGlobalSpecifications\ReadExternalCommerceSystemGlobalSpecifications.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeManufacturers\ReadExternalCommerceSystemManufacturers.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductClassifications\ReadExternalCommerceSystemProductClassifications.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductDivisions\ReadExternalCommerceSystemProductDivisions.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductGlobalSpecifications\ReadExternalCommerceSystemProductGlobalSpecifications.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductEntity\SaveProductToExternalCommerceSystem.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductManufacturers\ReadExternalCommerceSystemProductManufacturers.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductRelations\ReadExternalCommerceSystemCrossSales.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductRelations\ReadExternalCommerceSystemProductRelations.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductRelations\ReadExternalCommerceSystemProductRelationsBase.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductRelations\ReadExternalCommerceSystemVariants.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductResources\ReadExternalCommerceSystemProductAlternateImages.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductResources\ReadExternalCommerceSystemProductDownloads.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductResources\ReadExternalCommerceSystemProductMainImage.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductResources\ReadExternalCommerceSystemProductResourceBase.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductTypes\ReadExternalCommerceSystemProductTypes.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeProductEntity\ReadExternalCommerceSystemProduct.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeResources\ReadExternalCommerceSystemResources.cs" />
+    <Compile Include="Pipelines\Products\SynchronizeTypes\ReadExternalCommerceSystemTypes.cs" />
+    <Compile Include="Pipelines\Shipping\GetShippingMethods\GetShippingMethods.cs" />
+    <Compile Include="Pipelines\Shipping\GetShippingOptions\GetShippingOptions.cs" />
+    <Compile Include="Pipelines\Wishlists\GetWishlist\GetWishlist.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\NopCartsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NopCustomersService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NopInventoryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NopPaymentService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NopPricesService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NopProductsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NopShippingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NopWishlistsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceClientFactory.cs" />
+    <Compile Include="ServiceModel\Configuration\HttpUserAgentBehaviorExtensionElement.cs" />
+    <Compile Include="ServiceModel\Description\HttpUserAgentEndpointBehavior.cs" />
+    <Compile Include="ServiceModel\Dispatcher\ClientRuntime\HttpUserAgentMessageInspector.cs" />
+    <Compile Include="Services\Shipping\GetShippingMethodsRequest.cs" />
+    <Compile Include="Texts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopCartsService\CartsService.wsdl" />
+    <None Include="Service References\NopCartsService\CartsService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopCartsService\CartsService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopCartsService\CartsService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopCartsService\CartsService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopCartsService\Sitecore.Commerce.Connectors.NopCommerce.NopCartsService.PaymentInfoModelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopCartsService\Sitecore.Commerce.Connectors.NopCommerce.NopCartsService.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopCartsService\Sitecore.Commerce.Connectors.NopCommerce.NopCartsService.ShoppingCartModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopCustomersService\CustomersService.wsdl" />
+    <None Include="Service References\NopCustomersService\CustomersService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopCustomersService\CustomersService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopCustomersService\CustomersService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopCustomersService\CustomersService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopCustomersService\Sitecore.Commerce.Connectors.NopCommerce.NopCustomersService.ArrayOfAddressModelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopCustomersService\Sitecore.Commerce.Connectors.NopCommerce.NopCustomersService.CustomerModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopCustomersService\Sitecore.Commerce.Connectors.NopCommerce.NopCustomersService.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopInventoryService\InventoryService.wsdl" />
+    <None Include="Service References\NopInventoryService\InventoryService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopInventoryService\InventoryService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopInventoryService\InventoryService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopInventoryService\InventoryService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopInventoryService\Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService.IndexStockInformationModel1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopInventoryService\Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService.OrderableInformationModel1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopInventoryService\Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService.StockInformationModel1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopInventoryService\Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService.StockInformationUpdateModel1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopOrdersService\OrdersService.wsdl" />
+    <None Include="Service References\NopOrdersService\OrdersService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopOrdersService\OrdersService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopOrdersService\OrdersService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopOrdersService\OrdersService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopOrdersService\OrdersService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopOrdersService\Sitecore.Commerce.Connectors.NopCommerce.NopOrdersService.OrderModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopPaymentService\PaymentService.wsdl" />
+    <None Include="Service References\NopPaymentService\PaymentService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopPaymentService\PaymentService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopPaymentService\PaymentService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopPaymentService\Sitecore.Commerce.Connectors.NopCommerce.NopPaymentService.ResponseModelOfArrayOfPaymentMethodModelQBnDdvBq.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopPricesService\PricesService.wsdl" />
+    <None Include="Service References\NopPricesService\PricesService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopPricesService\PricesService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopPricesService\PricesService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopPricesService\PricesService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopPricesService\Sitecore.Commerce.Connectors.NopCommerce.NopPricesService.ProductPriceModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\ProductsService.wsdl" />
+    <None Include="Service References\NopProductsService\ProductsService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopProductsService\ProductsService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopProductsService\ProductsService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopProductsService\ProductsService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.CategoryModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.DivisionModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.ManufacturerModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.ProductDivisionsModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.ProductGlobalSpecificationModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.ProductManufacturersModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.ProductModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.ProductResourceModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.ProductTypeModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.ResourceModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.SpecificationLookupModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopShippingService\ShippingService.wsdl" />
+    <None Include="Service References\NopShippingService\ShippingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopShippingService\ShippingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopShippingService\ShippingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopShippingService\ShippingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopShippingService\Sitecore.Commerce.Connectors.NopCommerce.NopShippingService.ArrayOfShippingMethodModelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopWishlistsService\Sitecore.Commerce.Connectors.NopCommerce.NopWishlistsService.ShoppingCartModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NopWishlistsService\WishlistsService.wsdl" />
+    <None Include="Service References\NopWishlistsService\WishlistsService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopWishlistsService\WishlistsService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopWishlistsService\WishlistsService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NopWishlistsService\WishlistsService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\NopCartsService\" />
+    <WCFMetadataStorage Include="Service References\NopCustomersService\" />
+    <WCFMetadataStorage Include="Service References\NopInventoryService\" />
+    <WCFMetadataStorage Include="Service References\NopOrdersService\" />
+    <WCFMetadataStorage Include="Service References\NopPaymentService\" />
+    <WCFMetadataStorage Include="Service References\NopPricesService\" />
+    <WCFMetadataStorage Include="Service References\NopProductsService\" />
+    <WCFMetadataStorage Include="Service References\NopShippingService\" />
+    <WCFMetadataStorage Include="Service References\NopWishlistsService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopCartsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopCartsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopCartsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopProductsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopProductsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopProductsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopInventoryService\InventoryService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopInventoryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopInventoryService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopInventoryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopPricesService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopPricesService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopPricesService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopPaymentService\PaymentService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopPaymentService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopPaymentService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopPaymentService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopShippingService\ShippingService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopShippingService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopShippingService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopShippingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopCustomersService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopCustomersService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopCustomersService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopWishlistsService\WishlistsService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopWishlistsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopWishlistsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopWishlistsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopCartsService\CartsService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopCustomersService\CustomersService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopPricesService\PricesService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopProductsService\ProductsService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopOrdersService\OrdersService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopOrdersService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopOrdersService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NopOrdersService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(ProjectDir)$(OutDir)Sitecore.Commerce.Connectors.NopCommerce.*" "$(ProjectDir)..\bin" /S /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0db443bb-c822-412f-80e7-5a877deb7629" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Obec.Orders/Remote/OrdersService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OrdersService.xsd" MetadataType="Schema" ID="5415dd27-6f51-42f7-8f59-c7839686c1be" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Orders/Remote/OrdersService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OrdersService3.xsd" MetadataType="Schema" ID="8a288c22-3efa-4a1e-872b-267afe5fcf76" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Orders/Remote/OrdersService.svc?xsd=xsd3" />
+    <MetadataFile FileName="OrdersService.wsdl" MetadataType="Wsdl" ID="2a93f87b-4d8e-4f9a-8936-30a437f911c4" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Orders/Remote/OrdersService.svc?wsdl" />
+    <MetadataFile FileName="OrdersService.disco" MetadataType="Disco" ID="94a81c1c-b1e2-477a-86da-a069de9b2e41" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Orders/Remote/OrdersService.svc?disco" />
+    <MetadataFile FileName="OrdersService4.xsd" MetadataType="Schema" ID="5da8637c-4aee-44c5-9ca3-6180905f46ee" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Orders/Remote/OrdersService.svc?xsd=xsd4" />
+    <MetadataFile FileName="OrdersService1.xsd" MetadataType="Schema" ID="2904dcee-854c-4eca-8902-e3694248c881" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Orders/Remote/OrdersService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OrdersService2.xsd" MetadataType="Schema" ID="7c44810c-174d-474d-87c6-7670509b6d19" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Orders/Remote/OrdersService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,125 @@
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <settings>
+      <setting name="ProductsSynchronization.ProductAmount" value="10000" />
+      <setting name="ProductsSynchronization.ProductArtifactsAmount" value="3" />
+      <setting name="CartRepositoryTest.IterationsCount" value="100" />
+    </settings>
+    <commands>
+      <command name="synchronization:allproducts">
+        <patch:attribute name="type">Sitecore.Commerce.PerformanceTests.Commands.InMemorySynchronizeAllProducts, Sitecore.Commerce.PerformanceTests</patch:attribute>
+      </command>
+      <command name="synchronization:artifacts">
+        <patch:attribute name="type">Sitecore.Commerce.PerformanceTests.Commands.InMemorySynchronizeArtifacts, Sitecore.Commerce.PerformanceTests</patch:attribute>
+      </command>
+    </commands>
+    <pipelines>
+      <commerce.prices.getCartTotal>
+        <!-- Gets cart total from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Prices.GetCartTotal.GetPricesForCart, Sitecore.Commerce.Connectors.NopCommerce" />
+      </commerce.prices.getCartTotal>
+
+      <commerce.prices.getProductPrices>
+        <!-- Gets product prices from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.GetProductPrices, Sitecore.Commerce.PerformanceTests" />
+      </commerce.prices.getProductPrices>
+
+      <commerce.prices.getProductBulkPrices>
+        <!-- Gets prices for several products from NopCommerce e-commerce system side at once. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.GetProductBulkPrices, Sitecore.Commerce.PerformanceTests" />
+      </commerce.prices.getProductBulkPrices>
+      
+      <commerce.synchronizeProducts.getExternalCommerceSystemProductList>
+        <!-- Gets list of products from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.GetMemoryProductList, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.GetExternalCommerceSystemProductList.GetExternalCommerceSystemProductList']" />
+      </commerce.synchronizeProducts.getExternalCommerceSystemProductList>
+
+      <commerce.synchronizeProducts.synchronizeProductEntity>
+        <!-- Gets product entity from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryProduct, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductEntity.ReadExternalCommerceSystemProduct, Sitecore.Commerce']">
+        </processor>
+      </commerce.synchronizeProducts.synchronizeProductEntity>
+
+      <commerce.synchronizeProducts.synchronizeManufacturers>
+        <!-- Gets all manufacturers from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryManufacturers, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeManufacturers.ReadExternalCommerceSystemManufacturers, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeManufacturers>
+
+      <commerce.synchronizeProducts.synchronizeClassifications>
+        <!-- Gets all classifications from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryClassifications, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeClassifications.ReadExternalCommerceSystemClassifications, Sitecore.Commerce']">
+        </processor>
+      </commerce.synchronizeProducts.synchronizeClassifications>
+
+      <commerce.synchronizeProducts.synchronizeProductManufacturers>
+        <!-- Gets product manufacturers from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryProductManufacturers, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductManufacturers.ReadExternalCommerceSystemProductManufacturers, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductManufacturers>
+
+      <commerce.synchronizeProducts.synchronizeProductClassifications>
+        <!-- Gets product manufacturers from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryProductClassifications, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductClassifications.ReadExternalCommerceSystemProductClassifications, Sitecore.Commerce']">
+        </processor>
+      </commerce.synchronizeProducts.synchronizeProductClassifications>
+
+      <commerce.synchronizeProducts.synchronizeDivisions>
+        <!-- Gets all divisions from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryDivisions, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeDivisions.ReadExternalCommerceSystemDivisions, Sitecore.Commerce']"/>
+      </commerce.synchronizeProducts.synchronizeDivisions>
+
+      <commerce.synchronizeProducts.synchronizeResources>
+        <!-- Gets all resources from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryResources, Sitecore.Commerce.PerformanceTests"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeResources.SaveResourcesToSitecore, Sitecore.Commerce']"/>
+      </commerce.synchronizeProducts.synchronizeResources>
+
+      <commerce.synchronizeProducts.synchronizeProductDivisions>
+        <!-- Gets product divisions from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryProductDivisions, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductDivisions.ReadExternalCommerceSystemProductDivisions, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductDivisions>
+
+      <commerce.synchronizeProducts.synchronizeProductRelations>
+        <!-- Gets product relations from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryProductRelations, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductRelations.ReadExternalCommerceSystemProductRelations, Sitecore.Commerce']"/>
+      </commerce.synchronizeProducts.synchronizeProductRelations>
+
+      <commerce.synchronizeProducts.synchronizeTypes>
+        <!-- Gets all types from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryTypes, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeTypes.ReadExternalCommerceSystemTypes, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeTypes>
+
+      <commerce.synchronizeProducts.synchronizeProductTypes>
+        <!-- Gets product types from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryProductTypes, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductTypes.ReadExternalCommerceSystemProductTypes, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductTypes>
+
+      <commerce.synchronizeProducts.synchronizeProductResources>
+        <!-- Gets product resources from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryProductResources, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductResources.ReadExternalCommerceSystemProductResources, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductResources>
+
+      <commerce.synchronizeProducts.synchronizeGlobalSpecifications>
+        <!-- Gets global specifications from MemCommerce system side. -->
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryGlobalSpecifications, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeGlobalSpecifications.ReadExternalCommerceSystemGlobalSpecifications, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeGlobalSpecifications>
+
+      <commerce.synchronizeProducts.synchronizeProductGlobalSpecifications>
+        <processor type="Sitecore.Commerce.PerformanceTests.MemCommerce.SynchronizeProduct.ReadMemoryProductGlobalSpecifications, Sitecore.Commerce.PerformanceTests"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeProductGlobalSpecifications.ReadExternalCommerceSystemProductGlobalSpecifications, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeProductGlobalSpecifications>
+    </pipelines>
+  </sitecore>
+</configuration>

@@ -1,0 +1,2576 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.Abstractions.AccessRightWrapper">
+            <summary>
+            The Sitecore proxy of IAccessRight interface.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Abstractions.IAccessRight">
+            <summary>
+            The interface to proxy AcessRight API.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.FromName(System.String)">
+            <summary>
+            Gets an access right definition from its name.
+            </summary>
+            <param name="accessRightName">Name of the access right.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.Any">
+            <summary>
+            Gets the access right representing 'anything'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.FieldRead">
+            <summary>
+            Gets the operation representing 'field read'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.FieldWrite">
+            <summary>
+            Gets the operation representing 'field write'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.InsertShow">
+            <summary>
+            Gets the show in insert right.
+            </summary>
+            <value>The show in insert right.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.ItemAdmin">
+            <summary>
+            Gets the operation representing 'item admin'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.ItemCreate">
+            <summary>
+            Gets the operation representing 'item create'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.ItemDelete">
+            <summary>
+            Gets the operation representing 'item delete'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.ItemRead">
+            <summary>
+            Gets the operation representing 'item read'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.ItemRename">
+            <summary>
+            Gets the operation representing 'item rename'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.ItemWrite">
+            <summary>
+            Gets the operation representing 'item write'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.LanguageRead">
+            <summary>
+            Gets the operation representing 'language read'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.LanguageWrite">
+            <summary>
+            Gets the operation representing 'language write'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.WorkflowCommandExecute">
+            <summary>
+            Gets the operation representing 'workflow command execute'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.WorkflowStateDelete">
+            <summary>
+            Gets the operation representing 'workflow state delete'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.WorkflowStateWrite">
+            <summary>
+            Gets the operation representing 'workflow state write'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.SiteEnter">
+            <summary>
+            Gets the operation representing 'site enter'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.IAccessRight.ProfileCustomize">
+            <summary>
+            Gets the operation representing 'profile customize'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="F:Sitecore.Abstractions.AccessRightWrapper.AccessRight">
+            <summary>
+            The access right
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Abstractions.AccessRightWrapper"/> class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.#ctor(Sitecore.Security.AccessControl.AccessRight)">
+            <summary>
+            Prevents a default instance of the <see cref="T:Sitecore.Abstractions.AccessRightWrapper"/> class from being created.
+            </summary>
+            <param name="right">The right.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.FromName(System.String)">
+            <summary>
+            Gets an access right definition from its name.
+            </summary>
+            <param name="accessRightName">Name of the access right.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.Any">
+            <summary>
+            Gets the access right representing 'anything'.
+            </summary>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.FieldRead">
+            <summary>
+            Gets the operation representing 'field read'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.FieldWrite">
+            <summary>
+            Gets the operation representing 'field write'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.InsertShow">
+            <summary>
+            Gets the show in insert right.
+            </summary>
+            <returns></returns>
+            <value>The show in insert right.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.ItemAdmin">
+            <summary>
+            Gets the operation representing 'item admin'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.ItemCreate">
+            <summary>
+            Gets the operation representing 'item create'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.ItemDelete">
+            <summary>
+            Gets the operation representing 'item delete'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.ItemRead">
+            <summary>
+            Gets the operation representing 'item read'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.ItemRename">
+            <summary>
+            Gets the operation representing 'item rename'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.ItemWrite">
+            <summary>
+            Gets the operation representing 'item write'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.LanguageRead">
+            <summary>
+            Gets the operation representing 'language read'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.LanguageWrite">
+            <summary>
+            Gets the operation representing 'language write'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.WorkflowCommandExecute">
+            <summary>
+            Gets the operation representing 'workflow command execute'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.WorkflowStateDelete">
+            <summary>
+            Gets the operation representing 'workflow state delete'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.WorkflowStateWrite">
+            <summary>
+            Gets the operation representing 'workflow state write'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.SiteEnter">
+            <summary>
+            Gets the operation representing 'site enter'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.ProfileCustomize">
+            <summary>
+            Gets the operation representing 'profile customize'.
+            </summary>
+            <returns></returns>
+            <value>The operation.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.Equals(System.Object)">
+            <summary>
+            Determines whether the specified System.Object, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.op_Equality(Sitecore.Abstractions.AccessRightWrapper,Sitecore.Abstractions.AccessRightWrapper)">
+            <summary>
+            Overrides equal operator.
+            </summary>
+            <param name="right1">The right1.</param>
+            <param name="right2">The right2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.op_Equality(Sitecore.Abstractions.AccessRightWrapper,Sitecore.Security.AccessControl.AccessRight)">
+            <summary>
+            Overrides equal operator.
+            </summary>
+            <param name="right1">The right1.</param>
+            <param name="right2">The right2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.op_Inequality(Sitecore.Abstractions.AccessRightWrapper,Sitecore.Abstractions.AccessRightWrapper)">
+            <summary>
+            Overrides not equal operator.
+            </summary>
+            <param name="right1">The right1.</param>
+            <param name="right2">The right2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.AccessRightWrapper.op_Inequality(Sitecore.Abstractions.AccessRightWrapper,Sitecore.Security.AccessControl.AccessRight)">
+            <summary>
+            Overrides not equal operator.
+            </summary>
+            <param name="right1">The right1.</param>
+            <param name="right2">The right2.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Sitecore.Abstractions.CorePipelineWrapper">
+            <summary>
+            The Sitecore proxy of ICorePipeline interface.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Abstractions.ICorePipeline">
+            <summary>
+            The interface to proxy CorePipeline API.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.ICorePipeline.Run(System.String,Sitecore.Pipelines.PipelineArgs)">
+            <summary>
+            Runs the specified pipeline.
+            </summary>
+            <param name="pipelineName">Name of the pipeline.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.ICorePipeline.Run(System.String,Sitecore.Pipelines.PipelineArgs,System.Boolean)">
+            <summary>
+            Runs the specified pipeline.
+            </summary>
+            <param name="pipelineName">Name of the pipeline.</param>
+            <param name="args">The args.</param>
+            <param name="failIfNotExists">if set to <c>true</c> the code will throw an exception if pipeline not found.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.ICorePipeline.Run(System.String,Sitecore.Pipelines.PipelineArgs,System.String)">
+            <summary>
+            Runs the specified pipeline.
+            </summary>
+            <param name="pipelineName">Name of the pipeline.</param>
+            <param name="args">The arguments.</param>
+            <param name="pipelineDomain">The pipeline domain.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.ICorePipeline.Run(System.String,Sitecore.Pipelines.PipelineArgs,System.String,System.Boolean)">
+            <summary>
+            Runs the specified pipeline name.
+            </summary>
+            <param name="pipelineName">Name of the pipeline.</param>
+            <param name="args">The arguments.</param>
+            <param name="pipelineDomain">The pipeline domain.</param>
+            <param name="failIfNotExists">if set to <c>true</c> the code will throw an exception if pipeline not found.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.CorePipelineWrapper.Run(System.String,Sitecore.Pipelines.PipelineArgs)">
+            <summary>
+            Runs the specified pipeline.
+            </summary>
+            <param name="pipelineName">Name of the pipeline.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.CorePipelineWrapper.Run(System.String,Sitecore.Pipelines.PipelineArgs,System.Boolean)">
+            <summary>
+            Runs the specified pipeline.
+            </summary>
+            <param name="pipelineName">Name of the pipeline.</param>
+            <param name="args">The args.</param>
+            <param name="failIfNotExists">if set to <c>true</c> the code will throw an exception if pipeline not found.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.CorePipelineWrapper.Run(System.String,Sitecore.Pipelines.PipelineArgs,System.String)">
+            <summary>
+            Runs the specified pipeline.
+            </summary>
+            <param name="pipelineName">Name of the pipeline.</param>
+            <param name="args">The arguments.</param>
+            <param name="pipelineDomain">The pipeline domain.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.CorePipelineWrapper.Run(System.String,Sitecore.Pipelines.PipelineArgs,System.String,System.Boolean)">
+            <summary>
+            Runs the specified pipeline name.
+            </summary>
+            <param name="pipelineName">Name of the pipeline.</param>
+            <param name="args">The arguments.</param>
+            <param name="pipelineDomain">The pipeline domain.</param>
+            <param name="failIfNotExists">if set to <c>true</c> the code will throw an exception if pipeline not found.</param>
+        </member>
+        <member name="T:Sitecore.Abstractions.DateTimeConverterWrapper">
+            <summary>
+            DateTime convertor wrapper.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Abstractions.IDateTimeConverter">
+            <summary>
+            DateTime Converter class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.IDateTimeConverter.ToServerTime(System.DateTime)">
+            <summary>
+            Converts date and time to the server time.
+            </summary>
+            <param name="timeToConvert">The date and time to convert.</param>
+            <returns>The server time.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IDateTimeConverter.ToUniversalTime(System.DateTime)">
+            <summary>
+            Converts server time to universal time.
+            </summary>
+            <param name="serverTime">The server time.</param>
+            <returns>The universal time.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.DateTimeConverterWrapper.ToServerTime(System.DateTime)">
+            <summary>
+            Converts date and time to the server time.
+            </summary>
+            <param name="timeToConvert">The date and time to convert.</param>
+            <returns>The server time.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.DateTimeConverterWrapper.ToUniversalTime(System.DateTime)">
+            <summary>
+            Converts server time to universal time.
+            </summary>
+            <param name="serverTime">The server time.</param>
+            <returns>The universal time.</returns>
+        </member>
+        <member name="T:Sitecore.Abstractions.EventManagerWrapper">
+            <summary>
+            The event manager wrapper.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Abstractions.IEventManager">
+            <summary>The EventManager <see langword="interface"/>.</summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.QueueEvent``1(``0)">
+            <summary>Queues the event.</summary>
+            <typeparam name="TEvent">The type of the event.</typeparam>
+            <param name="event">The @event.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.QueueEvent``1(``0,System.Boolean,System.Boolean)">
+            <summary>Queues the event.</summary>
+            <typeparam name="TEvent">The type of the event.</typeparam>
+            <param name="event">The @event.</param>
+            <param name="addToGlobalQueue">If set to <c>true</c> add the event to the global queue.</param>
+            <param name="addToLocalQueue">If set to <c>true</c> add the event to the local queue.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.RaiseEvent``1(``0)">
+            <summary>Raises the specified event.</summary>
+            <typeparam name="TEvent">The type of the event.</typeparam>
+            <param name="event">The @event.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.RaiseQueuedEvents">
+            <summary>Raises the queued events.</summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.RemoveQueuedEvents(Sitecore.Eventing.EventQueueQuery)">
+            <summary>Removes the queued events matching the criteria specified by the query.</summary>
+            <param name="query">The query.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.Initialize">
+            <summary>Initializes the EventManager. The method must be invoked after all handlers are subscribed.</summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.Subscribe``1(System.Action{``0})">
+            <summary>Subscribes the specified event handler.</summary>
+            <typeparam name="TEvent">The type of the event.</typeparam>
+            <param name="eventHandler">The event handler.</param>
+            <returns>The subscription id.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.Subscribe``1(System.Action{``0,Sitecore.Eventing.EventContext})">
+            <summary>Subscribes the specified handler.</summary>
+            <typeparam name="TEvent">The type of the event.</typeparam>
+            <param name="eventHandler">The event handler.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.Subscribe``1(System.Action{``0},System.Predicate{``0})">
+            <summary>Subscribes the specified event handler.</summary>
+            <typeparam name="TEvent">The type of the event.</typeparam>
+            <param name="eventHandler">The event handler.</param>
+            <param name="filter">The filter.</param>
+            <returns>The subscription id.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.Subscribe``1(System.Action{``0,Sitecore.Eventing.EventContext},System.Func{``0,Sitecore.Eventing.EventContext,System.Boolean})">
+            <summary>Subscribes the specified handler.</summary>
+            <typeparam name="TEvent">The type of the event.</typeparam>
+            <param name="eventHandler">The event handler.</param>
+            <param name="filter">The filter.</param>
+            <returns>The result. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.Unsubscribe(Sitecore.Eventing.SubscriptionId)">
+            <summary>Unsubscribes the specified subscription id.</summary>
+            <param name="subscriptionId">The subscription id.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.ResetConfiguration">
+            <summary>The reset configuration.</summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.SetProvider(Sitecore.Eventing.EventProvider)">
+            <summary>Sets the (default) provider.</summary>
+            <param name="provider">The provider.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.SetProvider(Sitecore.Eventing.EventProvider,System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>Sets the (default) provider.</summary>
+            <param name="provider">The provider.</param>
+            <param name="name">The name of the provider.</param>
+            <param name="configuration">The initial configuration.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEventManager.SetProviders(Sitecore.Configuration.Providers.ProviderCollectionBase{Sitecore.Eventing.EventProvider})">
+            <summary>Sets the list of provider.</summary>
+            <param name="providers">The providers.</param>
+        </member>
+        <member name="P:Sitecore.Abstractions.IEventManager.Enabled">
+            <summary>Gets a value indicating whether enabled.</summary>
+            <value>The enabled.</value>
+        </member>
+        <member name="P:Sitecore.Abstractions.IEventManager.Provider">
+            <summary>Gets the provider.</summary>
+            <value>The provider.</value>
+        </member>
+        <member name="P:Sitecore.Abstractions.IEventManager.Providers">
+            <summary>Gets providers collection.</summary>
+            <value>The providers collection.</value>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.Initialize">
+            <summary>The initialize.</summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.Subscribe``1(System.Action{``0})">
+            <summary>
+            </summary>
+            <param name="eventHandler">Event handler.</param>
+            <typeparam name="TEvent">Event type.</typeparam>
+            <returns>Returns SubscriptionId.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.Subscribe``1(System.Action{``0,Sitecore.Eventing.EventContext})">
+            <summary>The subscribe.</summary>
+            <param name="eventHandler">The event handler.</param>
+            <typeparam name="TEvent"></typeparam>
+            <returns>The <see cref="T:Sitecore.Eventing.SubscriptionId"/>SubscriptionId.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.Subscribe``1(System.Action{``0},System.Predicate{``0})">
+            <summary>The subscribe.</summary>
+            <param name="eventHandler">The event handler.</param>
+            <param name="filter">The filter.</param>
+            <typeparam name="TEvent"></typeparam>
+            <returns>The <see cref="T:Sitecore.Eventing.SubscriptionId"/>SubscriptionId.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.Subscribe``1(System.Action{``0,Sitecore.Eventing.EventContext},System.Func{``0,Sitecore.Eventing.EventContext,System.Boolean})">
+            <summary>The subscribe.</summary>
+            <param name="eventHandler">The event handler.</param>
+            <param name="filter">The filter.</param>
+            <typeparam name="TEvent"></typeparam>
+            <returns>The <see cref="T:Sitecore.Eventing.SubscriptionId"/>.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.Unsubscribe(Sitecore.Eventing.SubscriptionId)">
+            <summary>The unsubscribe.</summary>
+            <param name="subscriptionId">The subscription id.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.ResetConfiguration">
+            <summary>The reset configuration.</summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.SetProvider(Sitecore.Eventing.EventProvider)">
+            <summary>The set provider.</summary>
+            <param name="provider">The provider.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.SetProvider(Sitecore.Eventing.EventProvider,System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>The set provider.</summary>
+            <param name="provider">The provider.</param>
+            <param name="name">The provider name.</param>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.SetProviders(Sitecore.Configuration.Providers.ProviderCollectionBase{Sitecore.Eventing.EventProvider})">
+            <summary>The set providers.</summary>
+            <param name="providers">The providers.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.QueueEvent``1(``0)">
+            <summary>Queues the event.</summary>
+            <typeparam name="TEvent">The type of the event.</typeparam>
+            <param name="event">The event.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.QueueEvent``1(``0,System.Boolean,System.Boolean)">
+            <summary>The queue event.</summary>
+            <param name="event">The event.</param>
+            <param name="addToGlobalQueue">The add to global queue.</param>
+            <param name="addToLocalQueue">The add to local queue.</param>
+            <typeparam name="TEvent">Event type.</typeparam>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.RaiseEvent``1(``0)">
+            <summary>The raise event.</summary>
+            <param name="event">The event.</param>
+            <typeparam name="TEvent">Event type.</typeparam>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.RaiseQueuedEvents">
+            <summary>The raise queued events.</summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventManagerWrapper.RemoveQueuedEvents(Sitecore.Eventing.EventQueueQuery)">
+            <summary>The remove queued events.</summary>
+            <param name="query">The query.</param>
+        </member>
+        <member name="P:Sitecore.Abstractions.EventManagerWrapper.Enabled">
+            <summary>Gets a value indicating whether enabled.</summary>
+            <value>The enabled.</value>
+        </member>
+        <member name="P:Sitecore.Abstractions.EventManagerWrapper.Provider">
+            <summary>Gets the provider.</summary>
+            <value>The provider.</value>
+        </member>
+        <member name="P:Sitecore.Abstractions.EventManagerWrapper.Providers">
+            <summary>Gets the providers.</summary>
+            <value>The providers.</value>
+        </member>
+        <member name="T:Sitecore.Abstractions.EventWrapper">
+            <summary>
+            The Sitecore proxy of IEvent interface.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Abstractions.IEvent">
+            <summary>
+            The interface to proxy Event API.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.AddFilter(System.String,System.EventHandler)">
+            <summary>
+            Adds the filter.
+            </summary>
+            <param name="eventName">Name of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.ExtractParameter``1(System.EventArgs,System.Int32)">
+            <summary>
+            Extracts the parameter.
+            </summary>
+            <typeparam name="T">
+            Type parameter.
+            </typeparam>
+            <param name="args">
+            The arguments.
+            </param>
+            <param name="index">
+            The index.
+            </param>
+            <returns>
+            The parameter.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.ExtractParameter(System.EventArgs,System.Int32)">
+            <summary>
+            Extracts the parameter.
+            </summary>
+            <param name="args">The arguments.</param>
+            <param name="index">The index.</param>
+            <returns>The parameter.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.ExtractParameters(System.EventArgs)">
+            <summary>
+            Extracts the parameters.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>The parameters.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseEvent(System.String,Sitecore.Events.IPassNativeEventArgs)">
+            <summary>
+            Raises the event.
+            </summary>
+            <param name="eventName">
+            Name of the event.
+            </param>
+            <param name="args">
+            The instance containing the event data.
+            </param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseEvent(System.String,System.Object[])">
+            <summary>
+            Raises the event.
+            </summary>
+            <param name="eventName">
+            Name of the event.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <returns>
+            The event.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseItemCopied(System.Object,Sitecore.Data.Events.ItemCopiedEventArgs)">
+            <summary>
+            Raises the item copied event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemCopiedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseItemCreated(System.Object,Sitecore.Data.Events.ItemCreatedEventArgs)">
+            <summary>
+            Raises the item created event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemCreatedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseItemCreatedRemote(System.Object,Sitecore.Data.Events.ItemCreatedRemoteEventArgs)">
+            <summary>
+            Raises the item created remote event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemCreatedRemoteEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseItemCreating(System.Object,Sitecore.Data.Events.ItemCreatingEventArgs)">
+            <summary>
+            Raises the item creating event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemCreatingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseItemDeleted(System.Object,Sitecore.Data.Events.ItemDeletedEventArgs)">
+            <summary>
+            Raises the item deleted event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemDeletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseItemDeleting(System.Object,Sitecore.Data.Events.ItemDeletingEventArgs)">
+            <summary>
+            Raises the item deleting event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemDeletingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseItemMoved(System.Object,Sitecore.Data.Events.ItemMovedEventArgs)">
+            <summary>
+            Raises the item moved event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemMovedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseItemSaved(System.Object,Sitecore.Data.Events.ItemSavedEventArgs)">
+            <summary>
+            Raises the item saved event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemSavedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RaiseItemSaving(System.Object,Sitecore.Data.Events.ItemSavingEventArgs)">
+            <summary>
+            Raises the item saving event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemSavingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.RemoveFilter(System.String,System.EventHandler)">
+            <summary>
+            Removes the filter.
+            </summary>
+            <param name="eventName">Name of the event.</param>
+            <param name="handler">The event handler.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.Reset">
+            <summary>
+            Resets this instance.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.Subscribe(System.String,System.EventHandler)">
+            <summary>
+            Subscribes the specified event name.
+            </summary>
+            <param name="eventName">Name of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.IEvent.Unsubscribe(System.String,System.EventHandler)">
+            <summary>
+            Unsubscribes the specified event name.
+            </summary>
+            <param name="eventName">Name of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.AddFilter(System.String,System.EventHandler)">
+            <summary>
+            Adds the filter.
+            </summary>
+            <param name="eventName">Name of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.ExtractParameter``1(System.EventArgs,System.Int32)">
+            <summary>
+            Extracts the parameter.
+            </summary>
+            <typeparam name="T">Type parameter.</typeparam>
+            <param name="args">The arguments.</param>
+            <param name="index">The index.</param>
+            <returns>
+            The parameter.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.ExtractParameter(System.EventArgs,System.Int32)">
+            <summary>
+            Extracts the parameter.
+            </summary>
+            <param name="args">The arguments.</param>
+            <param name="index">The index.</param>
+            <returns>
+            The parameter.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.ExtractParameters(System.EventArgs)">
+            <summary>
+            Extracts the parameters.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>
+            The parameters.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseEvent(System.String,Sitecore.Events.IPassNativeEventArgs)">
+            <summary>
+            Raises the event.
+            </summary>
+            <param name="eventName">Name of the event.</param>
+            <param name="args">The instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseEvent(System.String,System.Object[])">
+            <summary>
+            Raises the event.
+            </summary>
+            <param name="eventName">Name of the event.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>
+            The event.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseItemCopied(System.Object,Sitecore.Data.Events.ItemCopiedEventArgs)">
+            <summary>
+            Raises the item copied event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemCopiedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseItemCreated(System.Object,Sitecore.Data.Events.ItemCreatedEventArgs)">
+            <summary>
+            Raises the item created event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemCreatedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseItemCreatedRemote(System.Object,Sitecore.Data.Events.ItemCreatedRemoteEventArgs)">
+            <summary>
+            Raises the item created remote event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemCreatedRemoteEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseItemCreating(System.Object,Sitecore.Data.Events.ItemCreatingEventArgs)">
+            <summary>
+            Raises the item creating event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemCreatingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseItemDeleted(System.Object,Sitecore.Data.Events.ItemDeletedEventArgs)">
+            <summary>
+            Raises the item deleted event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemDeletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseItemDeleting(System.Object,Sitecore.Data.Events.ItemDeletingEventArgs)">
+            <summary>
+            Raises the item deleting event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemDeletingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseItemMoved(System.Object,Sitecore.Data.Events.ItemMovedEventArgs)">
+            <summary>
+            Raises the item moved event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemMovedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseItemSaved(System.Object,Sitecore.Data.Events.ItemSavedEventArgs)">
+            <summary>
+            Raises the item saved event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemSavedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RaiseItemSaving(System.Object,Sitecore.Data.Events.ItemSavingEventArgs)">
+            <summary>
+            Raises the item saving event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:Sitecore.Data.Events.ItemSavingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.RemoveFilter(System.String,System.EventHandler)">
+            <summary>
+            Removes the filter.
+            </summary>
+            <param name="eventName">Name of the event.</param>
+            <param name="handler">The event handler.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.Reset">
+            <summary>
+            Resets this instance.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.Subscribe(System.String,System.EventHandler)">
+            <summary>
+            Subscribes the specified event name.
+            </summary>
+            <param name="eventName">Name of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.EventWrapper.Unsubscribe(System.String,System.EventHandler)">
+            <summary>
+            Unsubscribes the specified event name.
+            </summary>
+            <param name="eventName">Name of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="T:Sitecore.Abstractions.FactoryWrapper">
+            <summary>
+            The Sitecore proxy of IFactory interface.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Abstractions.IFactory">
+            <summary>
+            The interface to proxy Factory API.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.CreateErrorControl(System.String,System.String)">
+            <summary>
+            Creates an error control.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="details">
+            The details.
+            </param>
+            <returns>
+            The Error Control object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.CreateItemNavigator(Sitecore.Data.Items.Item)">
+            <summary>
+            Creates an item navigator.
+            </summary>
+            <param name="item">
+            The Sitecore item.
+            </param>
+            <returns>
+            The Item Navigator.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.CreateObject``1(System.Xml.XmlNode)">
+            <summary>
+            Creates an object from a configuration node.
+            </summary>
+            <typeparam name="T">
+            The type of object to create.
+            </typeparam>
+            <param name="configNode">
+            The config node.
+            </param>
+            <returns>
+            The object of type T
+            </returns>
+            <exception cref="T:Sitecore.Exceptions.ConfigurationException">
+            <c>ConfigurationException</c>.
+            </exception>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetConfigStore(System.String)">
+            <summary>
+            Gets the config store.
+            </summary>
+            <param name="configStoreName">
+            Name of the config store.
+            </param>
+            <returns>
+            The ConfigStore object.
+            </returns>
+            <exception cref="T:Sitecore.Exceptions.ConfigurationException">
+            <c>ConfigurationException</c>.
+            </exception>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetCustomHandlers">
+            <summary>
+            Gets the request handlers.
+            </summary>
+            <returns>
+            The request handlers.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            <c>InvalidOperationException</c>.
+            </exception>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetDatabase(System.String)">
+            <summary>
+            Gets the database.
+            </summary>
+            <param name="name">
+            The database name.
+            </param>
+            <returns>
+            The Database object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetDatabase(System.String,System.Boolean)">
+            <summary>
+            Gets the database.
+            </summary>
+            <param name="name">
+            The database name.
+            </param>
+            <param name="assert">
+            if set to <c>true</c> exception will be thrown if database does not exist.
+            </param>
+            <returns>
+            The Database object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetDatabaseNames">
+            <summary>
+            Gets the database names.
+            </summary>
+            <returns>
+            The list of registered in configuration file database names.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetDatabases">
+            <summary>
+            Gets all databases.
+            </summary>
+            <returns>
+            The list of registered in configuration file databases.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetDomain(System.String)">
+            <summary>
+            Gets the domain.
+            </summary>
+            <param name="name">
+            The domain name.
+            </param>
+            <returns>
+            The list of registered in configuration file database objects.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetDomainMap(System.String)">
+            <summary>
+            Gets the domain map.
+            </summary>
+            <param name="path">
+            The domain map Xml path.
+            </param>
+            <returns>
+            The domain map.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetDomainNames">
+            <summary>
+            Gets the domain names.
+            </summary>
+            <returns>
+            The array of damain names.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetHashtable(System.String,Sitecore.Configuration.Factory.HashKeyType,Sitecore.Configuration.Factory.HashValueType,Sitecore.Configuration.Factory.HashValueFormat,System.Type)">
+            <summary>
+            Gets the hash table.
+            </summary>
+            <param name="path">
+            The Xml path.
+            </param>
+            <param name="keyType">
+            Type of the key.
+            </param>
+            <param name="valueType">
+            Type of the value.
+            </param>
+            <param name="format">
+            The format.
+            </param>
+            <param name="dataType">
+            Type of the data.
+            </param>
+            <returns>
+            The Hashtable.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetIDTable">
+            <summary>
+            Gets the ID table.
+            </summary>
+            <returns>
+            The IDTable provider.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetItemComparer(Sitecore.Data.Items.Item)">
+            <summary>
+            Gets an item comparer.
+            </summary>
+            <param name="item">
+            The Sitecore item.
+            </param>
+            <returns>
+            The Item comparer.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetLinkDatabase">
+            <summary>
+            Gets the link database.
+            </summary>
+            <returns>
+            The LinkDatabase.
+            </returns>
+            <exception cref="T:Sitecore.Exceptions.InvalidTypeException">
+            <c>LinkDatabase</c> object is of wrong type
+            </exception>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetMasterVariablesReplacer">
+            <summary>
+            Gets the object used for replacing variables when creating a master.
+            </summary>
+            <returns>
+            The MasterVariables replacer.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetPerformanceCounters">
+            <summary>
+            Gets the performance counters.
+            </summary>
+            <returns>
+            The performance counters.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetProviders``2(System.String,``0@)">
+            <summary>
+            Gets a list of providers.
+            </summary>
+            <typeparam name="TProvider">
+            The Default provider.
+            </typeparam>
+            <typeparam name="TCollection">
+            The provider collection.
+            </typeparam>
+            <param name="rootPath">
+            The root Path.
+            </param>
+            <param name="defaultProvider">
+            The default Provider.
+            </param>
+            <returns>
+            The providers.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetRetryer">
+            <summary>
+            Gets the reiterator.
+            </summary>
+            <returns>IRetryable object.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetReplacer(System.String)">
+            <summary>
+            Gets the replacer.
+            </summary>
+            <param name="name">
+            The replacer name.
+            </param>
+            <returns>
+            The replacer.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetSite(System.String)">
+            <summary>
+            Gets the site.
+            </summary>
+            <param name="siteName">
+            Name of the site.
+            </param>
+            <returns>
+            The site by name.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetSiteInfo(System.String)">
+            <summary>
+            Gets the site info.
+            </summary>
+            <param name="siteName">
+            Name of the site.
+            </param>
+            <returns>
+            The site info.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetSiteInfoList">
+            <summary>
+            Gets a list of all <see cref="T:Sitecore.Web.SiteInfo">site info</see> instances.
+            </summary>
+            <returns>
+            Gets all sites.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetSiteNames">
+            <summary>
+            Gets the site names.
+            </summary>
+            <returns>
+            The site names.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetString(System.String,System.Boolean)">
+            <summary>
+            Gets the string.
+            </summary>
+            <param name="configPath">
+            The config path.
+            </param>
+            <param name="assert">
+            if set to <c>true</c> this instance is assert.
+            </param>
+            <returns>
+            The string.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetStringSet(System.String)">
+            <summary>
+            Gets a string set from config.
+            </summary>
+            <param name="configPath">
+            The config path.
+            </param>
+            <returns>
+            The set of inner texts of Xml nodes with specified path.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetArchiveTaskDatabase">
+            <summary>
+            Gets the task database.
+            </summary>
+            <returns>
+            The task database.
+            </returns>
+            <exception cref="T:Sitecore.Exceptions.InvalidTypeException">
+            <c>TaskDatabase</c> object is of wrong type
+            </exception>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetTaskDatabase">
+            <summary>
+            Gets the task database.
+            </summary>
+            <returns>
+            The task database.
+            </returns>
+            <exception cref="T:Sitecore.Exceptions.InvalidTypeException">
+            <c>TaskDatabase</c> object is of wrong type
+            </exception>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.CreateObject(System.String,System.Boolean)">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="configPath">
+            The config path.
+            </param>
+            <param name="assert">
+            if set to <c>true</c> this instance is assert.
+            </param>
+            <returns>
+            The create object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.CreateObject(System.String,System.String[],System.Boolean)">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="configPath">
+            The config path.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <param name="assert">
+            if set to <c>true</c> this instance is assert.
+            </param>
+            <returns>
+            The create object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.CreateObject(System.Xml.XmlNode,System.Boolean)">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="configNode">
+            The config node.
+            </param>
+            <param name="assert">
+            if set to <c>true</c> this instance is assert.
+            </param>
+            <returns>
+            The create object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.CreateObject(System.Xml.XmlNode,System.String[],System.Boolean)">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="configNode">
+            The config node.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <param name="assert">
+            if set to <c>true</c> this instance is assert.
+            </param>
+            <returns>
+            The create object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.CreateObject(System.Xml.XmlNode,System.String[],System.Boolean,Sitecore.Configuration.IFactoryHelper)">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="configNode">
+            The config node.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <param name="assert">
+            If set to <c>true</c> throw an exception if the object could not be created.
+            </param>
+            <param name="helper">
+            The helper.
+            </param>
+            <returns>
+            The object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.CreateType(System.Xml.XmlNode,System.Boolean)">
+            <summary>
+            Creates the type.
+            </summary>
+            <param name="configNode">
+            The config node.
+            </param>
+            <param name="assert">
+            if set to <c>true</c> this instance is assert.
+            </param>
+            <returns>
+            The Type object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.CreateType(System.Xml.XmlNode,System.String[],System.Boolean)">
+            <summary>
+            Creates the type.
+            </summary>
+            <param name="configNode">
+            The config node.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <param name="assert">
+            if set to <c>true</c> this instance is assert.
+            </param>
+            <returns>
+            The Type object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.FindType(System.String,System.Reflection.Assembly)">
+            <summary>
+            Finds the type.
+            </summary>
+            <param name="className">
+            Name of the class.
+            </param>
+            <param name="assembly">
+            The assembly.
+            </param>
+            <returns>
+            The Type object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetAttribute(System.String,System.Xml.XmlNode,System.String[])">
+            <summary>
+            Gets the attribute.
+            </summary>
+            <param name="name">
+            The attribute name.
+            </param>
+            <param name="node">
+            The Xml node.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <returns>
+            The attribute.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetConfigNode(System.String)">
+            <summary>
+            Gets a config node.
+            </summary>
+            <param name="xpath">
+            The Xpath.
+            </param>
+            <returns>
+            The config node.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetConfigNode(System.String,System.Boolean)">
+            <summary>
+            Gets a config node.
+            </summary>
+            <param name="xpath">
+            The Xpath.
+            </param>
+            <param name="assert">
+            if set to <c>true</c> assert that the node is not null.
+            </param>
+            <returns>
+            The config node.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetConfigNodes(System.String)">
+            <summary>
+            Gets a set of config nodes.
+            </summary>
+            <param name="xpath">
+            The Xpath.
+            </param>
+            <returns>The Configuration nodes.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.Reset">
+            <summary>
+            Resets all cached information.
+            </summary>
+            <remarks>
+            This will cause all configuration data to be reloaded.
+            </remarks>
+        </member>
+        <member name="M:Sitecore.Abstractions.IFactory.GetConfiguration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <returns>
+            Xml document containing the entire Sitecore configuration.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.CreateErrorControl(System.String,System.String)">
+            <summary>
+            Creates an error control.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="details">The details.</param>
+            <returns>
+            The Error Control object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.CreateItemNavigator(Sitecore.Data.Items.Item)">
+            <summary>
+            Creates an item navigator.
+            </summary>
+            <param name="item">The Sitecore item.</param>
+            <returns>
+            The Item Navigator.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.CreateObject``1(System.Xml.XmlNode)">
+            <summary>
+            Creates an object from a configuration node.
+            </summary>
+            <typeparam name="T">The type of object to create.</typeparam>
+            <param name="configNode">The config node.</param>
+            <returns>
+            The object of type T
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetConfigStore(System.String)">
+            <summary>
+            Gets the config store.
+            </summary>
+            <param name="configStoreName">Name of the config store.</param>
+            <returns>
+            The ConfigStore object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetCustomHandlers">
+            <summary>
+            Gets the request handlers.
+            </summary>
+            <returns>
+            The request handlers.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetDatabase(System.String)">
+            <summary>
+            Gets the database.
+            </summary>
+            <param name="name">The database name.</param>
+            <returns>
+            The Database object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetDatabase(System.String,System.Boolean)">
+            <summary>
+            Gets the database.
+            </summary>
+            <param name="name">The database name.</param>
+            <param name="assert">if set to <c>true</c> exception will be thrown if database does not exist.</param>
+            <returns>
+            The Database object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetDatabaseNames">
+            <summary>
+            Gets the database names.
+            </summary>
+            <returns>
+            The list of registered in configuration file database names.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetDatabases">
+            <summary>
+            Gets all databases.
+            </summary>
+            <returns>
+            The list of registered in configuration file databases.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetDomain(System.String)">
+            <summary>
+            Gets the domain.
+            </summary>
+            <param name="name">The domain name.</param>
+            <returns>
+            The list of registered in configuration file database objects.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetDomainMap(System.String)">
+            <summary>
+            Gets the domain map.
+            </summary>
+            <param name="path">The domain map Xml path.</param>
+            <returns>
+            The domain map.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetDomainNames">
+            <summary>
+            Gets the domain names.
+            </summary>
+            <returns>
+            The array of damain names.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetHashtable(System.String,Sitecore.Configuration.Factory.HashKeyType,Sitecore.Configuration.Factory.HashValueType,Sitecore.Configuration.Factory.HashValueFormat,System.Type)">
+            <summary>
+            Gets the hash table.
+            </summary>
+            <param name="path">The Xml path.</param>
+            <param name="keyType">Type of the key.</param>
+            <param name="valueType">Type of the value.</param>
+            <param name="format">The format.</param>
+            <param name="dataType">Type of the data.</param>
+            <returns>
+            The Hashtable.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetIDTable">
+            <summary>
+            Gets the ID table.
+            </summary>
+            <returns>
+            The IDTable provider.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetItemComparer(Sitecore.Data.Items.Item)">
+            <summary>
+            Gets an item comparer.
+            </summary>
+            <param name="item">The Sitecore item.</param>
+            <returns>
+            The Item comparer.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetLinkDatabase">
+            <summary>
+            Gets the link database.
+            </summary>
+            <returns>
+            The LinkDatabase.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetMasterVariablesReplacer">
+            <summary>
+            Gets the object used for replacing variables when creating a master.
+            </summary>
+            <returns>
+            The MasterVariables replacer.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetPerformanceCounters">
+            <summary>
+            Gets the performance counters.
+            </summary>
+            <returns>
+            The performance counters.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetProviders``2(System.String,``0@)">
+            <summary>
+            Gets a list of providers.
+            </summary>
+            <typeparam name="TProvider">The Default provider.</typeparam>
+            <typeparam name="TCollection">The provider collection.</typeparam>
+            <param name="rootPath">The root Path.</param>
+            <param name="defaultProvider">The default Provider.</param>
+            <returns>
+            The providers.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetRetryer">
+            <summary>
+            Gets the reiterator.
+            </summary>
+            <returns>
+            IRetryable object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetReplacer(System.String)">
+            <summary>
+            Gets the replacer.
+            </summary>
+            <param name="name">The replacer name.</param>
+            <returns>
+            The replacer.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetSite(System.String)">
+            <summary>
+            Gets the site.
+            </summary>
+            <param name="siteName">Name of the site.</param>
+            <returns>
+            The site by name.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetSiteInfo(System.String)">
+            <summary>
+            Gets the site info.
+            </summary>
+            <param name="siteName">Name of the site.</param>
+            <returns>
+            The site info.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetSiteInfoList">
+            <summary>
+            Gets a list of all <see cref="T:Sitecore.Web.SiteInfo">site info</see> instances.
+            </summary>
+            <returns>
+            Gets all sites.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetSiteNames">
+            <summary>
+            Gets the site names.
+            </summary>
+            <returns>
+            The site names.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetString(System.String,System.Boolean)">
+            <summary>
+            Gets the string.
+            </summary>
+            <param name="configPath">The config path.</param>
+            <param name="assert">if set to <c>true</c> this instance is assert.</param>
+            <returns>
+            The string.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetStringSet(System.String)">
+            <summary>
+            Gets a string set from config.
+            </summary>
+            <param name="configPath">The config path.</param>
+            <returns>
+            The set of inner texts of Xml nodes with specified path.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetArchiveTaskDatabase">
+            <summary>
+            Gets the task database.
+            </summary>
+            <returns>
+            The task database.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetTaskDatabase">
+            <summary>
+            Gets the task database.
+            </summary>
+            <returns>
+            The task database.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.CreateObject(System.String,System.Boolean)">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="configPath">The config path.</param>
+            <param name="assert">if set to <c>true</c> this instance is assert.</param>
+            <returns>
+            The create object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.CreateObject(System.String,System.String[],System.Boolean)">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="configPath">The config path.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="assert">if set to <c>true</c> this instance is assert.</param>
+            <returns>
+            The create object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.CreateObject(System.Xml.XmlNode,System.Boolean)">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="configNode">The config node.</param>
+            <param name="assert">if set to <c>true</c> this instance is assert.</param>
+            <returns>
+            The create object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.CreateObject(System.Xml.XmlNode,System.String[],System.Boolean)">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="configNode">The config node.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="assert">if set to <c>true</c> this instance is assert.</param>
+            <returns>
+            The create object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.CreateObject(System.Xml.XmlNode,System.String[],System.Boolean,Sitecore.Configuration.IFactoryHelper)">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="configNode">The config node.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="assert">If set to <c>true</c> throw an exception if the object could not be created.</param>
+            <param name="helper">The helper.</param>
+            <returns>
+            The object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.CreateType(System.Xml.XmlNode,System.Boolean)">
+            <summary>
+            Creates the type.
+            </summary>
+            <param name="configNode">The config node.</param>
+            <param name="assert">if set to <c>true</c> this instance is assert.</param>
+            <returns>
+            The Type object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.CreateType(System.Xml.XmlNode,System.String[],System.Boolean)">
+            <summary>
+            Creates the type.
+            </summary>
+            <param name="configNode">The config node.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="assert">if set to <c>true</c> this instance is assert.</param>
+            <returns>
+            The Type object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.FindType(System.String,System.Reflection.Assembly)">
+            <summary>
+            Finds the type.
+            </summary>
+            <param name="className">Name of the class.</param>
+            <param name="assembly">The assembly.</param>
+            <returns>
+            The Type object.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetAttribute(System.String,System.Xml.XmlNode,System.String[])">
+            <summary>
+            Gets the attribute.
+            </summary>
+            <param name="name">The attribute name.</param>
+            <param name="node">The Xml node.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>
+            The attribute.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetConfigNode(System.String)">
+            <summary>
+            Gets a config node.
+            </summary>
+            <param name="xpath">The Xpath.</param>
+            <returns>
+            The config node.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetConfigNode(System.String,System.Boolean)">
+            <summary>
+            Gets a config node.
+            </summary>
+            <param name="xpath">The Xpath.</param>
+            <param name="assert">if set to <c>true</c> assert that the node is not null.</param>
+            <returns>
+            The config node.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetConfigNodes(System.String)">
+            <summary>
+            Gets a set of config nodes.
+            </summary>
+            <param name="xpath">The Xpath.</param>
+            <returns>
+            The Configuration nodes.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.Reset">
+            <summary>
+            Resets all cached information.
+            </summary>
+            <remarks>
+            This will cause all configuration data to be reloaded.
+            </remarks>
+        </member>
+        <member name="M:Sitecore.Abstractions.FactoryWrapper.GetConfiguration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <returns>
+            Xml document containing the entire Sitecore configuration.
+            </returns>
+        </member>
+        <member name="T:Sitecore.Abstractions.ICustomCache`2">
+            <summary>The CustomCache interface.</summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TResult">The type of the result.</typeparam>
+        </member>
+        <member name="M:Sitecore.Abstractions.ICustomCache`2.Add(`0,`1)">
+            <summary>Adds the specified key.</summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.ICustomCache`2.Get(`0)">
+            <summary>Gets the specified key.</summary>
+            <param name="key">The key.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ICustomCache`2.Clear">
+            <summary>The clear.</summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.ICustomCache`2.Remove(`0)">
+            <summary>
+            Removes entry with specific key.
+            </summary>
+            <param name="key">entry key to remove.</param>
+        </member>
+        <member name="P:Sitecore.Abstractions.ICustomCache`2.Enabled">
+            <summary>Determines whether cache enabled or not.</summary>
+            <value>The enabled.</value>
+        </member>
+        <member name="T:Sitecore.Abstractions.ISettings">
+            <summary>
+            ISettings interface.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetAppSetting(System.String)">
+            <summary>
+            Gets named application setting.
+            </summary>
+            <param name="name"> The application setting name.</param>
+            <returns>The app setting.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetAppSetting(System.String,System.String)">
+            <summary>
+            Gets named application setting.
+            </summary>
+            <param name="name">
+            The application setting name.
+            </param> <param name="defaultValue">The default value.</param>
+            <returns> The app setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetBoolSetting(System.String,System.Boolean)">
+            <summary>
+            Gets boolean setting.
+            </summary>
+            <param name="name"> Name of the s.</param>
+            <param name="defaultValue"> if set to <c>true</c> this instance is default value.</param>
+            <returns>The boolean setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetConnectionString(System.String)">
+            <summary>
+            Gets a named connection string.
+            </summary>
+            <param name="connectionStringName"> Name of the connection string.</param>
+            <returns> The connection string.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetDoubleSetting(System.String,System.Double)">
+            <summary>
+            Gets double setting.
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>The long setting.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetFileSetting(System.String)">
+            <summary>
+            Gets named setting contains a file path.
+            </summary>
+            <param name="name"> Name of the s.</param>
+            <returns>The file setting.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetFileSetting(System.String,System.String)">
+            <summary>
+            Gets named setting contains a file path.
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value. </param>
+            <returns>The file setting.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetIntSetting(System.String,System.Int32)">
+            <summary>
+            Gets int setting.
+            </summary>
+            <param name="name"> The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns> The int setting.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetLongSetting(System.String,System.Int64)">
+            <summary>
+            Gets long setting.
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>The long setting.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetNumberOfSettings">
+            <summary>
+            Gets number of settings.
+            </summary>
+            <returns> The number of settings.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetProviderObject(System.String,System.Type)">
+            <summary>
+            Gets the provider object.
+            </summary>
+            <param name="implementationPath">The implementation path.</param>
+            <param name="expectedType">The expected type.</param>
+            <returns>The provider object.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetProviderObject(System.String,System.String,System.Type)">
+            <summary>
+            Gets the provider object.
+            </summary>
+            <param name="referencePath">The reference path.</param>
+            <param name="implementationPath">The implementation path.</param>
+            <param name="expectedType">The expected type.</param>
+            <returns>The provider object.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetProviderObjects(System.String,System.String,System.Type)">
+            <summary>
+            Gets the provider objects.
+            </summary>
+            <param name="referencePath">The reference path.</param>
+            <param name="implementationPath">The implementation path.</param>
+            <param name="expectedType">The expected type.</param>
+            <returns>The provider objects.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetSetting(System.String)">
+            <summary>
+            Gets named setting.
+            </summary>
+            <param name="name"> The setting name.</param>
+            <returns>The setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetSetting(System.String,System.String)">
+            <summary>
+            Gets named setting with default.
+            </summary>
+            <param name="name"> The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>The setting.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetSystemSection``1(System.String)">
+            <summary>
+            Gets a system section from web.config (i.e. a section located beneath system.web).
+            </summary>
+            <param name="sectionName">Name of the section.</param>
+            <returns> The system section.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetTimeSpanSetting(System.String,System.String)">
+            <summary>
+            Gets setting contains a time span (hh:mm:ss)
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>The time span setting.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetTimeSpanSetting(System.String,System.TimeSpan)">
+            <summary>
+            Gets setting contains a time span (hh:mm:ss)
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>The time span setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ISettings.GetTimeSpanSetting(System.String,System.TimeSpan,System.Globalization.CultureInfo)">
+            <summary>
+            Gets the time span setting.
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <param name="cultureInfo">The culture info.</param>
+            <returns>The time span setting. </returns>
+        </member>
+        <member name="T:Sitecore.Abstractions.ITranslate">
+            <summary>
+            The interface to proxy Translate API.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.CachePhrase(System.String,System.String,Sitecore.Globalization.Language,Sitecore.Globalization.DictionaryDomain)">
+            <summary>
+            Caches the phrase.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="phrase">The phrase.</param>
+            <param name="language">The language.</param>
+            <param name="domain">The domain.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.CreateDictionary(System.Type)">
+            <summary>
+            Creates the dictionary.
+            </summary>
+            <param name="type">
+            The type containing the strings for which the dictionary should be created.
+            </param>
+            <returns>
+            The dictionary.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.GetCachedDomains">
+            <summary>
+            Gets the cached domains.
+            </summary>
+            <returns>The array of cached domains.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.GetCachedLanguages(Sitecore.Globalization.DictionaryDomain)">
+            <summary>
+            Gets the cached languages.
+            </summary>
+            <param name="domain">The domain.</param>
+            <returns>The array of cached languages for specified dictionary domain.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.ReloadDomainCache(Sitecore.Globalization.DictionaryDomain)">
+            <summary>
+            Reloads the domain cache.
+            </summary>
+            <param name="domain">The domain.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.ReloadFromDatabase">
+            <summary>
+            Reloads the translations from database.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.RemoveKeyFromCache(System.String)">
+            <summary>
+            Removes the key from cache.
+            </summary>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.RemoveKeyFromCache(System.String,Sitecore.Globalization.Language)">
+            <summary>
+            Removes the key from cache.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="language">The language.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.RemoveKeyFromCache(System.String,Sitecore.Globalization.Language,Sitecore.Globalization.DictionaryDomain)">
+            <summary>
+            Removes the key from cache.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="language">The language.</param>
+            <param name="domain">The domain.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.ResetCache">
+            <summary>
+            Resets the cache.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.ResetCache(System.Boolean)">
+            <summary>
+            Resets the cache.
+            </summary>
+            <param name="removeFileCache">if set to <c>true</c> dictionary file will be removed.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.Text(System.String)">
+            <summary>
+            Gets a localized string.
+            </summary>
+            <param name="key">
+            The key of the string.
+            </param>
+            <returns>
+            The localized string.
+            </returns>
+            <remarks>
+            If the key is not found, the key itself is returned.
+            </remarks>
+            <example>
+            <code lang="CS">
+            string myText = Localization.ls("My Text");
+            </code>
+            </example>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.Text(System.String,System.Object[])">
+            <summary>
+            Gets the localized string for the key.
+            </summary>
+            <param name="key">
+            The text key.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <returns>
+            The translated text for given key.
+            </returns>
+            <remarks>
+            The localized string is formatted using String.Format.
+            </remarks>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.TextByDomain(System.String,System.String,System.Object[])">
+            <summary>
+            Gets a localized string.
+            </summary>
+            <param name="domain">The domain.</param>
+            <param name="key">The key of the string.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>
+            The localized string.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.TextByDomain(System.String,Sitecore.Globalization.TranslateOptions,System.String,System.Object[])">
+            <summary>
+            Gets a localized string.
+            </summary>
+            <param name="domain">The domain.</param>
+            <param name="options">The options.</param>
+            <param name="key">The key of the string.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>
+            The localized string.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.TextByLanguage(System.String,Sitecore.Globalization.Language)">
+            <summary>
+            Gets a localized string.
+            </summary>
+            <param name="key">
+            The key of the string.
+            </param>
+            <param name="language">
+            The language identifier.
+            </param>
+            <returns>
+            The localized string.
+            </returns>
+            <remarks>
+            If the key is not found, the key itself is returned.
+            </remarks>
+            <example>
+            <code lang="CS">
+            string myText = Translate.Text("My Text", "da");
+            </code>
+            </example>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.TextByLanguage(System.String,Sitecore.Globalization.Language,System.String)">
+            <summary>
+            Texts the by language no default.
+            </summary>
+            <param name="key">
+            The text key.
+            </param>
+            <param name="language">
+            The language.
+            </param>
+            <param name="defaultValue">
+            The default value.
+            </param>
+            <returns>
+            The by language.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.TextByLanguage(System.String,Sitecore.Globalization.Language,System.String,System.Object[])">
+            <summary>
+            Texts the by language no default.
+            </summary>
+            <param name="key">The text key.</param>
+            <param name="language">The language.</param>
+            <param name="defaultValue">The default value.</param>
+            <param name="parameters">String replacement parameters.</param>
+            <returns>The by text language.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.ITranslate.TextByLanguage(System.String,Sitecore.Globalization.TranslateOptions,System.String,Sitecore.Globalization.Language,System.String,System.Object[])">
+            <summary>
+            Texts the by language.
+            </summary>
+            <param name="domainName">Name of the domain.</param>
+            <param name="options">The options.</param>
+            <param name="key">The phrase key.</param>
+            <param name="language">The language.</param>
+            <param name="defaultValue">The default value.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>The translated phrade for specified combination of key, language, domain</returns>
+        </member>
+        <member name="P:Sitecore.Abstractions.ITranslate.HasPendingReloads">
+            <summary>
+            Gets a value indicating whether translation cache needs to be reloaded.
+            </summary>
+            <value>
+              <c>true</c> if translation cache needs to be reloaded; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Sitecore.Abstractions.SettingsWrapper">
+            <summary>
+            ISetting wrapper.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetAppSetting(System.String)">
+            <summary>
+            Gets named application setting.
+            </summary>
+            <param name="name">The application setting name.</param>
+            <returns>The app setting.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetAppSetting(System.String,System.String)">
+            <summary>
+            Gets named application setting.
+            </summary>
+            <param name="name">The application setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns> The app setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetBoolSetting(System.String,System.Boolean)">
+            <summary>
+            Gets boolean setting.
+            </summary>
+            <param name="name">Name of the s.</param>
+            <param name="defaultValue">if set to <c>true</c> this instance is default value.</param>
+            <returns> The boolean setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetConnectionString(System.String)">
+            <summary>
+            Gets a named connection string.
+            </summary>
+            <param name="connectionStringName">Name of the connection string.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetDoubleSetting(System.String,System.Double)">
+            <summary>
+            Gets double setting.
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns> The long setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetFileSetting(System.String)">
+            <summary>
+            Gets named setting contains a file path.
+            </summary>
+            <param name="name">Name of the s.</param>
+            <returns> The file setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetFileSetting(System.String,System.String)">
+            <summary>
+            Gets named setting contains a file path.
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>The file setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetIntSetting(System.String,System.Int32)">
+            <summary>
+            Gets int setting.
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns> The int setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetLongSetting(System.String,System.Int64)">
+            <summary>
+            Gets long setting.
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns> The long setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetNumberOfSettings">
+            <summary>
+            Gets number of settings.
+            </summary>
+            <returns> The number of settings.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetProviderObject(System.String,System.Type)">
+            <summary>
+            Gets the provider object.
+            </summary>
+            <param name="implementationPath">The implementation path.</param>
+            <param name="expectedType">The expected type.</param>
+            <returns> The provider object. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetProviderObject(System.String,System.String,System.Type)">
+            <summary>
+            Gets the provider object.
+            </summary>
+            <param name="referencePath">The reference path.</param>
+            <param name="implementationPath">The implementation path.</param>
+            <param name="expectedType">The expected type.</param>
+            <returns> The provider object. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetProviderObjects(System.String,System.String,System.Type)">
+            <summary>
+            Gets the provider objects.
+            </summary>
+            <param name="referencePath">The reference path.</param>
+            <param name="implementationPath">The implementation path.</param>
+            <param name="expectedType">The expected type.</param>
+            <returns> The provider objects. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetSetting(System.String)">
+            <summary>
+            Gets named setting.
+            </summary>
+            <param name="name">The setting name.</param>
+            <returns> The setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetSetting(System.String,System.String)">
+            <summary>
+            Gets named setting with default.
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns> The setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetSystemSection``1(System.String)">
+            <summary>
+            Gets a system section from web.config (i.e. a section located beneath system.web).
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sectionName">Name of the section.</param>
+            <returns> The system section. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetTimeSpanSetting(System.String,System.String)">
+            <summary>
+            Gets setting contains a time span (hh:mm:ss)
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns> The time span setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetTimeSpanSetting(System.String,System.TimeSpan)">
+            <summary>
+            Gets setting contains a time span (hh:mm:ss)
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns> The time span setting. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.SettingsWrapper.GetTimeSpanSetting(System.String,System.TimeSpan,System.Globalization.CultureInfo)">
+            <summary>
+            Gets the time span setting.
+            </summary>
+            <param name="name">The setting name.</param>
+            <param name="defaultValue">The default value.</param>
+            <param name="cultureInfo">The culture info.</param>
+            <returns> The time span setting.</returns>
+        </member>
+        <member name="T:Sitecore.Abstractions.TranslateWrapper">
+            <summary>
+            The Sitecore proxy of ITranslate interface.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.CachePhrase(System.String,System.String,Sitecore.Globalization.Language,Sitecore.Globalization.DictionaryDomain)">
+            <summary>
+            Caches the phrase.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="phrase">The phrase.</param>
+            <param name="language">The language.</param>
+            <param name="domain">The domain.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.CreateDictionary(System.Type)">
+            <summary>
+            Creates the dictionary.
+            </summary>
+            <param name="type">The type containing the strings for which the dictionary should be created.</param>
+            <returns> The dictionary.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.GetCachedDomains">
+            <summary>
+            Gets the cached domains.
+            </summary>
+            <returns> The array of cached domains. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.GetCachedLanguages(Sitecore.Globalization.DictionaryDomain)">
+            <summary>
+            Gets the cached languages.
+            </summary>
+            <param name="domain">The domain.</param>
+            <returns> The array of cached languages for specified dictionary domain.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.ReloadDomainCache(Sitecore.Globalization.DictionaryDomain)">
+            <summary>
+            Reloads the domain cache.
+            </summary>
+            <param name="domain">The domain.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.ReloadFromDatabase">
+            <summary>
+            Reloads the translations from database.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.RemoveKeyFromCache(System.String)">
+            <summary>
+            Removes the key from cache.
+            </summary>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.RemoveKeyFromCache(System.String,Sitecore.Globalization.Language)">
+            <summary>
+            Removes the key from cache.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="language">The language.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.RemoveKeyFromCache(System.String,Sitecore.Globalization.Language,Sitecore.Globalization.DictionaryDomain)">
+            <summary>
+            Removes the key from cache.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="language">The language.</param>
+            <param name="domain">The domain.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.ResetCache">
+            <summary>
+            Resets the cache.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.ResetCache(System.Boolean)">
+            <summary>
+            Resets the cache.
+            </summary>
+            <param name="removeFileCache">if set to <c>true</c> dictionary file will be removed.</param>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.Text(System.String)">
+            <summary>
+            Gets a localized string.
+            </summary>
+            <param name="key">The key of the string.</param>
+            <returns>
+            The localized string.
+            </returns>
+            <example>
+              <code lang="CS">
+            string myText = Localization.ls("My Text");
+              </code>
+              </example>
+            <remarks>
+            If the key is not found, the key itself is returned.
+            </remarks>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.Text(System.String,System.Object[])">
+            <summary>
+            Gets the localized string for the key.
+            </summary>
+            <param name="key">The text key.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>
+            The translated text for given key.
+            </returns>
+            <remarks>
+            The localized string is formatted using String.Format.
+            </remarks>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.TextByDomain(System.String,System.String,System.Object[])">
+            <summary>
+            Gets a localized string.
+            </summary>
+            <param name="domain">The domain.</param>
+            <param name="key">The key of the string.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>
+            The localized string.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.TextByDomain(System.String,Sitecore.Globalization.TranslateOptions,System.String,System.Object[])">
+            <summary>
+            Gets a localized string.
+            </summary>
+            <param name="domain">The domain.</param>
+            <param name="options">The options.</param>
+            <param name="key">The key of the string.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>The localized string.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.TextByLanguage(System.String,Sitecore.Globalization.Language)">
+            <summary>
+            Gets a localized string.
+            </summary>
+            <param name="key">The key of the string.</param>
+            <param name="language">The language identifier.</param>
+            <returns>
+            The localized string.
+            </returns>
+            <example>
+              <code lang="CS">
+            string myText = Translate.Text("My Text", "da");
+              </code>
+              </example>
+            <remarks>
+            If the key is not found, the key itself is returned.
+            </remarks>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.TextByLanguage(System.String,Sitecore.Globalization.Language,System.String)">
+            <summary>
+            Texts the by language no default.
+            </summary>
+            <param name="key">The text key.</param>
+            <param name="language">The language.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns> The by language. </returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.TextByLanguage(System.String,Sitecore.Globalization.Language,System.String,System.Object[])">
+            <summary>
+            Texts the by language no default.
+            </summary>
+            <param name="key">The text key.</param>
+            <param name="language">The language.</param>
+            <param name="defaultValue">The default value.</param>
+            <param name="parameters">String replacement parameters.</param>
+            <returns>The by text language.</returns>
+        </member>
+        <member name="M:Sitecore.Abstractions.TranslateWrapper.TextByLanguage(System.String,Sitecore.Globalization.TranslateOptions,System.String,Sitecore.Globalization.Language,System.String,System.Object[])">
+            <summary>
+            Texts the by language.
+            </summary>
+            <param name="domainName">Name of the domain.</param>
+            <param name="options">The options.</param>
+            <param name="key">The phrase key.</param>
+            <param name="language">The language.</param>
+            <param name="defaultValue">The default value.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>The translated phrade for specified combination of key, language, domain</returns>
+        </member>
+        <member name="P:Sitecore.Abstractions.TranslateWrapper.HasPendingReloads">
+            <summary>
+            Gets a value indicating whether translation cache needs to be reloaded.
+            </summary>
+            <value> <c>true</c> if translation cache needs to be reloaded; otherwise, <c>false</c>.</value>
+        </member>
+    </members>
+</doc>

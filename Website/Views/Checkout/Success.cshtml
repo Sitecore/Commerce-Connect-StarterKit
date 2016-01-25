@@ -1,0 +1,32 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using Sitecore.Commerce.StarterKit.Models
+@Html.Hidden("stepNumber", 6)
+@Html.Hidden("stepAction", Url.Action( "List","Product"))
+
+<h4>Success!</h4>
+<hr />
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="text-justify">
+      Your order has been succesfully created. Your order number is <strong>@ViewBag.OrderId</strong>. Please wait while administrator call you back to confirm all details.
+
+    </div>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-md-4">
+      <a class="btn btn-info" href="/Products">Go to shopping</a>
+  </div>
+</div>

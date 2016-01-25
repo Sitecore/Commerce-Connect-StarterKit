@@ -1,0 +1,171 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using Sitecore.Commerce.StarterKit.Models
+@using Sitecore.Commerce.StarterKit.Helpers
+@model AddressModel
+
+@Html.Hidden("stepNumber", 1)
+@Html.Hidden("stepAction", Url.Action("BillingAddress"))
+
+<h4>Step 1 : Billing Details</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <label>Select a billing address from your address book or enter a new address.</label>
+        <select class="form-control billing-address-control">
+            @foreach (var address in ViewBag.Addresses)
+            {
+                <option value="@address.PartyId" @(address.PartyId == Model.PartyId ? "selected" : "")>@(((AddressModel) address).DisplayName())</option>
+            }
+            <option value="new_address">New Address</option>
+        </select>
+    </div>
+</div>
+
+<br/>
+
+<div class="form-address">
+<div class="row">
+  <div>
+    @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+    @Html.HiddenFor(m => m.PartyId, new { @class = "form-control" })
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+    @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
+  </div>
+  <div class="col-md-4">
+    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+  </div>
+  <div class="col-md-4 text-danger">
+    @Html.ValidationMessageFor(m => m.FirstName)
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
+  </div>
+  <div class="col-md-4">
+    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+  </div>
+  <div class="col-md-4 text-danger">
+    @Html.ValidationMessageFor(m => m.LastName)
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+  </div>
+  <div class="col-md-4">
+    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+  </div>
+  <div class="col-md-4 text-danger">
+    @Html.ValidationMessageFor(m => m.Email)
+  </div>
+</div>
+
+<div class="row">
+  @Html.LabelFor(m => m.Company, new { @class = "col-md-2 control-label" })
+  <div class="col-md-4">
+    @Html.TextBoxFor(m => m.Company, new { @class = "form-control" })
+  </div>
+  <div class="col-md-4 text-danger">
+    @Html.ValidationMessageFor(m => m.Company)
+  </div>
+</div>
+
+<div class="row">
+  @Html.LabelFor(m => m.Country, new { @class = "col-md-2 control-label" })
+      <div class="col-md-4">
+        <select name="Country" class="form-control">
+          <option value="">Please select the country</option>
+          @foreach (Sitecore.Data.Items.Item child in ViewBag.Countries.Children)
+          {
+            <option value="@child.Fields["Country code"]" @(Model.Country == child.Fields["Country code"].ToString() ? "selected" : "")>@child.Name</option>
+          }
+        </select>
+      </div>
+  <div class="col-md-4 text-danger">
+    @Html.ValidationMessageFor(m => m.Country)
+  </div>
+</div>
+
+<div class="row">
+  @Html.LabelFor(m => m.State, new { @class = "col-md-2 control-label" })
+  <div class="col-md-4">
+    @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+  </div>
+  <div class="col-md-4 text-danger">
+    @Html.ValidationMessageFor(m => m.State)
+  </div>
+</div>
+
+<div class="row">
+  @Html.LabelFor(m => m.City, new { @class = "col-md-2 control-label" })
+  <div class="col-md-4">
+    @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+  </div>
+  <div class="col-md-4 text-danger">
+    @Html.ValidationMessageFor(m => m.City)
+  </div>
+</div>
+
+<div class="row">
+  @Html.LabelFor(m => m.Address1, new { @class = "col-md-2 control-label" })
+  <div class="col-md-4">
+    @Html.TextBoxFor(m => m.Address1, new { @class = "form-control" })
+  </div>
+  <div class="col-md-4 text-danger">
+    @Html.ValidationMessageFor(m => m.Address1)
+  </div>
+</div>
+
+<div class="row">
+  @Html.LabelFor(m => m.Address2, new { @class = "col-md-2 control-label" })
+  <div class="col-md-4">
+    @Html.TextBoxFor(m => m.Address2, new { @class = "form-control" })
+  </div>
+  <div class="col-md-4 text-danger">
+  </div>
+</div>
+
+<div class="row">
+  @Html.LabelFor(m => m.ZipPostalCode, new { @class = "col-md-2 control-label" })
+  <div class="col-md-4">
+    @Html.TextBoxFor(m => m.ZipPostalCode, new { @class = "form-control" })
+  </div>
+  <div class="col-md-4 text-danger">
+    @Html.ValidationMessageFor(m => m.ZipPostalCode)
+  </div>
+</div>
+
+<div class="row">
+  @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })
+  <div class="col-md-4">
+    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+  </div>
+  <div class="col-md-4 text-danger">
+    @Html.ValidationMessageFor(m => m.PhoneNumber)
+  </div>
+</div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-offset-4 col-md-4">
+        <button type="submit" name="changeStep" value="@ChangeStepType.Next" class="btn btn-success" data-loading-text="Loading...">Next</button>
+    </div>
+</div>

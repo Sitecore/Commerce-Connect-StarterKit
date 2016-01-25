@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="03d6fd41-8b5f-4313-af8b-d437dad0cc39" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Obec.Prices/Remote/PricesService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PricesService.xsd" MetadataType="Schema" ID="c9607a1a-251c-46c8-8560-51a9a1edbb69" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Prices/Remote/PricesService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PricesService.disco" MetadataType="Disco" ID="0bd979df-79f8-499e-a939-1b17a86adb7c" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Prices/Remote/PricesService.svc?disco" />
+    <MetadataFile FileName="PricesService.wsdl" MetadataType="Wsdl" ID="c2f98f75-e731-449d-a2b0-9b07197d653d" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Prices/Remote/PricesService.svc?wsdl" />
+    <MetadataFile FileName="PricesService1.xsd" MetadataType="Schema" ID="375af2c4-b5a0-40bd-86c6-be02e3e95963" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Prices/Remote/PricesService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PricesService2.xsd" MetadataType="Schema" ID="d2c56f2f-7fe5-4884-83d8-9f540cc0b0c2" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Prices/Remote/PricesService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PricesService3.xsd" MetadataType="Schema" ID="7b8292bc-a804-46a3-be84-19bb2264463f" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Prices/Remote/PricesService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

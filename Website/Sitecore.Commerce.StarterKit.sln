@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B2B8CB66-C1A2-4760-BAD2-CCA3CC9A7AC0}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Config", "App_Config", "{AA7B6EA0-AF4E-4737-8D2D-5F594EDD34AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Include", "Include", "{3437F84A-B6A8-4F5A-8E8F-BD47840A8952}"
+	ProjectSection(SolutionItems) = preProject
+		App_Config\Include\Sitecore.Commerce.config = App_Config\Include\Sitecore.Commerce.config
+		App_Config\Include\Obec\Sitecore.Commerce.StarterKit.config = App_Config\Include\Obec\Sitecore.Commerce.StarterKit.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Commerce.StarterKit", "Sitecore.Commerce.StarterKit.csproj", "{207E9436-59A3-4350-91AD-BA0AC3600FD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Commerce.StarterKit.Tests", "Tests\Sitecore.Commerce.StarterKit.Tests.csproj", "{F2E7F7E8-643A-4085-B566-DFA6CAE6C848}"
+	ProjectSection(ProjectDependencies) = postProject
+		{207E9436-59A3-4350-91AD-BA0AC3600FD5} = {207E9436-59A3-4350-91AD-BA0AC3600FD5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{207E9436-59A3-4350-91AD-BA0AC3600FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207E9436-59A3-4350-91AD-BA0AC3600FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207E9436-59A3-4350-91AD-BA0AC3600FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207E9436-59A3-4350-91AD-BA0AC3600FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2E7F7E8-643A-4085-B566-DFA6CAE6C848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E7F7E8-643A-4085-B566-DFA6CAE6C848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E7F7E8-643A-4085-B566-DFA6CAE6C848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E7F7E8-643A-4085-B566-DFA6CAE6C848}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3437F84A-B6A8-4F5A-8E8F-BD47840A8952} = {AA7B6EA0-AF4E-4737-8D2D-5F594EDD34AE}
+	EndGlobalSection
+EndGlobal

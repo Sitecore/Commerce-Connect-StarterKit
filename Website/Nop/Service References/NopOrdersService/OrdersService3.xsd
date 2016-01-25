@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Nop.Plugin.Sitecore.Commerce.Orders.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Nop.Plugin.Sitecore.Commerce.Orders.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Obec.Orders/Remote/OrdersService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Obec.Orders/Remote/OrdersService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Nop.Plugin.Sitecore.Commerce.Common.Models" />
+  <xs:complexType name="OrderModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Nop.Plugin.Sitecore.Commerce.Common.Models" base="q1:ShoppingCartModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardCvv2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CardExpirationMonth" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CardExpirationYear" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CardName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CardType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderGuid" type="ser:guid" />
+          <xs:element minOccurs="0" name="OrderItems" nillable="true" type="q1:ArrayOfShoppingCartItemModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OrderModel" nillable="true" type="tns:OrderModel" />
+  <xs:complexType name="ArrayOfOrderModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderModel" nillable="true" type="tns:OrderModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderModel" nillable="true" type="tns:ArrayOfOrderModel" />
+</xs:schema>

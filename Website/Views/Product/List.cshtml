@@ -1,0 +1,97 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using System.Globalization
+@using Sitecore.Commerce.StarterKit.Models
+@model ProductListModel
+
+@{Html.RenderPartial("../Product/ProductListHeader", new ProductListHeaderModel(Model.Paging,Model.Sorting));}
+<div id="C05-ProductList" class="row">
+    <div class="col-md-12 product-list">
+        @{
+            int iterator = 0;
+        }
+
+        @foreach (ProductModel productModel in Model.Products)
+        {
+            iterator++;
+
+            <div class="col-sm-4 col-xs-12">
+
+                <div class="col-item">
+                    <div class="photo">
+                        @if (productModel.Image != null)
+                        {
+                            <a href="@Url.RouteUrl("Products", new { id = productModel.ExternalID })">
+                                <img src="@(productModel.Image)?w=300&h=300&bc=ffffff" class="img-responsive" alt="product image" title="@productModel.Name" />
+                            </a>
+                        }
+                    </div>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price col-md-12 col-xs-12">
+                                <h5>@productModel.Name</h5>
+                                <p>@Html.RouteLink(productModel.Manufacturer, "Products", new { id = productModel.ExternalID })</p>
+                                @*if (Model.IsOnSale)
+                                    {
+                                      <div class="col-md-12 col-xs-12">
+                                        <h3 class="price-now">@Html.DisplayFor(model => Model.AdjustedPrice) <span class="savings">@Html.Sitecore().Field("Save procent lead", Model.Rendering.RenderingItem) @Model.SavingsPercentage%</span></h3>
+                                      </div>
+                                      <div class="col-md-12 col-xs-12"><h4 class="price-before">@Html.DisplayFor(model => Model.ListPrice)</h4>
+                                      </div>
+                                    }
+                                    else *@
+                                @{
+                                    <div class="col-md-12 col-xs-12">
+                                        <h3 class="price-now">@(productModel.Price > 0 ? productModel.Price.ToString("c", new CultureInfo("en-US")) : "-")</h3>
+                                    </div>
+                                }
+                            </div>
+                            @*
+                                <div class="rating hidden-sm hidden-xs col-md-12 col-xs-12">
+                                  <ul>
+                                    <li @(Model.CustomerAverageRating >= 1 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+                                    <li @(Model.CustomerAverageRating >= 2 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+                                    <li @(Model.CustomerAverageRating >= 3 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+                                    <li @(Model.CustomerAverageRating >= 4 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+                                    <li @(Model.CustomerAverageRating >= 5 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+                                  </ul>
+                                </div>
+                            *@
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="separator clear-left">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                            <p class="btn-details">
+                                                <a href="@Url.RouteUrl("Products", new { id = productModel.ExternalID })">
+                                                    <span class="glyphicon glyphicon-th-list">
+                                                    </span>&nbsp;@Html.RouteLink("More details", "Products", new { id = productModel.ExternalID })
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+            if (iterator % 3 == 0)
+            {
+                <div class="row"></div>
+            }
+        }
+    </div>
+</div>
+@{Html.RenderPartial("../Product/Pagination",Model.Paging);}

@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B2B8CB66-C1A2-4760-BAD2-CCA3CC9A7AC0}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Config", "App_Config", "{8A014581-69DB-40E1-A6A3-5CE1EB91CACE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Include", "Include", "{604B1EA9-C560-47BB-BEBD-CB5CDE0AB0E7}"
+	ProjectSection(SolutionItems) = preProject
+		App_Config\Include\Connectors\Sitecore.Commerce.Connectors.NopCommerce.config.disabled = App_Config\Include\Connectors\Sitecore.Commerce.Connectors.NopCommerce.config.disabled
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Commerce.Connectors.NopCommerce", "Nop\Sitecore.Commerce.Connectors.NopCommerce.csproj", "{7FDC777B-555F-4884-BD1A-6F08204B7663}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Commerce.Connectors.NopCommerce.Tests", "Nop\Tests\Sitecore.Commerce.Connectors.NopCommerce.Tests.csproj", "{82D721A3-F2AE-40C5-9070-09E05C1F40BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7FDC777B-555F-4884-BD1A-6F08204B7663} = {7FDC777B-555F-4884-BD1A-6F08204B7663}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FDC777B-555F-4884-BD1A-6F08204B7663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDC777B-555F-4884-BD1A-6F08204B7663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FDC777B-555F-4884-BD1A-6F08204B7663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FDC777B-555F-4884-BD1A-6F08204B7663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82D721A3-F2AE-40C5-9070-09E05C1F40BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D721A3-F2AE-40C5-9070-09E05C1F40BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D721A3-F2AE-40C5-9070-09E05C1F40BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D721A3-F2AE-40C5-9070-09E05C1F40BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{604B1EA9-C560-47BB-BEBD-CB5CDE0AB0E7} = {8A014581-69DB-40E1-A6A3-5CE1EB91CACE}
+	EndGlobalSection
+EndGlobal

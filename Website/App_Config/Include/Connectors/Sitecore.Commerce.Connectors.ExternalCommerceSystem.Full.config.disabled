@@ -1,0 +1,22 @@
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <pipelines>
+      <commerce.synchronizeProducts.synchronizeDivisions>
+        <processor type ="Sitecore.Commerce.Connectors.ExternalCommerceSystem.Pipelines.Products.SynchronizeDivisions.ReadExternalCommerceSystemDivisions, Sitecore.Commerce.Connectors.ExternalCommerceSystem"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeDivisions.ReadExternalCommerceSystemDivisions, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeDivisions>
+      <commerce.synchronizeProducts.synchronizeManufacturers>
+        <processor type ="Sitecore.Commerce.Connectors.ExternalCommerceSystem.Pipelines.Products.SynchronizeManufacturers.ReadExternalCommerceSystemManufacturers, Sitecore.Commerce.Connectors.ExternalCommerceSystem"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeManufacturers.ReadExternalCommerceSystemManufacturers, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeManufacturers>
+      <commerce.synchronizeProducts.synchronizeClassifications>
+        <processor type ="Sitecore.Commerce.Connectors.ExternalCommerceSystem.Pipelines.Products.SynchronizeClassifications.ReadExternalCommerceSystemClassifications"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeClassifications.ReadExternalCommerceSystemClassifications, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeClassifications>
+      <commerce.synchronizeProducts.synchronizeTypes>
+        <processor type ="Sitecore.Commerce.Connectors.ExternalCommerceSystem.Pipelines.Products.SynchronizeTypes.ReadExternalCommerceSystemTypes"
+                   patch:instead="processor[@type='Sitecore.Commerce.Pipelines.Products.SynchronizeTypes.ReadExternalCommerceSystemTypes, Sitecore.Commerce']" />
+      </commerce.synchronizeProducts.synchronizeTypes>
+    </pipelines>
+  </sitecore>
+</configuration>

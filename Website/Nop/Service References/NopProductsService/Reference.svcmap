@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ade45d1a-bf4b-41eb-ba55-d3f9832bad64" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Obec.Products/Remote/ProductsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProductsService.xsd" MetadataType="Schema" ID="6abb8c20-c0f7-41af-aff7-84283e3bdbae" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Products/Remote/ProductsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProductsService1.xsd" MetadataType="Schema" ID="eb064f86-a452-4df1-8821-9603d0aec608" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Products/Remote/ProductsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ProductsService2.xsd" MetadataType="Schema" ID="19807e30-c3da-4464-ab0a-e8d3997462b7" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Products/Remote/ProductsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProductsService3.xsd" MetadataType="Schema" ID="857859c8-dc3e-41c4-8362-9c336f35c310" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Products/Remote/ProductsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProductsService.wsdl" MetadataType="Wsdl" ID="cc9d43ec-eb91-44e1-97b5-714ff8fdf8da" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Products/Remote/ProductsService.svc?wsdl" />
+    <MetadataFile FileName="ProductsService.disco" MetadataType="Disco" ID="40edcd00-00a7-43fd-8eea-d314871dbadd" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Products/Remote/ProductsService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

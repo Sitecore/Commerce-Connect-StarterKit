@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="74e7aa6b-adf4-45a6-a3ab-9d3b59996f19" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InventoryService.disco" MetadataType="Disco" ID="ec170440-a970-4353-ab0a-62b9bae14b00" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc?disco" />
+    <MetadataFile FileName="InventoryService.xsd" MetadataType="Schema" ID="8a1df3ea-c536-44d3-8b7d-a37c0021d250" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc?xsd=xsd0" />
+    <MetadataFile FileName="InventoryService1.xsd" MetadataType="Schema" ID="904008da-96f3-4951-aba0-e9b1f7793219" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc?xsd=xsd2" />
+    <MetadataFile FileName="InventoryService.wsdl" MetadataType="Wsdl" ID="2d71c47e-4bdb-4af4-8239-4f28a7872db1" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc?wsdl" />
+    <MetadataFile FileName="InventoryService2.xsd" MetadataType="Schema" ID="8c95a6a0-71ae-4622-8ad5-f3a51a667482" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc?xsd=xsd1" />
+    <MetadataFile FileName="InventoryService3.xsd" MetadataType="Schema" ID="c60cf1c2-7450-4696-b2f5-54695595cd04" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
