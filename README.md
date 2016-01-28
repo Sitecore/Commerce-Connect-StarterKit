@@ -1,4 +1,6 @@
-This is the home of the Sitecore Commerce Connect StarterKit
+## Sitecore Commerce Connect StarterKit
+
+The Sitecore Commerce Connect StarterKit is a sample project showing how to create a custom connector for Commerce Connnect, in this case nopCommerce is used as the External eCommerce System.
 
 For download of binary packages and documentation go to [Releases] (https://github.com/Sitecore/Commerce-Connect-StarterKit/releases)  by following the link
 
