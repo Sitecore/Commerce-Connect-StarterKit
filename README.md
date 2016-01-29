@@ -6,7 +6,7 @@ For download of binary packages and documentation go to [Releases] (https://gith
 
 For information have a look at the [Wiki] (https://github.com/Sitecore/Commerce-Connect-StarterKit/wiki) 
 
-Copyright 2015 Sitecore Corporation A/S
+Copyright 2016 Sitecore Corporation A/S
 
 Licensed under the Apache License, Version 2.0 (the "License"); You may not use this solution except in compliance with the License.
 
