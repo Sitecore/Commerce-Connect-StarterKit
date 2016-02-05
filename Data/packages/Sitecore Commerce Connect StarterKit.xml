@@ -10,7 +10,7 @@
       <Attributes>folder=temp|files=StarterKit\de-DE.xml;StarterKit\da-DK.xml|</Attributes>
       <Readme>Sitecore Commerce Connect StarterKit 8.1 rev. 160101
 -------------------------------------------------------------
-Date: 01-Jan-2016
+Date: 02-Feb-2016
 
 -------------------------------------------------------------
 Prerequisites:
@@ -22,10 +22,10 @@ Prerequisites:
 
 •  Sitecore XP 8.1 rev. 151207 or later.
 
-•  Sitecore Commerce Connect 8.1 rev. 160101.
+•  Sitecore Commerce Connect 8.1 rev. 160202.
 
 -------------------------------------------------------------
-${product.starterkit} runs on:
+Sitecore Commerce Connect StarterKit runs on:
 
 •  Sitecore XP 8.1 rev. 151207 or later.
 
