@@ -1,11 +1,11 @@
-﻿// ---------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="PartyExtensions.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The cart extensions.
 // </summary>
-// ---------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,36 +18,38 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.Connectors.NopCommerce
 {
-  using Sitecore.Commerce.Connectors.NopCommerce.NopOrdersService;
-  using Sitecore.Commerce.Entities;
-  using Sitecore.Diagnostics;
+    using Sitecore.Commerce.Connectors.NopCommerce.NopOrdersService;
+    using Sitecore.Commerce.Entities;
+    using Sitecore.Diagnostics;
 
-  /// <summary>
-  /// The cart extensions.
-  /// </summary>
-  public static class PartyExtensions
-  {
     /// <summary>
-    /// Maps cart from model.
+    /// The cart extensions.
     /// </summary>
-    public static void MapPartyFromNopAddress([NotNull] this Party party, [NotNull] AddressModel address)
+    public static class PartyExtensions
     {
-      Assert.ArgumentNotNull(party, "party");
-      Assert.ArgumentNotNull(address, "address");
+        /// <summary>
+        /// Maps cart from model.
+        /// </summary>
+        /// <param name="party">The party.</param>
+        /// <param name="address">The address model.</param>
+        public static void MapPartyFromNopAddress([NotNull] this Party party, [NotNull] AddressModel address)
+        {
+            Assert.ArgumentNotNull(party, "party");
+            Assert.ArgumentNotNull(address, "address");
 
-      party.Address1 = address.Address1;
-      party.Address2 = address.Address2;
-      party.City = address.City;
-      party.Company = address.Company;
-      party.Country = address.CountryThreeLetterIsoCode;
-      party.Email = address.Email;
-      party.ExternalId = address.Id;
-      party.FirstName = address.FirstName;
-      party.LastName = address.LastName;
-      party.PartyId = address.Id;
-      party.PhoneNumber = address.PhoneNumber;
-      party.State = address.StateProvinceAbbreviation;
-      party.ZipPostalCode = address.ZipPostalCode;
+            party.Address1 = address.Address1;
+            party.Address2 = address.Address2;
+            party.City = address.City;
+            party.Company = address.Company;
+            party.Country = address.CountryThreeLetterIsoCode;
+            party.Email = address.Email;
+            party.ExternalId = address.Id;
+            party.FirstName = address.FirstName;
+            party.LastName = address.LastName;
+            party.PartyId = address.Id;
+            party.PhoneNumber = address.PhoneNumber;
+            party.State = address.StateProvinceAbbreviation;
+            party.ZipPostalCode = address.ZipPostalCode;
+        }
     }
-  }
 }

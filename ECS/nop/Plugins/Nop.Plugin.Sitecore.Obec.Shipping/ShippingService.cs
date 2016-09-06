@@ -1,11 +1,9 @@
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ShippingService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the ShippingService type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the ShippingService class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -62,10 +60,10 @@ namespace Nop.Plugin.Sitecore.Commerce.Shipping
     /// <summary>
     ///   Get shippin methods
     /// </summary>
-    /// <param name="shoppingCartModel"></param>
-    /// <param name="storeName"></param>
-    /// <param name="addressModel"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartModel">The shopping cart.</param>
+    /// <param name="storeName">The store name.</param>
+    /// <param name="addressModel">The address.</param>
+    /// <returns>A service response.</returns>
     [WebMethod(EnableSession = false)]
     public virtual Response<IList<ShippingMethodModel>> GetShippingMethods(ShoppingCartModel shoppingCartModel, string storeName = "", AddressModel addressModel = null)
     {
@@ -95,8 +93,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Shipping
         ? addressModel.MapToAddress()
         : customer.ShippingAddress;
 
-      var optionResponse = this.shippingService.GetShippingOptions(customer.ShoppingCartItems.ToList(), address, "",
-        store == null ? 0 : store.Id);
+      var optionResponse = this.shippingService.GetShippingOptions(customer.ShoppingCartItems.ToList(), address, string.Empty, store == null ? 0 : store.Id);
 
       var result = new List<ShippingMethodModel>(0);
 

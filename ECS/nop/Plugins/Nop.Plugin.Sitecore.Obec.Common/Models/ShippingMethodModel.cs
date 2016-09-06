@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ShippingMethodModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the ShippingMethodModel type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the ShippingMethodModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,30 +16,30 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Common.Models
 {
-  using System.Runtime.Serialization;
-
-  /// <summary>
-  /// Shipping method model
-  /// </summary>
-  [DataContract]
-  public class ShippingMethodModel
-  {
-    /// <summary>
-    /// Name
-    /// </summary>
-    [DataMember]
-    public string Name { get; set; }
+    using System.Runtime.Serialization;
 
     /// <summary>
-    /// System name
+    /// Shipping method model
     /// </summary>
-    [DataMember]
-    public string SystemName { get; set; }
+    [DataContract]
+    public class ShippingMethodModel
+    {
+        /// <summary>
+        /// Gets or sets the name
+        /// </summary>
+        [DataMember]
+        public string Name { get; set; }
 
-    /// <summary>
-    /// Description
-    /// </summary>
-    [DataMember]
-    public string Description { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets the system name
+        /// </summary>
+        [DataMember]
+        public string SystemName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the description
+        /// </summary>
+        [DataMember]
+        public string Description { get; set; }
+    }
 }

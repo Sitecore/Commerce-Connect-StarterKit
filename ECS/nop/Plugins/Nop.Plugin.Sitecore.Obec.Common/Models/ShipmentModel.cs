@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
-// <copyright file="AddressModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ShipmentModel.cs" company="Sitecore Corporation">
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
-//   The implementation of AddressModel.
+//   The implementation of ShipmentModel.
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,16 +18,31 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Common.Models
 {
-  using System.Collections;
+    using System.Collections;
 
-  public class ShipmentModel
-  {
-    public int Id { get; set; }
+    /// <summary>
+    /// Shipment model.
+    /// </summary>
+    public class ShipmentModel
+    {
+        /// <summary>
+        /// Gets or sets the ID.
+        /// </summary>
+        public int Id { get; set; }
 
-    public IList ItemsIDs { get; set; }
+        /// <summary>
+        /// Gets or sets the item IDs.
+        /// </summary>
+        public IList ItemsIDs { get; set; }
 
-    public int? ShippingAddressId { get; set; }
+        /// <summary>
+        /// Gets or sets the shipping address ID.
+        /// </summary>
+        public int? ShippingAddressId { get; set; }
 
-    public string ShippingMethod { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets the shipping method.
+        /// </summary>
+        public string ShippingMethod { get; set; }
+    }
 }

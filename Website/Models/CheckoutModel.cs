@@ -1,9 +1,9 @@
-﻿//-----------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="CheckoutModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>The CheckoutModel class.</summary>
-//-----------------------------------------------------------------------
+// <summary>Defines the CheckoutModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -14,24 +14,36 @@
 // either express or implied. See the License for the specific language governing permissions 
 // and limitations under the License.
 // ---------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  public class CheckoutModel
-  {
-    public CheckoutModel()
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+
+    /// <summary>
+    /// Specifies checkout information.
+    /// </summary>
+    public class CheckoutModel
     {
-      BillingAddress = new AddressModel();
-      ShippingAddress = new AddressModel();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckoutModel"/> class.
+        /// </summary>
+        public CheckoutModel()
+        {
+            this.BillingAddress = new AddressModel();
+            this.ShippingAddress = new AddressModel();
+        }
+
+        /// <summary>
+        /// Gets or sets the billing address.
+        /// </summary>
+        public AddressModel BillingAddress { get; set; }
+
+        /// <summary>
+        /// Gets or sets the shipping address.
+        /// </summary>
+        public AddressModel ShippingAddress { get; set; }
     }
-
-    public AddressModel BillingAddress { get; set; }
-
-    public AddressModel ShippingAddress { get; set; }
-
-  }
 }

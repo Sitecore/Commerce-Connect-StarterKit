@@ -1,11 +1,11 @@
-﻿// ---------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ReadExternalCommerceSystemClassifications.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Defines the pipeline processor that gets all product categories from external commerce system.
 // </summary>
-// ---------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at

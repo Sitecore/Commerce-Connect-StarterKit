@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="RouteConfig.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
-//   The RouteConfig class.
+//   Defines the RouteConfig type.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -42,8 +42,6 @@ namespace Sitecore.Commerce.StarterKit.App_Start
       routes.MapRoute("sc_ignore_Bundles_Css", "content/{*pathInfo}");
       routes.MapRoute("sc_ignore_Bundles_Js", "bundles/{*pathInfo}");
 
-      //routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
       routes.MapRoute(
         name: "CartData",
         url: "data/cart/{action}/{id}/{quantity}",
@@ -52,7 +50,7 @@ namespace Sitecore.Commerce.StarterKit.App_Start
       routes.MapRoute(
           name: "Account",
           url: "account/{action}",
-          defaults: new { controller = "Account"});
+          defaults: new { controller = "Account" });
 
       routes.MapRoute(name: "Products", url: "products/{id}");
 

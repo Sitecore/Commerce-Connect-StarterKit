@@ -1,9 +1,9 @@
-﻿//-----------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ConfirmModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>The ConfirmModel class.</summary>
-//-----------------------------------------------------------------------
+// <summary>Defines the ConfirmModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -16,14 +16,29 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  public class ConfirmModel
-  {
-    public AddressModel BillingAddress { get; set; }
+    /// <summary>
+    /// specifies order confirmation information.
+    /// </summary>
+    public class ConfirmModel
+    {
+        /// <summary>
+        /// Gets or sets the billing address.
+        /// </summary>
+        public AddressModel BillingAddress { get; set; }
 
-    public AddressModel ShippingAddress { get; set; }
+        /// <summary>
+        /// Gets or sets the shipping address.
+        /// </summary>
+        public AddressModel ShippingAddress { get; set; }
 
-    public string PaymentMethod { get; set; }
+        /// <summary>
+        /// Gets or sets the payment method.
+        /// </summary>
+        public string PaymentMethod { get; set; }
 
-    public string ShippingMethod { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets the shipping method.
+        /// </summary>
+        public string ShippingMethod { get; set; }
+    }
 }

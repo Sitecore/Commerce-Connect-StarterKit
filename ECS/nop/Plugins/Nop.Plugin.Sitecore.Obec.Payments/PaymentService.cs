@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="PaymentService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the PaymentService type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the PaymentService class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -25,13 +23,18 @@ namespace Nop.Plugin.Sitecore.Commerce.Payments
     using Nop.Plugin.Sitecore.Commerce.Payments.Models;
     using Nop.Services.Stores;
 
+    /// <summary>
+    /// The payment service.
+    /// </summary>
     public class PaymentService : IPaymentService
     {
         private readonly Services.Payments.IPaymentService paymentService;
 
         private readonly IStoreService storeService;
 
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentService"/> class.
+        /// </summary>
         public PaymentService()
         {
             this.paymentService = EngineContext.Current.Resolve<Services.Payments.IPaymentService>();
@@ -41,7 +44,8 @@ namespace Nop.Plugin.Sitecore.Commerce.Payments
         /// <summary>
         /// Get payment methods
         /// </summary>
-        /// <returns></returns>
+        /// <param name="storeName">The store name.</param>
+        /// <returns>Thhe payment methods.</returns>
         [WebMethod(EnableSession = false)]
         public ResponseModel<IEnumerable<PaymentMethodModel>> GetPaymentMethods(string storeName)
         {

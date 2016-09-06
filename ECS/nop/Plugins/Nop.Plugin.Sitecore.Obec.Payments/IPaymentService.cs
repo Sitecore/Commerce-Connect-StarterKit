@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="IPaymentService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The IPaymentService class.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the IPaymentService interface.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,22 +16,25 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Payments
 {
-  using System.Collections.Generic;
-  using System.ServiceModel;
-  using Models;
-
-  [ServiceContract]
-  public interface IPaymentService
-  {
-    //[OperationContract]
-    //ResponseModel<IEnumerable<PaymentOptionModel>> GetPaymentOptionsByStoreName(string storeName);
+    using System.Collections.Generic;
+    using System.ServiceModel;
+    using Models;
 
     /// <summary>
-    /// Get payment methods
+    /// The payment service interface.
     /// </summary>
-    /// <param name="storeName"></param>
-    /// <returns></returns>
-    [OperationContract]
-    ResponseModel<IEnumerable<PaymentMethodModel>> GetPaymentMethods(string storeName);
-  }
+    [ServiceContract]
+    public interface IPaymentService
+    {
+        //[OperationContract]
+        //ResponseModel<IEnumerable<PaymentOptionModel>> GetPaymentOptionsByStoreName(string storeName);
+
+        /// <summary>
+        /// Get payment methods
+        /// </summary>
+        /// <param name="storeName">The store name.</param>
+        /// <returns>The payment methods.</returns>
+        [OperationContract]
+        ResponseModel<IEnumerable<PaymentMethodModel>> GetPaymentMethods(string storeName);
+    }
 }

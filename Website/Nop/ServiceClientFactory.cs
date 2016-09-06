@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ServiceClientFactory.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The service client helper.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -16,17 +16,18 @@
 // either express or implied. See the License for the specific language governing permissions 
 // and limitations under the License.
 // ---------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.ServiceModel;
-using System.ServiceModel.Channels;
-using System.ServiceModel.Configuration;
-using Sitecore.IO;
 
 namespace Sitecore.Commerce.Connectors.NopCommerce
 {
-    /// <summary>
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.ServiceModel;
+    using System.ServiceModel.Channels;
+    using System.ServiceModel.Configuration;
+    using Sitecore.IO;
+
+  /// <summary>
   /// The service client factory.
   /// </summary>
   public class ServiceClientFactory

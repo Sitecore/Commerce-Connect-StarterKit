@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="AccountService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Provides default implementation of basic customer management operations.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -54,6 +54,11 @@ namespace Sitecore.Commerce.StarterKit.Services
             this.customerServiceProvider = customerServiceProvider;
         }
 
+        /// <summary>
+        /// Checks if a user exists.
+        /// </summary>
+        /// <param name="userName">The user name.</param>
+        /// <returns>True if the user exists, otherwise false.</returns>
         public bool IsUserExist([NotNull] string userName)
         {
           Assert.ArgumentNotNullOrEmpty(userName, "userName");
@@ -103,16 +108,14 @@ namespace Sitecore.Commerce.StarterKit.Services
                     var cartFromAnonymous = this.cartService.GetCart();
                     var wishlistFromAnonymous = this.cartService.GetWishList();
 
-                    if (CommerceAutomationHelper.ContactsEnabled)
+                    if (Tracker.Current.Session != null &&
+                        (Tracker.Current.Contact.Identifiers.IdentificationLevel == Analytics.Model.ContactIdentificationLevel.None ||
+                        !string.Equals(userName, Tracker.Current.Contact.Identifiers.Identifier, StringComparison.OrdinalIgnoreCase)))
                     {
-                        if (Tracker.Current.Contact.Identifiers.IdentificationLevel == Analytics.Model.ContactIdentificationLevel.None ||
-                            !string.Equals(userName, Tracker.Current.Contact.Identifiers.Identifier, StringComparison.OrdinalIgnoreCase))
-                        {
-                            Tracker.Current.Session.Identify(userName);
-                        }
-
-                        Tracker.Current.Contact.Identifiers.AuthenticationLevel = Analytics.Model.AuthenticationLevel.PasswordValidated;
+                        Tracker.Current.Session.Identify(userName);
                     }
+
+                    Tracker.Current.Contact.Identifiers.AuthenticationLevel = Analytics.Model.AuthenticationLevel.PasswordValidated;
 
                     this.cartService.MergeCarts(cartFromAnonymous);
                     this.cartService.MergeWishlist(wishlistFromAnonymous);

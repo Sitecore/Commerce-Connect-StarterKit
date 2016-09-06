@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sitecore.Commerce.StarterKit</RootNamespace>
     <AssemblyName>Sitecore.Commerce.StarterKit</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -46,15 +46,15 @@
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+    <Reference Include="Castle.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
+      <HintPath>$(SolutionDir)\packages\Castle.Core.3.1.0\lib\net35\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Windsor, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+    <Reference Include="Castle.Windsor, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <HintPath>$(SolutionDir)\packages\Castle.Windsor.3.1.0\lib\net35\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="Glass.Sitecore.Mapper">
       <HintPath>$(SolutionDir)\packages\Glass.Sitecore.Mapper.2.0.12.0\lib\net40\Glass.Sitecore.Mapper.dll</HintPath>
@@ -97,6 +97,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Sitecore.Commerce.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Commerce.PaymentService, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Sitecore.Commerce.PaymentService.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch">
       <Private>False</Private>
     </Reference>
@@ -133,6 +137,7 @@
       <HintPath>$(SolutionDir)\packages\Microsoft.Net.Http.2.1.10\lib\net45\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Spatial, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)\packages\System.Spatial.5.5.0\lib\net40\System.Spatial.dll</HintPath>
@@ -143,7 +148,7 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
@@ -188,7 +193,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)\packages\WebActivatorEx.2.0.4\lib\net40\WebActivatorEx.dll</HintPath>
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -211,11 +216,13 @@
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Filters\RequireCartLineAttribute.cs" />
     <Compile Include="Helpers\AddressHelper.cs" />
+    <Compile Include="Helpers\CatalogItemUrlData.cs" />
     <Compile Include="Helpers\WishlistHelper.cs" />
     <Compile Include="Models\AddressModel.cs" />
     <Compile Include="Models\ChangeStepType.cs" />
     <Compile Include="Models\CheckoutModel.cs" />
     <Compile Include="Models\ConfirmModel.cs" />
+    <Compile Include="Models\SamplePaymentServiceModel.cs" />
     <Compile Include="Models\CreditCardModel.cs" />
     <Compile Include="Models\PagedList.cs" />
     <Compile Include="Models\PaymentMethodModel.cs" />
@@ -242,6 +249,9 @@
     <Compile Include="Models\UserInfoModel.cs" />
     <Compile Include="Models\WishlistLineModel.cs" />
     <Compile Include="Models\WishlistModel.cs" />
+    <Compile Include="Pipelines\CreateContactInXDb.cs" />
+    <Compile Include="Pipelines\GetSamplePaymentServiceActionResult.cs" />
+    <Compile Include="Pipelines\GetSamplePaymentServiceUrl.cs" />
     <Compile Include="Pipelines\HttpRequest\ProductItemResolver.cs" />
     <Compile Include="Helpers\ProductHelper.cs" />
     <Compile Include="Helpers\ContentSearchHelper.cs" />
@@ -252,6 +262,7 @@
     <Compile Include="Models\ProductListModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Pipelines\Loader\InitializeRoutes.cs" />
+    <Compile Include="Pipelines\SamplePaymentServicePipelineBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInternalsVisibleInfo.cs" />
     <Content Include="Content\bootstrap-addins.css" />
@@ -277,9 +288,11 @@
     <Content Include="Scripts\product.js" />
     <Compile Include="Services\CartService.cs" />
     <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\CatalogService.cs" />
     <Compile Include="Services\CheckoutService.cs" />
     <Compile Include="Services\ICartService.cs" />
     <Compile Include="Services\IAccountService.cs" />
+    <Compile Include="Services\ICatalogService.cs" />
     <Compile Include="Services\ICheckoutService.cs" />
     <Compile Include="Services\IInventoryService.cs" />
     <Compile Include="Services\InventoryService.cs" />
@@ -290,6 +303,7 @@
     <Compile Include="Services\PricingService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Texts.cs" />
+    <Content Include="Scripts\paymentservice.js" />
     <Content Include="Scripts\StarterKit\wishlist.js" />
     <Content Include="Views\Checkout\CheckoutArrows.cshtml" />
     <Content Include="Views\Checkout\PaymentMethod.cshtml" />
@@ -302,6 +316,7 @@
     <Content Include="Views\Checkout\Success.cshtml" />
     <Content Include="Views\Account\Info.cshtml" />
     <Content Include="Views\ShoppingCart\Wishlist.cshtml" />
+    <Content Include="Views\Checkout\PaymentMethods\SamplePaymentService.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -387,7 +402,6 @@
     <Content Include="Scripts\jquery-2.1.3.min.map" />
     <Content Include="Views\Checkout\ShippingMethod.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <!--<Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />-->
@@ -411,7 +425,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>IF EXIST "$(ProjectDir)\App_Config\Include\Obec\Sitecore.Commerce.StarterKit.config.disabled" RENAME "$(ProjectDir)\App_Config\Include\Obec\Sitecore.Commerce.StarterKit.config.disabled" "Sitecore.Commerce.StarterKit.config"
+    <PostBuildEvent>IF EXIST "$(ProjectDir)\App_Config\Include\StarterKit\Sitecore.Commerce.StarterKit.config.disabled" RENAME "$(ProjectDir)\App_Config\Include\StarterKit\Sitecore.Commerce.StarterKit.config.disabled" "Sitecore.Commerce.StarterKit.config"
 
 XCOPY /y $(ProjectDir)$(OutDir)Sitecore.Mvc.dll $(ProjectDir)Tests\bin\Debug\
 XCOPY /y $(ProjectDir)$(OutDir)Sitecore.Mvc.*.dll $(ProjectDir)Tests\bin\Debug\

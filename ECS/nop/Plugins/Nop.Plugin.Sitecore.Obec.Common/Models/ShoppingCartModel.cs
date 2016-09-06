@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ShoppingCartModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Class for Nop shopping cart data
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,262 +18,367 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Common.Models
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Globalization;
-  using System.Linq;
-  using System.Runtime.Serialization;
-  using Nop.Core.Domain.Common;
-  using Nop.Core.Domain.Customers;
-  using Nop.Core.Domain.Orders;
-  using Nop.Core.Domain.Shipping;
-  using Nop.Core.Infrastructure;
-  using Nop.Services.Common;
-  using Nop.Services.Orders;
-  using Nop.Services.Stores;
-
-  /// <summary>
-  /// Class for Nop shopping cart data
-  /// </summary>
-  [DataContract]
-  public class ShoppingCartModel
-  {
-    /// <summary>
-    /// The order total calculation service.
-    /// </summary>
-    protected readonly IOrderTotalCalculationService orderTotalCalculationService;
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Runtime.Serialization;
+    using Nop.Core.Domain.Common;
+    using Nop.Core.Domain.Customers;
+    using Nop.Core.Domain.Orders;
+    using Nop.Core.Domain.Shipping;
+    using Nop.Core.Infrastructure;
+    using Nop.Services.Common;
+    using Nop.Services.Orders;
+    using Nop.Services.Stores;
 
     /// <summary>
-    /// The store service
+    /// Class for Nop shopping cart data
     /// </summary>
-    private readonly IStoreService storeService;
-
-    /// <summary>
-    /// The generic attribute service
-    /// </summary>
-    private readonly IGenericAttributeService genericAttributeService;
-
-
-    [DataMember]
-    public int StoreId { get; set; }
-
-    [DataMember]
-    public int TotalItems { get; set; }
-
-    [DataMember]
-    public int CustomerId { get; set; }
-
-    [DataMember]
-    public Guid CustomerGuid { get; set; }
-
-    [DataMember]
-    public decimal? Total { get; set; }
-
-    [DataMember]
-    public IList<ShoppingCartItemModel> ShoppingItems { get; set; }
-
-    [DataMember]
-    public bool IsAnonymous { get; set; }
-
-    [DataMember]
-    public string CustomerEmail { get; set; }
-
-    [DataMember]
-    public bool IsDeleted { get; set; }
-
-    [DataMember]
-    public string Status { get; set; }
-
-    [DataMember]
-    public int? ShippingAddressId { get; set; }
-
-    [DataMember]
-    public AddressModel ShippingAddress { get; set; }
-
-    [DataMember]
-    public string ShippingName { get; set; }
-
-    [DataMember]
-    public int? BillingAddressId { get; set; }
-
-    [DataMember]
-    public AddressModel BillingAddress { get; set; }
-
-    [DataMember]
-    public string BillingName { get; set; }
-
-
-    [DataMember]
-    public ICollection<AddressModel> Addresses { get; set; }
-
-    [DataMember]
-    public ICollection<ShipmentModel> Shipments { get; set; }
-
-    [DataMember]
-    public decimal Discount { get; set; }
-
-    [DataMember]
-    public string PaymentMethod { get; set; }
-
-    [DataMember]
-    public string PaymentStatus { get; set; }
-    
-    [DataMember]
-    public string ShippingMethod { get; set; }
-
-    [DataMember]
-    public string ShippingStatus { get; set; }
-
-    [DataMember]
-    public PaymentInfoModel PaymentInfo { get; set; }
-
-    [DataMember]
-    public ShippingMethodModel ShippingInfo { get; set; }
-
-
-    public ShoppingCartModel()
+    [DataContract]
+    public class ShoppingCartModel
     {
-      this.orderTotalCalculationService = EngineContext.Current.Resolve<IOrderTotalCalculationService>();
-      this.storeService = EngineContext.Current.Resolve<IStoreService>();
-      this.genericAttributeService = EngineContext.Current.Resolve<IGenericAttributeService>();
-    }
+        /// <summary>
+        /// The order total calculation service.
+        /// </summary>
+        protected readonly IOrderTotalCalculationService OrderTotalCalculationService;
 
-    public void Map(Customer customer, ShoppingCartType cartType, string storeName = null)
-    {
-      this.CustomerGuid = customer.CustomerGuid;
-      this.CustomerId = customer.Id;
-      this.Total = this.orderTotalCalculationService.GetShoppingCartTotal(customer.ShoppingCartItems.Where(sci => sci.ShoppingCartType == cartType).ToList(), true, false);
-      this.CustomerEmail = customer.IsGuest() ? string.Empty : customer.Email;
-      this.ShoppingItems = this.GetShoppingItemsModels(customer.ShoppingCartItems.Where(sci => sci.ShoppingCartType == cartType).ToList());
-      this.IsAnonymous = customer.IsGuest();
-      this.IsDeleted = customer.Deleted;
-      this.ShippingAddressId = (customer.ShippingAddress != null) ? customer.ShippingAddress.Id : (int?)null;
-      if (customer.ShippingAddress != null)
-      {
-        this.ShippingName = customer.ShippingAddress.FirstName + " " + customer.ShippingAddress.LastName;
-        var model = new AddressModel();
-        model.Map(customer.ShippingAddress);
-        this.ShippingAddress = model;
-      }
-      this.BillingAddressId = (customer.BillingAddress != null) ? customer.BillingAddress.Id : (int?)null;
-      if (customer.BillingAddress != null)
-      {
-        this.BillingName = customer.BillingAddress.FirstName + " " + customer.BillingAddress.LastName;
-        var model = new AddressModel();
-        model.Map(customer.BillingAddress);
-        this.BillingAddress = model;
-      }
+        /// <summary>
+        /// The store service
+        /// </summary>
+        private readonly IStoreService storeService;
 
-      this.Addresses = this.GetAddressModels(customer.Addresses);
+        /// <summary>
+        /// The generic attribute service
+        /// </summary>
+        private readonly IGenericAttributeService genericAttributeService;
 
-      /////////////////////
-      this.StoreId = this.GetStoreId(storeName);
-      this.PaymentInfo = this.GetPaymentInfoModel(customer, this.StoreId);
-      this.ShippingInfo = this.GetShippingMethodModel(customer, this.StoreId);
-    }
-
-
-    protected IList<ShoppingCartItemModel> GetShoppingItemsModels(ICollection<ShoppingCartItem> items)
-    {
-      var cartItems = new List<ShoppingCartItemModel>();
-
-      foreach (ShoppingCartItem item in items)
-      {
-        if (item.Product != null)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShoppingCartModel"/> class.
+        /// </summary>
+        public ShoppingCartModel()
         {
-          cartItems.Add(new ShoppingCartItemModel
-          {
-            Id = item.Id.ToString(),
-            ProductId = item.ProductId,
-            Price = item.Product.Price,
-            LineTotal = item.Product.Price * (uint)item.Quantity,
-            Sku = item.Product.Sku,
-            Quantity = (uint)item.Quantity
-          });
+            this.OrderTotalCalculationService = EngineContext.Current.Resolve<IOrderTotalCalculationService>();
+            this.storeService = EngineContext.Current.Resolve<IStoreService>();
+            this.genericAttributeService = EngineContext.Current.Resolve<IGenericAttributeService>();
         }
-      }
 
-      return cartItems;
-    }
+        /// <summary>
+        /// Gets or sets the store ID.
+        /// </summary>
+        [DataMember]
+        public int StoreId { get; set; }
 
-    protected IList<AddressModel> GetAddressModels(ICollection<Address> addresses)
-    {
-      var models = new List<AddressModel>();
+        /// <summary>
+        /// Gets or sets the total item count.
+        /// </summary>
+        [DataMember]
+        public int TotalItems { get; set; }
 
-      foreach (Address address in addresses)
-      {
-        var model = new AddressModel();
-        model.Map(address);
-        models.Add(model);
-      }
+        /// <summary>
+        /// Gets or sets the customer ID.
+        /// </summary>
+        [DataMember]
+        public int CustomerId { get; set; }
 
-      return models;
-    }
+        /// <summary>
+        /// Gets or sets the customer GUID.
+        /// </summary>
+        [DataMember]
+        public Guid CustomerGuid { get; set; }
 
-    protected int GetStoreId(string storeName)
-    {
-      int storeId;
+        /// <summary>
+        /// Gets or sets the cart total.
+        /// </summary>
+        [DataMember]
+        public decimal? Total { get; set; }
 
-      if (string.IsNullOrEmpty(storeName))
-      {
-        storeId = 0;
-      }
-      else
-      {
-        var store =
-          this.storeService.GetAllStores()
-            .FirstOrDefault(s => s.Name.Equals(storeName, StringComparison.InvariantCultureIgnoreCase));
+        /// <summary>
+        /// Gets or sets the cart items.
+        /// </summary>
+        [DataMember]
+        public IList<ShoppingCartItemModel> ShoppingItems { get; set; }
 
-        storeId = store == null ? 0 : store.Id;
-      }
+        /// <summary>
+        /// Gets or sets a value indicating whether the cart belongs to an anonymous users.
+        /// </summary>
+        [DataMember]
+        public bool IsAnonymous { get; set; }
 
-      return storeId;
-    }
+        /// <summary>
+        /// Gets or sets the customer email address.
+        /// </summary>
+        [DataMember]
+        public string CustomerEmail { get; set; }
 
-    protected PaymentInfoModel GetPaymentInfoModel(Customer customer, int storeId)
-    {
-      string selectedPaymentMethodSystemName = null;
+        /// <summary>
+        /// Gets or sets a value indicating whether the cart is deleted.
+        /// </summary>
+        [DataMember]
+        public bool IsDeleted { get; set; }
 
-      try
-      {
-        selectedPaymentMethodSystemName = customer.GetAttribute<string>(SystemCustomerAttributeNames.SelectedPaymentMethod, this.genericAttributeService, storeId);
-      }
-      catch
-      {
-        // ignored
-      }
+        /// <summary>
+        /// Gets or sets the cart status.
+        /// </summary>
+        [DataMember]
+        public string Status { get; set; }
 
-      var paymentMethod = !String.IsNullOrEmpty(selectedPaymentMethodSystemName) ?
-        new PaymentInfoModel
+        /// <summary>
+        /// Gets or sets the shipping address ID.
+        /// </summary>
+        [DataMember]
+        public int? ShippingAddressId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the shipping address.
+        /// </summary>
+        [DataMember]
+        public AddressModel ShippingAddress { get; set; }
+
+        /// <summary>
+        /// Gets or sets the shipping name.
+        /// </summary>
+        [DataMember]
+        public string ShippingName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the billing address ID.
+        /// </summary>
+        [DataMember]
+        public int? BillingAddressId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the billing address.
+        /// </summary>
+        [DataMember]
+        public AddressModel BillingAddress { get; set; }
+
+        /// <summary>
+        /// Gets or sets the billing name.
+        /// </summary>
+        [DataMember]
+        public string BillingName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the addresses.
+        /// </summary>
+        [DataMember]
+        public ICollection<AddressModel> Addresses { get; set; }
+
+        /// <summary>
+        /// Gets or sets shipments.
+        /// </summary>
+        [DataMember]
+        public ICollection<ShipmentModel> Shipments { get; set; }
+
+        /// <summary>
+        /// Gets or sets the discount amount.
+        /// </summary>
+        [DataMember]
+        public decimal Discount { get; set; }
+
+        /// <summary>
+        /// Gets or sets the payment method.
+        /// </summary>
+        [DataMember]
+        public string PaymentMethod { get; set; }
+
+        /// <summary>
+        /// Gets or sets the payment status.
+        /// </summary>
+        [DataMember]
+        public string PaymentStatus { get; set; }
+
+        /// <summary>
+        /// Gets or sets the shipping method.
+        /// </summary>
+        [DataMember]
+        public string ShippingMethod { get; set; }
+
+        /// <summary>
+        /// Gets or sets the shipping status.
+        /// </summary>
+        [DataMember]
+        public string ShippingStatus { get; set; }
+
+        /// <summary>
+        /// Gets or sets the payment information.
+        /// </summary>
+        [DataMember]
+        public PaymentInfoModel PaymentInfo { get; set; }
+
+        /// <summary>
+        /// Gets or sets the shipping information.
+        /// </summary>
+        [DataMember]
+        public ShippingMethodModel ShippingInfo { get; set; }
+
+        /// <summary>
+        /// Maps NOP data insto this model.
+        /// </summary>
+        /// <param name="customer">The NOP customer.</param>
+        /// <param name="cartType">The cart type.</param>
+        /// <param name="storeName">The store name.</param>
+        public void Map(Customer customer, ShoppingCartType cartType, string storeName = null)
         {
-          SystemName = selectedPaymentMethodSystemName
-        } : null;
+            this.CustomerGuid = customer.CustomerGuid;
+            this.CustomerId = customer.Id;
+            this.Total = this.OrderTotalCalculationService.GetShoppingCartTotal(customer.ShoppingCartItems.Where(sci => sci.ShoppingCartType == cartType).ToList(), true, false);
+            this.CustomerEmail = customer.IsGuest() ? string.Empty : customer.Email;
+            this.ShoppingItems = this.GetShoppingItemsModels(customer.ShoppingCartItems.Where(sci => sci.ShoppingCartType == cartType).ToList());
+            this.IsAnonymous = customer.IsGuest();
+            this.IsDeleted = customer.Deleted;
+            this.ShippingAddressId = (customer.ShippingAddress != null) ? customer.ShippingAddress.Id : (int?)null;
+            if (customer.ShippingAddress != null)
+            {
+                this.ShippingName = customer.ShippingAddress.FirstName + " " + customer.ShippingAddress.LastName;
+                var model = new AddressModel();
+                model.Map(customer.ShippingAddress);
+                this.ShippingAddress = model;
+            }
 
-      return paymentMethod;
-    }
+            this.BillingAddressId = (customer.BillingAddress != null) ? customer.BillingAddress.Id : (int?)null;
+            if (customer.BillingAddress != null)
+            {
+                this.BillingName = customer.BillingAddress.FirstName + " " + customer.BillingAddress.LastName;
+                var model = new AddressModel();
+                model.Map(customer.BillingAddress);
+                this.BillingAddress = model;
+            }
 
-    protected ShippingMethodModel GetShippingMethodModel(Customer customer, int storeId)
-    {
-      ShippingOption selectedShippingOption = null;
+            this.Addresses = this.GetAddressModels(customer.Addresses);
 
-      try
-      {
-        selectedShippingOption = customer.GetAttribute<ShippingOption>(SystemCustomerAttributeNames.SelectedShippingOption, storeId);
-      }
-      catch
-      {
-        // ignored
-      }
+            /////////////////////
+            this.StoreId = this.GetStoreId(storeName);
+            this.PaymentInfo = this.GetPaymentInfoModel(customer, this.StoreId);
+            this.ShippingInfo = this.GetShippingMethodModel(customer, this.StoreId);
+        }
 
-      var shippingOption = selectedShippingOption != null ?
-        new ShippingMethodModel
+        /// <summary>
+        /// Get shopping item models.
+        /// </summary>
+        /// <param name="items">The items.</param>
+        /// <returns>The shopping cart item models.</returns>
+        protected IList<ShoppingCartItemModel> GetShoppingItemsModels(ICollection<ShoppingCartItem> items)
         {
-          SystemName = selectedShippingOption.ShippingRateComputationMethodSystemName,
-          Name = selectedShippingOption.Name,
-          Description = selectedShippingOption.Description
-        } : null;
+            var cartItems = new List<ShoppingCartItemModel>();
 
-      return shippingOption;
+            foreach (ShoppingCartItem item in items)
+            {
+                if (item.Product != null)
+                {
+                    cartItems.Add(new ShoppingCartItemModel
+                    {
+                        Id = item.Id.ToString(),
+                        ProductId = item.ProductId,
+                        Price = item.Product.Price,
+                        LineTotal = item.Product.Price * (uint)item.Quantity,
+                        Sku = item.Product.Sku,
+                        Quantity = (uint)item.Quantity
+                    });
+                }
+            }
+
+            return cartItems;
+        }
+
+        /// <summary>
+        /// get address models.
+        /// </summary>
+        /// <param name="addresses">The addresses.</param>
+        /// <returns>The address models.</returns>
+        protected IList<AddressModel> GetAddressModels(ICollection<Address> addresses)
+        {
+            var models = new List<AddressModel>();
+
+            foreach (Address address in addresses)
+            {
+                var model = new AddressModel();
+                model.Map(address);
+                models.Add(model);
+            }
+
+            return models;
+        }
+
+        /// <summary>
+        /// Gets a store ID.
+        /// </summary>
+        /// <param name="storeName">the store name.</param>
+        /// <returns>The store name.</returns>
+        protected int GetStoreId(string storeName)
+        {
+            int storeId;
+
+            if (string.IsNullOrEmpty(storeName))
+            {
+                storeId = 0;
+            }
+            else
+            {
+                var store =
+                  this.storeService.GetAllStores()
+                    .FirstOrDefault(s => s.Name.Equals(storeName, StringComparison.InvariantCultureIgnoreCase));
+
+                storeId = store == null ? 0 : store.Id;
+            }
+
+            return storeId;
+        }
+
+        /// <summary>
+        /// get payment info model.
+        /// </summary>
+        /// <param name="customer">The customer.</param>
+        /// <param name="storeId">The store ID.</param>
+        /// <returns>The payment info model.</returns>
+        protected PaymentInfoModel GetPaymentInfoModel(Customer customer, int storeId)
+        {
+            string selectedPaymentMethodSystemName = null;
+
+            try
+            {
+                selectedPaymentMethodSystemName = customer.GetAttribute<string>(SystemCustomerAttributeNames.SelectedPaymentMethod, this.genericAttributeService, storeId);
+            }
+            catch
+            {
+                // ignored
+            }
+
+            var paymentMethod = !String.IsNullOrEmpty(selectedPaymentMethodSystemName) ? new PaymentInfoModel { SystemName = selectedPaymentMethodSystemName } : null;
+
+            return paymentMethod;
+        }
+
+        /// <summary>
+        /// get shipping method model.
+        /// </summary>
+        /// <param name="customer">The customer.</param>
+        /// <param name="storeId">The store ID.</param>
+        /// <returns>The shipping method model.</returns>
+        protected ShippingMethodModel GetShippingMethodModel(Customer customer, int storeId)
+        {
+            ShippingOption selectedShippingOption = null;
+
+            try
+            {
+                selectedShippingOption = customer.GetAttribute<ShippingOption>(SystemCustomerAttributeNames.SelectedShippingOption, storeId);
+            }
+            catch
+            {
+                // ignored
+            }
+
+            var shippingOption = selectedShippingOption != null ?
+              new ShippingMethodModel
+              {
+                  SystemName = selectedShippingOption.ShippingRateComputationMethodSystemName,
+                  Name = selectedShippingOption.Name,
+                  Description = selectedShippingOption.Description
+              }
+              : null;
+
+            return shippingOption;
+        }
     }
-  }
 }

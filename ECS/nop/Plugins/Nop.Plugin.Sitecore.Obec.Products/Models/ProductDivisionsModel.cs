@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ProductDivisionsModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the ProductDivisionsModel type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the ProductDivisionsModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,25 +16,27 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Products.Models
 {
-  using System.Collections.Generic;
-
-  public class ProductDivisionsModel
-  {
+    using System.Collections.Generic;
 
     /// <summary>
-    /// Gets or sets the product id.
+    /// Represents a product's divisions.
     /// </summary>
-    /// <value>
-    /// The product id.
-    /// </value>
-    public string ProductId { get; set; }
+    public class ProductDivisionsModel
+    {
+        /// <summary>
+        /// Gets or sets the product id.
+        /// </summary>
+        /// <value>
+        /// The product id.
+        /// </value>
+        public string ProductId { get; set; }
 
-    /// <summary>
-    /// Gets or sets the divisions.
-    /// </summary>
-    /// <value>
-    /// The divisions.
-    /// </value>
-    public IList<DivisionModel> Divisions { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets the divisions.
+        /// </summary>
+        /// <value>
+        /// The divisions.
+        /// </value>
+        public IList<DivisionModel> Divisions { get; set; }
+    }
 }

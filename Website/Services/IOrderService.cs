@@ -1,11 +1,9 @@
-﻿// --------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="IOrderService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   IOrderService interface
-// </summary>
-// --------------------------------------------------------------------
+// <summary>Defines the IOrderService class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,17 +16,26 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Services
 {
-  using System.Collections.Generic;
+    using System.Collections.Generic;
+    using Sitecore.Commerce.Entities.Orders;
 
-  using Sitecore.Commerce.Entities.Orders;
-
-  public interface IOrderService
-  {
     /// <summary>
-    /// Sets The Payment Information to the cart and submits an order.
+    /// The orders service interface.
     /// </summary>
-    string SetPaymentInformationAndSubmit(PropertyCollection paymentInformation, string paymentMethod);
+    public interface IOrderService
+    {
+        /// <summary>
+        /// Sets The Payment Information to the cart and submits an order.
+        /// </summary>
+        /// <param name="paymentInformation">The payment information.</param>
+        /// <param name="paymentMethod">The payment method.</param>
+        /// <returns>The order ID.</returns>
+        string SetPaymentInformationAndSubmit(PropertyCollection paymentInformation, string paymentMethod);
 
-    IReadOnlyCollection<OrderHeader> GetOrders();
-  }
+        /// <summary>
+        /// Gets the visitor orders.
+        /// </summary>
+        /// <returns>The visitor orders.</returns>
+        IReadOnlyCollection<OrderHeader> GetOrders();
+    }
 }

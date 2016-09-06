@@ -1,11 +1,9 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="NopPaymentOptionType.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The NopPaymentOptionType class.
-// </summary>
-// ----------------------------------------------------------------------------------------------
+// <summary>Defines the NopPaymentOptionType class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,45 +16,44 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.Connectors.NopCommerce.Entities.Payments
 {
-  using System;
-
-  /// <summary>
-  /// Payment option type enum
-  /// </summary>
-  [Serializable]
-  public class NopPaymentOptionType : Commerce.Entities.Shipping.ShippingOptionType
-  {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="NopPaymentOptionType"/> class.
-    /// </summary>
-    private NopPaymentOptionType()
-      : base()
-    {
-    }
+    using System;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="NopPaymentOptionType"/> class.
+    /// Payment option type enum
     /// </summary>
-    /// <param name="value">The value.</param>
-    /// <param name="name">The name.</param>
-    private NopPaymentOptionType(int value, string name)
-      : base(value, name)
+    [Serializable]
+    public class NopPaymentOptionType : Commerce.Entities.Shipping.ShippingOptionType
     {
-    }
+        /// <summary>
+        /// Prevents a default instance of the <see cref="NopPaymentOptionType" /> class from being created.
+        /// </summary>
+        private NopPaymentOptionType()
+            : base()
+        {
+        }
 
-    /// <summary>
-    /// Gets the online payment.
-    /// </summary>
-    /// <value>
-    /// The online payment.
-    /// </value>
-    public static Commerce.Entities.Payments.PaymentOptionType OnlinePayment
-    {
-      get
-      {
-        return new Commerce.Entities.Payments.PaymentOptionType(4, "OnlinePayment");
-      }
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NopPaymentOptionType"/> class.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="name">The name.</param>
+        private NopPaymentOptionType(int value, string name)
+            : base(value, name)
+        {
+        }
 
-  }
+        /// <summary>
+        /// Gets the online payment.
+        /// </summary>
+        /// <value>
+        /// The online payment.
+        /// </value>
+        public static Commerce.Entities.Payments.PaymentOptionType OnlinePayment
+        {
+            get
+            {
+                return new Commerce.Entities.Payments.PaymentOptionType(4, "OnlinePayment");
+            }
+        }
+    }
 }

@@ -25,7 +25,10 @@
         @* productimages *@
         <div id="C08-ProductImages" class="product-image-container">
             <div class="prod-img">
-                <img src="@Model.Images[0]" class="img-responsive" alt="a" id="prod-large-view"/>
+                @if (Model.Images.Count > 0)
+                {
+                    <img src="@Model.Images[0]" class="img-responsive" alt="a" id="prod-large-view"/>
+                }
             </div>
             <div class="thumbnails">
                 <ul>
@@ -164,7 +167,7 @@
                             @if (Model.Status != null && Equals(Model.Status, StockStatus.OutOfStock))
                             {
                                 <button class="btn disabled">BUY</button>
-                                if (Sitecore.Context.User.IsAuthenticated)
+                                if (Sitecore.Context.User.IsAuthenticated && Sitecore.Commerce.Automation.MarketingAutomation.CommerceAutomationHelper.EngagementPlansEnabled)
                                 {
                                     <button class="btn btn-success" onclick="product.signUpForBackInStockNotification('@Model.ExternalID')">Sign Up For Back In Stock Notification</button>
                                 }

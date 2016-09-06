@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="PricesService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The implementation of the price service.
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,87 +18,88 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Prices
 {
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.ServiceModel.Activation;
-  using System.Web.Services;
-  using Nop.Core.Infrastructure;
-  using Nop.Plugin.Sitecore.Commerce.Prices.Models;
-  using Nop.Services.Catalog;
-
-  /// <summary>
-  ///   The implementation of the price service..
-  /// </summary>
-  [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
-  public class PricesService : IPricesService
-  {
-    /// <summary>
-    ///   The product service.
-    /// </summary>
-    private readonly IProductService productService;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.ServiceModel.Activation;
+    using System.Web.Services;
+    using Nop.Core.Infrastructure;
+    using Nop.Plugin.Sitecore.Commerce.Prices.Models;
+    using Nop.Services.Catalog;
 
     /// <summary>
-    ///   Initializes a new instance of the <see cref="PricesService" /> class.
+    ///   The implementation of the price service..
     /// </summary>
-    public PricesService()
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
+    public class PricesService : IPricesService
     {
-      this.productService = EngineContext.Current.Resolve<IProductService>();
-    }
+        /// <summary>
+        ///   The product service.
+        /// </summary>
+        private readonly IProductService productService;
 
-    /// <summary>
-    ///   Gets the product prices by list of external product ids.
-    /// </summary>
-    /// <param name="externalproductIds">The external product ids.</param>
-    /// <param name="priceType">Type of the price.</param>
-    /// <returns>
-    ///   List of prices.
-    /// </returns>
-    [WebMethod(EnableSession = false)]
-    public virtual IList<ProductPriceModel> GetProductPrices(IList<string> externalproductIds, string priceType)
-    {
-      return externalproductIds.Select(externalproductId => new ProductPriceModel
-      {
-        Price = this.GetProductPrice(externalproductId, priceType),
-        ProductId = externalproductId
-      }).ToList();
-    }
-
-    /// <summary>
-    ///   Gets the product price by external product unique identifier.
-    /// </summary>
-    /// <param name="externalProductId">The external product unique identifier.</param>
-    /// <param name="priceType">Type of the price.</param>
-    /// <returns>
-    ///   Price value.
-    /// </returns>
-    [WebMethod(EnableSession = false)]
-    public virtual decimal? GetProductPrice(string externalProductId, string priceType)
-    {
-      int productId;
-
-      if (!int.TryParse(externalProductId, out productId))
-      {
-        return null;
-      }
-      var product = this.productService.GetProductById(productId);
-
-      if (product == null)
-      {
-        return null;
-      }
-
-      switch (priceType)
-      {
-        case "List":
+        /// <summary>
+        ///   Initializes a new instance of the <see cref="PricesService" /> class.
+        /// </summary>
+        public PricesService()
         {
-          return product.Price;
+            this.productService = EngineContext.Current.Resolve<IProductService>();
         }
 
-        default:
+        /// <summary>
+        ///   Gets the product prices by list of external product ids.
+        /// </summary>
+        /// <param name="externalproductIds">The external product ids.</param>
+        /// <param name="priceType">Type of the price.</param>
+        /// <returns>
+        ///   List of prices.
+        /// </returns>
+        [WebMethod(EnableSession = false)]
+        public virtual IList<ProductPriceModel> GetProductPrices(IList<string> externalproductIds, string priceType)
         {
-          return null;
+            return externalproductIds.Select(externalproductId => new ProductPriceModel
+            {
+                Price = this.GetProductPrice(externalproductId, priceType),
+                ProductId = externalproductId
+            }).ToList();
         }
-      }
+
+        /// <summary>
+        ///   Gets the product price by external product unique identifier.
+        /// </summary>
+        /// <param name="externalProductId">The external product unique identifier.</param>
+        /// <param name="priceType">Type of the price.</param>
+        /// <returns>
+        ///   Price value.
+        /// </returns>
+        [WebMethod(EnableSession = false)]
+        public virtual decimal? GetProductPrice(string externalProductId, string priceType)
+        {
+            int productId;
+
+            if (!int.TryParse(externalProductId, out productId))
+            {
+                return null;
+            }
+
+            var product = this.productService.GetProductById(productId);
+
+            if (product == null)
+            {
+                return null;
+            }
+
+            switch (priceType)
+            {
+                case "List":
+                    {
+                        return product.Price;
+                    }
+
+                default:
+                    {
+                        return null;
+                    }
+            }
+        }
     }
-  }
 }

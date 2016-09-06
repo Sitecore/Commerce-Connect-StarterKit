@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Sitecore.Obec.Common", "Nop.Plugin.Sitecore.Obec.Common\Nop.Plugin.Sitecore.Obec.Common.csproj", "{C5D77035-D413-4E3A-BB8F-9AAAB1152E15}"
 EndProject
@@ -30,6 +30,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Sitecore.Obec.Products.Tests", "Nop.Plugin.Sitecore.Obec.Products\Nop.Plugin.Sitecore.Obec.Products.Tests\Nop.Plugin.Sitecore.Obec.Products.Tests.csproj", "{FEB4D8A3-7243-42F8-8FA3-EE50A16A732B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Sitecore.Obec.Tests", "Nop.Plugin.Sitecore.Obec.Tests\Nop.Plugin.Sitecore.Obec.Tests.csproj", "{432C7C42-B0D3-4481-B63A-EAF4497190BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5AF0BB91-60DA-4657-8177-F48AA0074776}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\.gitignore = ..\..\..\.gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

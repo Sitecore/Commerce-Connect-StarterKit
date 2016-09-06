@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="GetStockInformation.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The pipeline processor that gets stock information for products in NOP commerce.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -37,7 +37,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetStockI
     public class GetStockInformation : NopProcessor<IInventoryServiceChannel>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PopulateStockInformation"/> class.
+        /// Initializes a new instance of the <see cref="GetStockInformation"/> class.
         /// </summary>
         /// <param name="entityFactory">The entity factory.</param>
         public GetStockInformation([NotNull] IEntityFactory entityFactory)
@@ -68,7 +68,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetStockI
                     visitorId = Guid.Empty;
                 }
 
-                stockInformationModels = client.GetStocksInformation(request.ShopName, request.Products.Select(p => p.ProductId).ToArray(), visitorId);
+                stockInformationModels = client.GetStocksInformation(request.Shop.Name, request.Products.Select(p => p.ProductId).ToArray(), visitorId);
             }
 
             var stockInformationList = new List<StockInformation>();

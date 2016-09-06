@@ -1,9 +1,9 @@
-﻿//-----------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="CancelOrder.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>The CancelOrder class.</summary>
-//-----------------------------------------------------------------------
+// <summary>Defines the CancelOrder class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -42,7 +42,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Orders.CancelOrder
       // Creates instance of WCF service client.
       using (var client = this.GetClient())
       {
-        var orderModel = client.CancelOrder(int.Parse(request.OrderID), request.ShopName);
+        var orderModel = client.CancelOrder(int.Parse(request.OrderID), request.Shop.Name);
         if (orderModel == null)
         {
           return;

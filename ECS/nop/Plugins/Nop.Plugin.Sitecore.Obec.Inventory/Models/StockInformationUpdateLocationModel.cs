@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="StockInformationUpdateLocationModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the StockInformationUpdateLocationModel type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the StockInformationUpdateLocationModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,32 +16,35 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Inventory.Models
 {
-  using System;
-
-  public class StockInformationUpdateLocationModel
-  {
-    /// <summary>
-    /// Gets or sets the location.
-    /// </summary>
-    /// <value>
-    /// The location.
-    /// </value>
-    public string Location { get; set; }
+    using System;
 
     /// <summary>
-    /// Gets or sets the availability date.
+    /// Represents information about a stock update.
     /// </summary>
-    /// <value>
-    /// The availability date.
-    /// </value>
-    public DateTime? AvailabilityDate { get; set; }
+    public class StockInformationUpdateLocationModel
+    {
+        /// <summary>
+        /// Gets or sets the location.
+        /// </summary>
+        /// <value>
+        /// The location.
+        /// </value>
+        public string Location { get; set; }
 
-    /// <summary>
-    /// Gets or sets the count.
-    /// </summary>
-    /// <value>
-    /// The count.
-    /// </value>
-    public double? Count { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets the availability date.
+        /// </summary>
+        /// <value>
+        /// The availability date.
+        /// </value>
+        public DateTime? AvailabilityDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the count.
+        /// </summary>
+        /// <value>
+        /// The count.
+        /// </value>
+        public double? Count { get; set; }
+    }
 }

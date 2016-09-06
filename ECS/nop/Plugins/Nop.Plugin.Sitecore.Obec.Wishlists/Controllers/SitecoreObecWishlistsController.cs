@@ -1,11 +1,11 @@
 ﻿// -----------------------------------------------------------------
 // <copyright file="SitecoreObecWishlistsController.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The SitecoreObecWishlistsController.
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -21,13 +21,16 @@ namespace Nop.Plugin.Sitecore.Commerce.Wishlists.Controllers
     using System.Web.Mvc;
     using Nop.Web.Framework.Controllers;
 
+    /// <summary>
+    /// The wish lists controller.
+    /// </summary>
     [AdminAuthorize]
     public class SitecoreObecWishlistsController : Controller
     {
         /// <summary>
         /// Configures this instance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The action result.</returns>
         public ActionResult Configure()
         {
           return this.View("Nop.Plugin.Sitecore.Commerce.Wishlists.Views.ObecWishlists.Configure");

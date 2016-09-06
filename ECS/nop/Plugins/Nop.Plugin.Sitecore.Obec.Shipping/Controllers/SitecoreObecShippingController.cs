@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="SitecoreObecShippingController.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The implementation of SitecoreObecShippingController.
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,20 +18,23 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Shipping.Controllers
 {
-  using System.Web.Mvc;
+    using System.Web.Mvc;
 
-  using Nop.Web.Framework.Controllers;
+    using Nop.Web.Framework.Controllers;
 
-  [AdminAuthorize]
-  public class SitecoreObecShippingController : Controller
-  {
     /// <summary>
-    /// Configures this instance.
+    /// The shipping controller.
     /// </summary>
-    /// <returns></returns>
-    public System.Web.Mvc.ActionResult Configure()
+    [AdminAuthorize]
+    public class SitecoreObecShippingController : Controller
     {
-      return this.View("Nop.Plugin.Sitecore.Commerce.Shipping.Views.ObecShipping.Configure");
+        /// <summary>
+        /// Configures this instance.
+        /// </summary>
+        /// <returns>The action result.</returns>
+        public System.Web.Mvc.ActionResult Configure()
+        {
+            return this.View("Nop.Plugin.Sitecore.Commerce.Shipping.Views.ObecShipping.Configure");
+        }
     }
-  }
 }

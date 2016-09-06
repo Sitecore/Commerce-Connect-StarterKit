@@ -1,9 +1,9 @@
-﻿//-----------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="WishlistModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>WishlistModel class.</summary>
-//-----------------------------------------------------------------------
+// <summary>Defines the WishlistModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -21,9 +21,15 @@ using System.Web;
 
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  public class WishlistModel
-  {
-    [CanBeNull]
-    public IEnumerable<WishlistLineModel> Lines { get; set; }
-  }
+    /// <summary>
+    /// Represents a wish list.
+    /// </summary>
+    public class WishlistModel
+    {
+        /// <summary>
+        /// Gets or sets the wish list lines.
+        /// </summary>
+        [CanBeNull]
+        public IEnumerable<WishlistLineModel> Lines { get; set; }
+    }
 }

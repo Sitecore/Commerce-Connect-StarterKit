@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="LoadCart.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The load cart.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -58,7 +58,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.LoadCart
                 }
 
                 // Check that NopCommerce instance contains cart with specified id and if not stops loading operation.
-                var cartModel = client.GetCart(nopCartId, request.ShopName);
+                var cartModel = client.GetCart(nopCartId, request.Shop.Name);
                 if (cartModel != null)
                 {
                     // Creates OBEC cart with specified id.

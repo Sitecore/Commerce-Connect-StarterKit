@@ -1,11 +1,9 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="WishlistExtensions.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Helpful Wish list extensions.
-// </summary>
-// ----------------------------------------------------------------------------------------------
+// <summary>Defines the WishlistExtensions class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -53,6 +51,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce
     /// <summary>
     /// Maps wishlist from model.
     /// </summary>
+    /// <param name="wishlist">The wish list.</param>
     /// <param name="wishlistModel">The wishlist model.</param>
     public static void MapWishlistFromModel([NotNull] this WishList wishlist, [NotNull] ShoppingCartModel wishlistModel)
     {
@@ -70,7 +69,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce
           Properties = line.Properties,
           Quantity = line.Quantity,
           Total = line.Total
-        } );
+        });
       }
 
       wishlist.Lines = wishlistlines.AsReadOnly();

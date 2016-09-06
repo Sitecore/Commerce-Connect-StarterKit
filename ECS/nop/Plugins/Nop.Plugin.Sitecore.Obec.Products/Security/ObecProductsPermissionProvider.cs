@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ObecProductsPermissionProvider.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the ObecProductsPermissionProvider type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the ObecProductsPermissionProvider class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -23,6 +21,9 @@ namespace Nop.Plugin.Sitecore.Commerce.Products.Security
     using Nop.Core.Domain.Security;
     using Nop.Services.Security;
 
+    /// <summary>
+    /// The products permission provider.
+    /// </summary>
     public class ObecProductsPermissionProvider : IPermissionProvider
     {
         public static readonly PermissionRecord AccessWebService = new PermissionRecord { Name = "Plugins. Access Synchronize Service", SystemName = "AccessSitecoreObecProductsService", Category = "Plugin" };
@@ -30,7 +31,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Products.Security
         /// <summary>
         /// Gets the permissions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The permission records.</returns>
         public virtual IEnumerable<PermissionRecord> GetPermissions()
         {
             return new[] 
@@ -42,7 +43,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Products.Security
         /// <summary>
         /// Gets the default permissions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The default permission records.</returns>
         public virtual IEnumerable<DefaultPermissionRecord> GetDefaultPermissions()
         {
             return Enumerable.Empty<DefaultPermissionRecord>();
@@ -60,6 +61,5 @@ namespace Nop.Plugin.Sitecore.Commerce.Products.Security
             //    },
             //};
         }
-
     }
 }

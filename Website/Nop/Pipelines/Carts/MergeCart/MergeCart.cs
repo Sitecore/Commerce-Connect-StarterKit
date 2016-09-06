@@ -1,11 +1,9 @@
-﻿// --------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="MergeCart.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   MergeCart class
-// </summary>
-// --------------------------------------------------------------------
+// <summary>Defines the MergeCart class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,36 +16,42 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.MergeCart
 {
-  using System;
+    using System;
+    using Sitecore.Commerce.Connectors.NopCommerce.NopCartsService;
+    using Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Common;
+    using Sitecore.Commerce.Pipelines;
+    using Sitecore.Commerce.Services.Carts;
+    using Sitecore.Diagnostics;
 
-  using Sitecore.Commerce.Connectors.NopCommerce.NopCartsService;
-  using Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Common;
-  using Sitecore.Commerce.Pipelines;
-  using Sitecore.Commerce.Services.Carts;
-  using Sitecore.Diagnostics;
-
-  public class MergeCart : NopProcessor<ICartsServiceChannel>
-  {
-    public override void Process([NotNull] ServicePipelineArgs args)
+    /// <summary>
+    /// The merge cart processor.
+    /// </summary>
+    public class MergeCart : NopProcessor<ICartsServiceChannel>
     {
-      Assert.ArgumentNotNull(args, "args");
-
-      var request = (MergeCartRequest)args.Request;
-
-      if (request.FromCart != null && request.ToCart != null)
-      {
-        Guid fromCartId;
-        Guid toCartId;
-
-        if (Guid.TryParse(request.FromCart.ExternalId, out fromCartId)
-            && Guid.TryParse(request.ToCart.ExternalId, out toCartId))
+        /// <summary>
+        /// Processes the arguments.
+        /// </summary>
+        /// <param name="args">The pipeline arguments.</param>
+        public override void Process([NotNull] ServicePipelineArgs args)
         {
-          using (var client = this.GetClient())
-          {
-            client.MigrateShoppingCart(fromCartId, toCartId, false);
-          }
+            Assert.ArgumentNotNull(args, "args");
+
+            var request = (MergeCartRequest)args.Request;
+
+            if (request.FromCart != null && request.ToCart != null)
+            {
+                Guid fromCartId;
+                Guid toCartId;
+
+                if (Guid.TryParse(request.FromCart.ExternalId, out fromCartId)
+                    && Guid.TryParse(request.ToCart.ExternalId, out toCartId))
+                {
+                    using (var client = this.GetClient())
+                    {
+                        client.MigrateShoppingCart(fromCartId, toCartId, false);
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="GetBackOrderableInformation.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Defines the pipeline processor that gets back-orderable stock information.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -65,7 +65,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetOrdera
                     visitorId = Guid.Empty;
                 }
 
-                orderableInformationModels = client.GetBackOrderableInformationList(request.ShopName, request.Products.Select(p => p.ProductId).ToArray(), visitorId);
+                orderableInformationModels = client.GetBackOrderableInformationList(request.Shop.Name, request.Products.Select(p => p.ProductId).ToArray(), visitorId);
             }
             
             var orderableInfos = new List<OrderableInformation>();

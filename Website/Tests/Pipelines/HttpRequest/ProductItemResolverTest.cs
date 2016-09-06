@@ -1,11 +1,11 @@
-﻿// ---------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ProductItemResolverTest.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The product item resolver test.
 // </summary>
-// ---------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -115,7 +115,6 @@ namespace Sitecore.Commerce.StarterKit.Tests.Pipelines.HttpRequest
         {
           var cola = tree.Database.GetItem("/sitecore/content/home/products/beverages/cola");
           this.productService.ReadProduct("cola").Returns(cola);
-          this.productHelper.GetProductIdFromIncomingRequest().Returns("cola");
 
           // Act
           this.processor.Process(new PipelineArgs());
@@ -133,7 +132,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Pipelines.HttpRequest
     public void ShouldNotResolveContextItemIfProductRouteDoesNotMatchRequest()
     {
       // Arrange
-      this.productHelper.GetProductIdFromIncomingRequest().Returns((string)null);
+      this.productHelper.GetCatalogItemIdFromIncomingRequest().Returns((CatalogItemUrlData)null);
 
       // Act
       this.processor.Process(new PipelineArgs());

@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="SitecoreObecOrdersController.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the SitecoreObecOrdersController type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the SitecoreObecOrdersController class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -21,9 +19,16 @@ namespace Nop.Plugin.Sitecore.Commerce.Orders.Controllers
     using System.Web.Mvc;
     using Web.Framework.Controllers;
 
+    /// <summary>
+    /// The orders controller.
+    /// </summary>
     [AdminAuthorize]
     public class SitecoreObecOrdersController : Controller
     {
+        /// <summary>
+        /// Configures the controller.
+        /// </summary>
+        /// <returns>The action result.</returns>
         public ActionResult Configure()
         {
             return View("Nop.Plugin.Sitecore.Commerce.Orders.Views.ObecOrders.Configure");

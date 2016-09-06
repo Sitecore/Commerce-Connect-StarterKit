@@ -1,11 +1,9 @@
-﻿// ----------------------------------------------------------------------------------------------
-// <copyright file="FindCartInEaState.cs" company="Sitecore Corporation">
-//   Copyright (c) Sitecore Corporation 1999-2014
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FindCart.cs" company="Sitecore Corporation">
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Processor performs search for cart in EA state.
-// </summary>
-// ----------------------------------------------------------------------------------------------
+// <summary>Defines the FindCart class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -16,6 +14,9 @@
 // either express or implied. See the License for the specific language governing permissions 
 // and limitations under the License.
 // ---------------------------------------------------------------------
+
+// DOCDONE
+
 namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.GetCarts
 {
     using System.Linq;
@@ -62,7 +63,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.GetCarts
         private readonly ICartRepository repository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FindCartInEaState"/> class.
+        /// Initializes a new instance of the <see cref="FindCart"/> class.
         /// </summary>
         /// <param name="repository">The repository.</param>
         public FindCart([NotNull] ICartRepository repository)

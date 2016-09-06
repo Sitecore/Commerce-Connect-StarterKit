@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="CartExtensions.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The cart extensions.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -16,17 +16,18 @@
 // either express or implied. See the License for the specific language governing permissions 
 // and limitations under the License.
 // ---------------------------------------------------------------------
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Globalization;
-using Sitecore.Commerce.Connectors.NopCommerce.NopCartsService;
-using Sitecore.Commerce.Entities.Carts;
-using Sitecore.Commerce.Entities.Prices;
-using Sitecore.Diagnostics;
 
 namespace Sitecore.Commerce.Connectors.NopCommerce
 {
-    /// <summary>
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Globalization;
+    using Sitecore.Commerce.Connectors.NopCommerce.NopCartsService;
+    using Sitecore.Commerce.Entities.Carts;
+    using Sitecore.Commerce.Entities.Prices;
+    using Sitecore.Diagnostics;
+
+  /// <summary>
   /// The cart extensions.
   /// </summary>
   public static class CartExtensions

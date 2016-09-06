@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ResponseModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the ResponseModel type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the ResponseModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,17 +16,21 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Payments.Models
 {
-  using System.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-  public class ResponseModel<T> : ResponseModel
-  {
-    public T Result { get; set; }
-  }
+    /// <summary>
+    /// The response model.
+    /// </summary>
+    public class ResponseModel
+    {
+        /// <summary>
+        /// Gets or sets the response message.
+        /// </summary>
+        public string Message { get; set; }
 
-  public class ResponseModel
-  {
-    public string Message { get; set; }
-
-    public bool Success { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets a value indicating whether the operation succeeded.
+        /// </summary>
+        public bool Success { get; set; }
+    }
 }

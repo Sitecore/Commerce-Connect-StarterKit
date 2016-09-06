@@ -1,9 +1,9 @@
-﻿//-----------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ChangeStepType.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>The ChangeStepType enum.</summary>
-//-----------------------------------------------------------------------
+// <summary>Defines the ChangeStepType enum.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -16,10 +16,24 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  public enum ChangeStepType
-  {
-    Next = 0,
-    Previous = 1,
-    Confirm = 2
-  }
+    /// <summary>
+    /// Represents a change step.
+    /// </summary>
+    public enum ChangeStepType
+    {
+        /// <summary>
+        /// Move to the next page.
+        /// </summary>
+        Next = 0,
+
+        /// <summary>
+        /// Move to the previous page.
+        /// </summary>
+        Previous = 1,
+
+        /// <summary>
+        /// Confirm the page.
+        /// </summary>
+        Confirm = 2
+    }
 }

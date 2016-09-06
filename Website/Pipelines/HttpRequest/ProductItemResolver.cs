@@ -1,11 +1,11 @@
-﻿// ---------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ProductItemResolver.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The product item resolver.
 // </summary>
-// ---------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,79 +18,92 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Pipelines.HttpRequest
 {
-  using Castle.Windsor;
-  using Sitecore;
-  using Sitecore.Commerce.StarterKit.App_Start;
-  using Sitecore.Commerce.StarterKit.Helpers;
-  using Sitecore.Commerce.StarterKit.Services;
-  using Sitecore.Pipelines;
-
-  /// <summary>
-  /// The product item resolver.
-  /// </summary>
-  public class ProductItemResolver
-  {
-    /// <summary>
-    /// The product service.
-    /// </summary>
-    private IProductService productService;
+    using Castle.Windsor;
+    using Sitecore;
+    using Sitecore.Commerce.StarterKit.App_Start;
+    using Sitecore.Commerce.StarterKit.Helpers;
+    using Sitecore.Commerce.StarterKit.Services;
+    using Sitecore.Data.Items;
+    using Sitecore.Pipelines;
 
     /// <summary>
-    /// The product link manager.
+    /// The product item resolver.
     /// </summary>
-    private ProductHelper productHelper;
-
-    /// <summary>
-    /// The windsor container.
-    /// </summary>
-    private IWindsorContainer windsorContainer;
-
-    /// <summary>
-    /// Gets or sets the windsor container.
-    /// </summary>
-    /// <value>The windsor container.</value>
-    public IWindsorContainer WindsorContainer
+    public class ProductItemResolver
     {
-      get { return this.windsorContainer ?? (this.windsorContainer = WindsorConfig.Container); }
-      set { this.windsorContainer = value; }
+        /// <summary>
+        /// The product service.
+        /// </summary>
+        private IProductService productService;
+
+        /// <summary>
+        /// The product link manager.
+        /// </summary>
+        private ProductHelper productHelper;
+
+        /// <summary>
+        /// The windsor container.
+        /// </summary>
+        private IWindsorContainer windsorContainer;
+
+        /// <summary>
+        /// Gets or sets the windsor container.
+        /// </summary>
+        /// <value>The windsor container.</value>
+        public IWindsorContainer WindsorContainer
+        {
+            get { return this.windsorContainer ?? (this.windsorContainer = WindsorConfig.Container); }
+            set { this.windsorContainer = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the product service.
+        /// </summary>
+        /// <value>The product service.</value>
+        public IProductService ProductService
+        {
+            get { return this.productService ?? (this.productService = this.WindsorContainer.Resolve<IProductService>()); }
+            set { this.productService = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the product helper.
+        /// </summary>
+        /// <value>The product helper.</value>
+        public ProductHelper ProductHelper
+        {
+            get { return this.productHelper ?? (this.productHelper = this.WindsorContainer.Resolve<ProductHelper>()); }
+            set { this.productHelper = value; }
+        }
+
+        /// <summary>
+        /// Runs the processor.
+        /// </summary>
+        /// <param name="args">The args.</param>
+        public virtual void Process(PipelineArgs args)
+        {
+            var catalogItemUrlData = this.ProductHelper.GetCatalogItemIdFromIncomingRequest();
+
+            if (catalogItemUrlData == null)
+            {
+                return;
+            }
+
+            Item catalogItem = null;
+
+            if (catalogItemUrlData.ItemType == CatalogItemType.Product)
+            {
+                catalogItem = this.ProductService.ReadProduct(catalogItemUrlData.CatalogItemId);
+            }
+            else if (catalogItemUrlData.ItemType == CatalogItemType.Category)
+            {
+                catalogItem = this.ProductService.GetCategory(catalogItemUrlData.CatalogItemId);
+            }
+
+            if (catalogItem != null)
+            {
+                Context.Item = catalogItem;
+            }
+        }
     }
-
-    /// <summary>
-    /// Gets or sets the product service.
-    /// </summary>
-    /// <value>The product service.</value>
-    public IProductService ProductService
-    {
-      get { return this.productService ?? (this.productService = this.WindsorContainer.Resolve<IProductService>()); }
-      set { this.productService = value; }
-    }
-
-    /// <summary>
-    /// Gets or sets the product helper.
-    /// </summary>
-    /// <value>The product helper.</value>
-    public ProductHelper ProductHelper
-    {
-      get { return this.productHelper ?? (this.productHelper = this.WindsorContainer.Resolve<ProductHelper>()); }
-      set { this.productHelper = value; }
-    }
-
-    /// <summary>
-    /// Runs the processor.
-    /// </summary>
-    /// <param name="args">The args.</param>
-    public virtual void Process(PipelineArgs args)
-    {
-      var productId = this.ProductHelper.GetProductIdFromIncomingRequest();
-
-      if (string.IsNullOrEmpty(productId))
-      {
-        return;
-      }
-
-      var product = this.ProductService.ReadProduct(productId);
-
-      Context.Item = product;
-    }
-  }
 }

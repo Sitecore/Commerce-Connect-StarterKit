@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="SitecoreHelperExtensions.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Defines the SitecoreHelperExtensions type.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -42,7 +42,10 @@ namespace Sitecore.Commerce.StarterKit.Helpers
                 return new HtmlString("<!-- Visitor identification is disabled because debugging is active. -->");
             }
 
-            if (!Tracker.IsActive || Tracker.Current.Contact.System.Classification != 925) return MvcHtmlString.Empty;
+            if (!Tracker.IsActive || Tracker.Current.Contact.System.Classification != 925)
+            {
+                return MvcHtmlString.Empty;
+            }
 
             return new HtmlString("<link href=\"/layouts/System/VisitorIdentification.aspx\" rel=\"stylesheet\" type=\"text/css\" />");
         }

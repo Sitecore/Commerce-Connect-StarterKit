@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
-// <copyright file="SpecificationOptionModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="LookupValueModel.cs" company="Sitecore Corporation">
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Defines the specification option model used by remote services.
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at

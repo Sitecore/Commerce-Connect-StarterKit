@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="CustomerNotExistException.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The CustomerNotExistException class.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the CustomerNotExistException class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,16 +16,26 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Common.Exceptions
 {
-  using System;
+    using System;
 
-  public class CustomerNotExistException : Exception
-  {
-    public Guid CustomerId { get; private set; }
-
-    public CustomerNotExistException(Guid customerId)
-      : base(string.Format("The customer with ID {0} is not exist.", customerId))
+    /// <summary>
+    /// Customer does not exist exception.
+    /// </summary>
+    public class CustomerNotExistException : Exception
     {
-      this.CustomerId = customerId;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerNotExistException"/> class.
+        /// </summary>
+        /// <param name="customerId">The customer ID.</param>
+        public CustomerNotExistException(Guid customerId)
+            : base(string.Format("The customer with ID {0} is not exist.", customerId))
+        {
+            this.CustomerId = customerId;
+        }
+
+        /// <summary>
+        /// Gets the customer ID.
+        /// </summary>
+        public Guid CustomerId { get; private set; }
     }
-  }
 }

@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="InventoryServiceTest.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The inventory service test.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -73,7 +73,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Services
             var products = new List<string> { "1001", "1002" };
 
             this._serviceProvider
-                .GetStockInformation(Arg.Is<GetStockInformationRequest>(r => r.ShopName == "shopname" && r.Products.First().ProductId == "1001" && r.Products.Last().ProductId == "1002" && r.Products.Count() == 2 && r.DetailsLevel == StockDetailsLevel.All))
+                .GetStockInformation(Arg.Is<GetStockInformationRequest>(r => r.Shop.Name == "shopname" && r.Products.First().ProductId == "1001" && r.Products.Last().ProductId == "1002" && r.Products.Count() == 2 && r.DetailsLevel == StockDetailsLevel.All))
                 .Returns(new GetStockInformationResult { StockInformation = stockInfos });
 
             // Act & Assert
@@ -90,7 +90,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Services
             var stockInfos = new List<StockInformation> { new StockInformation { Product = new InventoryProduct { ProductId = "1001" } } };
 
             this._serviceProvider
-                .GetStockInformation(Arg.Is<GetStockInformationRequest>(r => r.ShopName == "shopname" && r.Products.Single().ProductId == "1001"  && r.Products.Count() == 1 && r.DetailsLevel == StockDetailsLevel.All))
+                .GetStockInformation(Arg.Is<GetStockInformationRequest>(r => r.Shop.Name == "shopname" && r.Products.Single().ProductId == "1001"  && r.Products.Count() == 1 && r.DetailsLevel == StockDetailsLevel.All))
                 .Returns(new GetStockInformationResult { StockInformation = stockInfos });
 
             // Act & Assert
@@ -108,7 +108,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Services
             var invProduct1 = new InventoryProduct { ProductId = "1001" };
 
             this._serviceProvider
-                .GetStockInformation(Arg.Is<GetStockInformationRequest>(r => r.ShopName == "shopname" && r.Products.Contains(invProduct1) && r.Products.Count() == 1 && r.DetailsLevel == StockDetailsLevel.All))
+                .GetStockInformation(Arg.Is<GetStockInformationRequest>(r => r.Shop.Name == "shopname" && r.Products.Contains(invProduct1) && r.Products.Count() == 1 && r.DetailsLevel == StockDetailsLevel.All))
                 .ReturnsForAnyArgs(new GetStockInformationResult { StockInformation = new List<StockInformation> { stockInfo } });
 
             // Act
@@ -132,7 +132,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Services
             var ids = new List<string> { "1001", "1002" };
 
             this._serviceProvider
-                .GetPreOrderableInformation(Arg.Is<GetPreOrderableInformationRequest>(r => r.ShopName == "shopname" && r.Products.First().ProductId == "1001" && r.Products.Last().ProductId == "1002" && r.Products.Count() == 2))
+                .GetPreOrderableInformation(Arg.Is<GetPreOrderableInformationRequest>(r => r.Shop.Name == "shopname" && r.Products.First().ProductId == "1001" && r.Products.Last().ProductId == "1002" && r.Products.Count() == 2))
                 .Returns(new GetPreOrderableInformationResult { OrderableInformation = orderableInfos });
 
             // Act & Assert
@@ -152,7 +152,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Services
             var ids = new List<string> { "1001", "1002" };
 
             this._serviceProvider
-               .GetPreOrderableInformation(Arg.Is<GetPreOrderableInformationRequest>(r => r.ShopName == "shopname" && r.Products.First().ProductId == "1001" && r.Products.Last().ProductId == "1002" && r.Products.Count() == 2))
+               .GetPreOrderableInformation(Arg.Is<GetPreOrderableInformationRequest>(r => r.Shop.Name == "shopname" && r.Products.First().ProductId == "1001" && r.Products.Last().ProductId == "1002" && r.Products.Count() == 2))
                .Returns(new GetPreOrderableInformationResult { OrderableInformation = orderableInfos });
 
             // Act & Assert
@@ -170,7 +170,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Services
             var invProduct1 = new InventoryProduct { ProductId = "1001" };
 
             this._serviceProvider
-                .GetPreOrderableInformation(Arg.Is<GetPreOrderableInformationRequest>(r => r.ShopName == "shopname" && r.Products.Contains(invProduct1) && r.Products.Count() == 1))
+                .GetPreOrderableInformation(Arg.Is<GetPreOrderableInformationRequest>(r => r.Shop.Name == "shopname" && r.Products.Contains(invProduct1) && r.Products.Count() == 1))
                 .ReturnsForAnyArgs(new GetPreOrderableInformationResult { OrderableInformation = new List<OrderableInformation> { orderableInfo } });
 
             // Act
@@ -194,7 +194,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Services
             var ids = new List<string> { "1001", "1002" };
 
             this._serviceProvider
-                .GetBackOrderableInformation(Arg.Is<GetBackOrderableInformationRequest>(r => r.ShopName == "shopname" && r.Products.First().ProductId == "1001" && r.Products.Last().ProductId == "1002" && r.Products.Count() == 2))
+                .GetBackOrderableInformation(Arg.Is<GetBackOrderableInformationRequest>(r => r.Shop.Name == "shopname" && r.Products.First().ProductId == "1001" && r.Products.Last().ProductId == "1002" && r.Products.Count() == 2))
                 .Returns(new GetBackOrderableInformationResult { OrderableInformation = orderableInfos });
 
             // Act & Assert
@@ -214,7 +214,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Services
             var ids = new List<string> { "1001", "1002" };
 
             this._serviceProvider
-                 .GetBackOrderableInformation(Arg.Is<GetBackOrderableInformationRequest>(r => r.ShopName == "shopname" && r.Products.First().ProductId == "1001" && r.Products.Last().ProductId == "1002" && r.Products.Count() == 2))
+                 .GetBackOrderableInformation(Arg.Is<GetBackOrderableInformationRequest>(r => r.Shop.Name == "shopname" && r.Products.First().ProductId == "1001" && r.Products.Last().ProductId == "1002" && r.Products.Count() == 2))
                  .Returns(new GetBackOrderableInformationResult { OrderableInformation = orderableInfos });
 
             // Act & Assert
@@ -232,7 +232,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Services
             var invProduct1 = new InventoryProduct { ProductId = "1001" };
 
             this._serviceProvider
-                .GetBackOrderableInformation(Arg.Is<GetBackOrderableInformationRequest>(r => r.ShopName == "shopname" && r.Products.Contains(invProduct1) && r.Products.Count() == 1))
+                .GetBackOrderableInformation(Arg.Is<GetBackOrderableInformationRequest>(r => r.Shop.Name == "shopname" && r.Products.Contains(invProduct1) && r.Products.Count() == 1))
                 .ReturnsForAnyArgs(new GetBackOrderableInformationResult { OrderableInformation = new List<OrderableInformation> { orderableInfo } });
 
             // Act

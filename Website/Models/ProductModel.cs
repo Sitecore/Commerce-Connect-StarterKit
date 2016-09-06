@@ -1,11 +1,11 @@
-﻿// ---------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ProductModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Defines the ProductModel type.
 // </summary>
-// ---------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -16,11 +16,11 @@
 // either express or implied. See the License for the specific language governing permissions 
 // and limitations under the License.
 // ---------------------------------------------------------------------
-using System.Globalization;
-using Glass.Sitecore.Mapper.Configuration;
 
 namespace Sitecore.Commerce.StarterKit.Models
 {
+    using System.Globalization;
+    using Glass.Sitecore.Mapper.Configuration;
     using System.Collections.Generic;
     using System.Linq;
     using Glass.Sitecore.Mapper.Configuration.Attributes;
@@ -125,7 +125,7 @@ namespace Sitecore.Commerce.StarterKit.Models
         /// Gets or sets the Full description.
         /// </summary>
         /// <value>The body type.</value>
-        [SitecoreField("{25FE6930-D1F7-4924-95F9-770AA320A1F9}",SitecoreFieldType.RichText)]
+        [SitecoreField("{25FE6930-D1F7-4924-95F9-770AA320A1F9}", SitecoreFieldType.RichText)]
         public string FullDescription { get; set; }
 
         /// <summary>

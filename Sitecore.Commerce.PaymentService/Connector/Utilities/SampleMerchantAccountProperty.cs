@@ -1,0 +1,60 @@
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="SampleMerchantAccountProperty.cs" company="Sitecore Corporation">
+//   Copyright (c) Sitecore Corporation 1999-2016
+// </copyright>
+// <summary>
+//   Defines the SampleMerchantAccountProperty class.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+// Copyright 2016 Sitecore Corporation A/S 
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file  
+// except in compliance with the License. You may obtain a copy of the License at 
+//       http://www.apache.org/licenses/LICENSE-2.0 
+// 
+// Unless required by applicable law or agreed to in writing, software distributed under the  
+// License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,  
+// either express or implied. See the License for the specific language governing permissions  
+// and limitations under the License. 
+// --------------------------------------------------------------------- 
+
+namespace Sitecore.Commerce.PaymentService.Connector
+{
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// Merchant account properties of the payment connector.
+    /// </summary>
+    public static class SampleMerchantAccountProperty
+    {
+        /// <summary>
+        /// ProviderId property.
+        /// </summary>
+        public const string ProviderId = "ProviderId";
+
+        /// <summary>
+        /// Environment property.
+        /// </summary>
+        public const string Environment = "Environment";
+
+        private static List<string> arrayList = new List<string>() 
+        { 
+            MerchantAccountProperties.ServiceAccountId,
+            MerchantAccountProperties.MerchantId, 
+            ProviderId,
+            Environment,
+            MerchantAccountProperties.SupportedCurrencies, 
+            MerchantAccountProperties.SupportedTenderTypes, 
+        };
+
+        /// <summary>
+        /// Gets the merchant account properties array.
+        /// </summary>
+        public static List<string> ArrayList
+        { 
+            get
+            {
+                return arrayList;
+            }
+        }
+    }
+}

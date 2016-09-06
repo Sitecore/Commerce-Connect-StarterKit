@@ -1,9 +1,9 @@
-﻿//-----------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="BundleConfig.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>The BundleConfig class.</summary>
-//-----------------------------------------------------------------------
+// <summary>Defines the BundleConfig class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -14,19 +14,25 @@
 // either express or implied. See the License for the specific language governing permissions 
 // and limitations under the License.
 // ---------------------------------------------------------------------
-using System.Web.Optimization;
 
 [assembly: WebActivatorEx.PostApplicationStartMethod(typeof(Sitecore.Commerce.StarterKit.App_Start.BundleConfig), "RegisterBundles")]
 
 namespace Sitecore.Commerce.StarterKit.App_Start
 {
-  public class BundleConfig
-  {
-    public static void RegisterBundles()
-    {
-      // Add @Scripts.Render("~/bundles/starterkit")
-      BundleTable.Bundles.Add(new ScriptBundle("~/bundles/starterkit").Include("~/Scripts/StarterKit/ui-interactions.js"));
+    using System.Web.Optimization;
 
+    /// <summary>
+    /// Bundle configuration.
+    /// </summary>
+    public static class BundleConfig
+    {
+        /// <summary>
+        /// registers the site script bundles.
+        /// </summary>
+        public static void RegisterBundles()
+        {
+            // Add @Scripts.Render("~/bundles/starterkit")
+            BundleTable.Bundles.Add(new ScriptBundle("~/bundles/starterkit").Include("~/Scripts/StarterKit/ui-interactions.js"));
+        }
     }
-  }
 }

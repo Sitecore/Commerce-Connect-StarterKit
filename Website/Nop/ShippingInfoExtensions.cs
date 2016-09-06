@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ShippingInfoExtensions.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The cart extensions.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,33 +18,35 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.Connectors.NopCommerce
 {
-  using System.Linq;
-  using Sitecore.Commerce.Connectors.NopCommerce.NopOrdersService;
-  using Sitecore.Commerce.Entities.Carts;
-  using Sitecore.Diagnostics;
+    using System.Linq;
+    using Sitecore.Commerce.Connectors.NopCommerce.NopOrdersService;
+    using Sitecore.Commerce.Entities.Carts;
+    using Sitecore.Diagnostics;
 
-  /// <summary>
-  /// The cart extensions.
-  /// </summary>
-  public static class ShippingInfoExtensions
-  {
     /// <summary>
-    /// Maps cart from model.
+    /// The cart extensions.
     /// </summary>
-    public static void MapShipmentFromModel([NotNull] this ShippingInfo info, [NotNull] ShipmentModel shipmentModel)
+    public static class ShippingInfoExtensions
     {
-      Assert.ArgumentNotNull(info, "info");
-      Assert.ArgumentNotNull(shipmentModel, "shipmentModel");
+        /// <summary>
+        /// Maps cart from model.
+        /// </summary>
+        /// <param name="info">The shipping information.</param>
+        /// <param name="shipmentModel">The shipment model.</param>
+        public static void MapShipmentFromModel([NotNull] this ShippingInfo info, [NotNull] ShipmentModel shipmentModel)
+        {
+            Assert.ArgumentNotNull(info, "info");
+            Assert.ArgumentNotNull(shipmentModel, "shipmentModel");
 
-      info.ExternalId = shipmentModel.Id.ToString();
-      info.LineIDs = shipmentModel.ItemsIDs.OfType<string>().ToList().AsReadOnly();
+            info.ExternalId = shipmentModel.Id.ToString();
+            info.LineIDs = shipmentModel.ItemsIDs.OfType<string>().ToList().AsReadOnly();
 
-      if (shipmentModel.ShippingAddressId != null)
-      {
-        info.PartyID = shipmentModel.ShippingAddressId.Value.ToString();
-      }
+            if (shipmentModel.ShippingAddressId != null)
+            {
+                info.PartyID = shipmentModel.ShippingAddressId.Value.ToString();
+            }
 
-      info.ShippingMethodID = shipmentModel.ShippingMethod;
+            info.ShippingMethodID = shipmentModel.ShippingMethod;
+        }
     }
-  }
 }

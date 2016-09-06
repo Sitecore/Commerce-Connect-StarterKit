@@ -159,7 +159,7 @@ function MiniCartItemListViewModel(data) {
     self.miniCartItems = ko.observableArray();
 
     $(data.CartLines).each(function () {
-      self.miniCartItems.push(new MiniCartItemViewModel(this.Image, this.ProductName, this.Quantity, this.TotalPrice, this.UnitPrice, this.ProductId, this.Id));
+      self.miniCartItems.push(new MiniCartItemViewModel(this.Image, this.ProductName, this.Quantity, this.TotalPrice, this.UnitPriceLocal, this.ProductId, this.Id));
     });
 
     self.totalQuantity = ko.computed(function () {
@@ -178,7 +178,7 @@ function MiniCartItemListViewModel(data) {
       self.miniCartItems.removeAll();
 
       $(data.CartLines).each(function () {
-        self.miniCartItems.push(new MiniCartItemViewModel(this.Image, this.ProductName, this.Quantity, this.TotalPrice, this.UnitPrice, this.ProductId, this.Id));
+        self.miniCartItems.push(new MiniCartItemViewModel(this.Image, this.ProductName, this.Quantity, this.TotalPrice, this.UnitPriceLocal, this.ProductId, this.Id));
       });
 
       self.total(data.TotalSum);

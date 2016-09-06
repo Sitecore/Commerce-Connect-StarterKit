@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Response.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the Response type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the Response class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,22 +16,24 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Common.Models
 {
-  using System.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-  [DataContract(Name = "{0}Response")]
-  public class Response<T>: Response
-  {
-    [DataMember]
-    public T Result { get; set; }
-  }
+    /// <summary>
+    /// A service response.
+    /// </summary>
+    [DataContract]
+    public class Response
+    {
+        /// <summary>
+        /// Gets or sets the response message.
+        /// </summary>
+        [DataMember]
+        public string Message { get; set; }
 
-  [DataContract]
-  public class Response
-  {
-    [DataMember]
-    public string Message { get; set; }
-
-    [DataMember]
-    public bool Success { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets a value indicating whether the service request succeeded.
+        /// </summary>
+        [DataMember]
+        public bool Success { get; set; }
+    }
 }

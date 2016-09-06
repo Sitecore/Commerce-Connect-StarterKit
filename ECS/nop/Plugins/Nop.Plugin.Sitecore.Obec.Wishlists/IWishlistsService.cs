@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
-// <copyright file="ICartService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IWishlistsService.cs" company="Sitecore Corporation">
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
-//   The CartService interface.
+//   The IWishlistsService interface.
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -55,6 +55,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Wishlists
     /// Creates the wishlist by customer id.
     /// </summary>
     /// <param name="customerId">The customer id.</param>
+    /// <returns>The customer's wish list.</returns>
     [OperationContract]
     ShoppingCartModel CreateWishlist(Guid customerId);
 
@@ -64,6 +65,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Wishlists
     /// <param name="customerId">The customer id.</param>
     /// <param name="externalProductId">The external product id.</param>
     /// <param name="quantity">The quantity.</param>
+    /// <returns>The customer's wish list.</returns>
     [OperationContract]
     ShoppingCartModel AddProduct(Guid customerId, string externalProductId, uint quantity);
 
@@ -72,6 +74,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Wishlists
     /// </summary>
     /// <param name="customerId">The customer Id.</param>
     /// <param name="externalProductId">The external product id.</param>
+    /// <returns>The customer's wish list.</returns>
     [OperationContract]
     ShoppingCartModel RemoveProduct(Guid customerId, string externalProductId);
 

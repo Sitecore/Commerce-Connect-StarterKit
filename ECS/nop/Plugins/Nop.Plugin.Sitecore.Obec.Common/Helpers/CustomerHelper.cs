@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="CustomerHelper.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The CustomerHelper class.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the CustomerHelper class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,44 +16,48 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Common.Helpers
 {
-  using System;
-  using Nop.Core;
-  using Nop.Core.Domain.Customers;
-  using Nop.Services.Customers;
+    using System;
+    using Nop.Core;
+    using Nop.Core.Domain.Customers;
+    using Nop.Services.Customers;
 
-  public static class CustomerHelper
-  {
     /// <summary>
-    /// Creates the user.
+    /// Class that contains customer helper methods.
     /// </summary>
-    /// <param name="customerId">The customer id.</param>
-    /// <returns>Instance of <see cref="Customer"/></returns>
-    /// <exception cref="Nop.Core.NopException">'Guests' role could not be loaded</exception>
-    public static Customer CreateCustomer(Guid customerId, ICustomerService customerService)
+    public static class CustomerHelper
     {
-      // Creates new instance of customer.
-      var customer = new Customer
-      {
-        CustomerGuid = customerId,
-        Active = true,
-        CreatedOnUtc = DateTime.UtcNow,
-        LastActivityDateUtc = DateTime.UtcNow
-      };
+        /// <summary>
+        /// Creates the user.
+        /// </summary>
+        /// <param name="customerId">The customer id.</param>
+        /// <param name="customerService">The customer service.</param>
+        /// <returns>Instance of <see cref="Customer"/></returns>
+        /// <exception cref="Nop.Core.NopException">'Guests' role could not be loaded</exception>
+        public static Customer CreateCustomer(Guid customerId, ICustomerService customerService)
+        {
+            // Creates new instance of customer.
+            var customer = new Customer
+            {
+                CustomerGuid = customerId,
+                Active = true,
+                CreatedOnUtc = DateTime.UtcNow,
+                LastActivityDateUtc = DateTime.UtcNow
+            };
 
-      // Gets guest role.
-      var guestRole = customerService.GetCustomerRoleBySystemName(SystemCustomerRoleNames.Guests);
-      if (guestRole == null)
-      {
-        throw new NopException("'Guests' role could not be loaded");
-      }
+            // Gets guest role.
+            var guestRole = customerService.GetCustomerRoleBySystemName(SystemCustomerRoleNames.Guests);
+            if (guestRole == null)
+            {
+                throw new NopException("'Guests' role could not be loaded");
+            }
 
-      // Adds guest role to customer.
-      customer.CustomerRoles.Add(guestRole);
+            // Adds guest role to customer.
+            customer.CustomerRoles.Add(guestRole);
 
-      // Saves new customer.
-      customerService.InsertCustomer(customer);
+            // Saves new customer.
+            customerService.InsertCustomer(customer);
 
-      return customer;
+            return customer;
+        }
     }
-  }
 }

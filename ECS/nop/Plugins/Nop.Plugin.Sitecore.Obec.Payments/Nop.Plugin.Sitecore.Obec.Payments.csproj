@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Nop.Plugin.Sitecore.Commerce.Payments</RootNamespace>
     <AssemblyName>Nop.Plugin.Sitecore.Obec.Payments</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -91,6 +91,7 @@
     <Compile Include="Models\PaymentMethodModel.cs" />
     <Compile Include="Models\PaymentOptionModel.cs" />
     <Compile Include="Models\ResponseModel.cs" />
+    <Compile Include="Models\ResponseModelt.cs" />
     <Compile Include="ObecPlugin.cs" />
     <Compile Include="PaymentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,11 +1,9 @@
-﻿// ---------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ProductSortingModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The ProductSortingModel class.
-// </summary>
-// ---------------------------------------------------------------------
+// <summary>Defines the ProductSortingModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,60 +16,83 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  using System;
-  using System.Linq;
+    using System;
+    using System.Linq;
+    using Sitecore.Diagnostics;
 
-  using Sitecore.Diagnostics;
-
-  public class ProductSortingModel
-  {
-    private const string DirectionAsc = "asc";
-    private const string DirectionDesc = "desc";
-
-    public ProductSortingModel([NotNull] string field, string direction)
+    /// <summary>
+    /// Represents product sorting information.
+    /// </summary>
+    public class ProductSortingModel
     {
-      Assert.ArgumentNotNullOrEmpty(field, "field");
+        private const string DirectionAsc = "asc";
+        private const string DirectionDesc = "desc";
 
-      this.Field = field.ToLowerInvariant();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProductSortingModel"/> class.
+        /// </summary>
+        /// <param name="field">The field name.</param>
+        /// <param name="direction">The sorting direction.</param>
+        public ProductSortingModel([NotNull] string field, string direction)
+        {
+            Assert.ArgumentNotNullOrEmpty(field, "field");
 
-      if (new []{DirectionAsc,DirectionDesc}.Contains(direction.ToLowerInvariant()))
-      {
-        this.Direction = direction.ToLowerInvariant();
-      }
-      else
-      {
-        this.Direction = DirectionAsc;
-      }
+            this.Field = field.ToLowerInvariant();
+
+            var validDirections = new string[] { DirectionAsc, DirectionDesc };
+            if (validDirections.Contains(direction.ToLowerInvariant()))
+            {
+                this.Direction = direction.ToLowerInvariant();
+            }
+            else
+            {
+                this.Direction = DirectionAsc;
+            }
+        }
+
+        /// <summary>
+        /// Gets the field name.
+        /// </summary>
+        public string Field { get; private set; }
+
+        /// <summary>
+        /// Gets the sort direction.
+        /// </summary>
+        public string Direction { get; private set; }
+
+        /// <summary>
+        /// Gets the sort value.
+        /// </summary>
+        public string Value
+        {
+            get
+            {
+                return this.Field + ":" + this.Direction;
+            }
+        }
+
+        /// <summary>
+        /// Parses the sorting string.
+        /// </summary>
+        /// <param name="sorting">The sorting string.</param>
+        /// <returns>The sorting model.</returns>
+        public static ProductSortingModel Parse(string sorting)
+        {
+            string field = "name";
+            string direction = DirectionAsc;
+
+            string[] array = sorting.Split(new[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+            if (array.Length > 0)
+            {
+                field = array[0];
+            }
+
+            if (array.Length > 1)
+            {
+                direction = array[1];
+            }
+
+            return new ProductSortingModel(field, direction);
+        }
     }
-
-    public string Field { get; private set; }
-
-    public string Direction { get; private set; }
-
-    public string Value
-    {
-      get
-      {
-        return this.Field + ":" + this.Direction;
-      }
-    }
-
-    public static ProductSortingModel Parse(string sorting)
-    {
-      string field = "name";
-      string direction = DirectionAsc;
-
-      string[] array = sorting.Split(new[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
-      if (array.Length > 0)
-      {
-        field = array[0];
-      }
-      if (array.Length > 1)
-      {
-        direction = array[1];
-      }
-
-      return new ProductSortingModel(field, direction);
-    }
-  }
 }

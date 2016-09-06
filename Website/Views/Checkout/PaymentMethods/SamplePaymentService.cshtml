@@ -1,0 +1,55 @@
+﻿@*//-----------------------------------------------------------------------
+    // Copyright 2016 Sitecore Corporation A/S
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+    // except in compliance with the License. You may obtain a copy of the License at
+    //       http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software distributed under the
+    // License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    // either express or implied. See the License for the specific language governing permissions
+    // and limitations under the License.
+    // -------------------------------------------------------------------------------------------*@
+@using Sitecore.Commerce.StarterKit.Models
+@using System.Web.Optimization
+@model SamplePaymentServiceModel
+
+@Html.Hidden("stepNumber", 5)
+@Html.Hidden("stepAction", Url.Action("PaymentInformation"))
+
+<h4>Step 5 : Payment Information</h4>
+<hr />
+
+<div>
+    <div class="info">
+        <div class="row">
+            <div class="col-md-4">
+                <span id="ErrorMessageLabel" style="color:Red;"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <!--The iframe containing the tokenization page-->
+                <iframe id="CardPageFrame" style="height: 610px; width: 500px" frameborder="0" sandbox="allow-scripts allow-forms allow-same-origin" src="@Model.PaymentServiceUrl"></iframe>
+            </div>
+        </div>
+
+        <hr/>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" name="changeStep" id="PreviousButton" value="@ChangeStepType.Previous" class="btn btn-default" data-loading-text="Loading...">Previous</button>
+            </div>
+            <div class="col-md-4">
+                <input type="button" name="changeStep" value="@ChangeStepType.Next" class="btn btn-success" data-loading-text="Loading..." onclick="submitCard(); return false;" />
+                <button type="submit" name="changeStep" id="NextButton" value="@ChangeStepType.Next" style="visibility: hidden" data-loading-text="Loading...">Next</button>
+            </div>
+        </div>
+
+        <div><input type="hidden" name="CreditCardType" id="CreditCardType" /></div>
+        <div><input type="hidden" name="CreditCardPrefix" id="CreditCardPrefix" /></div>
+        <div><input type="hidden" name="ResultAccessCode" id="ResultAccessCode" /></div>
+        <div><input type="hidden" name="CardPageOrigin" id="CardPageOrigin" value="@Model.CardPageOrigin" /></div>
+        <div><input type="hidden" name="PaymentAmount" id="PaymentAmount" value="@Model.PaymentAmount.ToString(System.Globalization.CultureInfo.InvariantCulture)" /></div>
+
+    </div>
+</div>

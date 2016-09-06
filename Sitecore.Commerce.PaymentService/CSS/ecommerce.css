@@ -1,0 +1,199 @@
+﻿/*
+Copyright 2016 Sitecore Corporation A/S 
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
+except in compliance with the License. You may obtain a copy of the License at 
+      http://www.apache.org/licenses/LICENSE-2.0 
+
+Unless required by applicable law or agreed to in writing, software distributed under the 
+License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+either express or implied. See the License for the specific language governing permissions 
+and limitations under the License. 
+*/
+@charset "UTF-8";
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(../Fonts/segoeui.woff);
+}
+
+@font-face {
+    font-family: "Segoe UI Light";
+    src: url(../Fonts/segoeuilight.woff);
+}
+
+@font-face {
+    font-family: "Segoe UI Semilight";
+    src: url(../Fonts/segoeuisemilight.woff);
+}
+
+body {
+    font-size: 12px;
+    margin: 0;
+    width: 76.66em;
+}
+
+form {
+    background-color: white;
+}
+
+.msax-Control {
+    font-size: 12px;
+    font-family: "Segoe UI";
+    line-height: normal;
+    color: black;
+}
+
+    .msax-Control * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .msax-Control label {
+            border: none;
+            background: none;
+            display: block;
+            padding: 0.41em 0;
+            line-height: 1em;
+        }
+
+    .msax-Control .msax-ErrorLabel {
+        color: red;
+    }
+
+    .msax-Control h4 {
+        background-color: none;
+        text-transform: none;
+        vertical-align: middle;
+        font-size: 1.16em;
+        margin-bottom: 1.66em;
+        margin-top: 2.5em;
+        text-align: left;
+        font-weight: normal;
+    }
+
+    .msax-Control input,
+    .msax-Control select {
+        background-color: white;
+        height: 2.33em;
+        border: 1px solid #90989F;
+        font-size: 1em;
+        font-family: "Segoe UI";
+        color: black;
+    }
+
+    .msax-Control input:disabled,
+    .msax-Control select:disabled {
+        background-color: #E4E4E4; /* light grey */
+        color: #707070; /* grey */
+    }
+
+    .msax-Control input {
+        padding: 0.16em 0.58em;
+    }
+
+    .msax-Control select {
+        padding: 0 0 0 0.58em;
+    }
+
+    .msax-Control input[type=radio],
+        .msax-Control input[type=radio]:focus,
+        .msax-Control input[type=checkbox],
+        .msax-Control input[type=checkbox]:focus {
+            background: none;
+            height: 1.33em;
+            width: 1.33em;
+            float: left;
+            box-shadow: none;
+            border: none;
+            margin-top: 0.33em;
+            margin-left: 0px;
+            -moz-box-sizing: content-box;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+
+    .msax-Control .msax-CheckBoxUnderH4Top {
+            margin-top: 4.25em;
+        }
+
+    .msax-Control .msax-FieldPanel {
+        margin-bottom: 0.41em;
+    }
+
+        .msax-Control .msax-FieldPanel > * {
+            width: 100%;
+        }
+
+    .msax-Control .msax-Table {
+        display: table;
+        width: 100%;
+    }
+
+    .msax-Control .msax-Row {
+        display: table-row;
+        width: 100%;
+        vertical-align: top;
+    }
+
+        .msax-Control .msax-Row > * {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+    .msax-Control .msax-MarginTop0 {
+        margin-top: 0px;
+    }
+
+    .msax-Control .msax-WidthRatio50 {
+        width: 50%;
+    }
+
+    .msax-Control .msax-WidthRatio45 {
+        width: 45%;
+    }
+
+    .msax-Control .msax-WidthRatio40 {
+        width: 40%;
+    }
+
+    .msax-Control .msax-WidthRatio30 {
+        width: 30%;
+    }
+
+    .msax-Control .msax-WidthRatio35 {
+        width: 35%;
+    }
+
+    .msax-Control .msax-WidthRatio25 {
+        width: 25%;
+    }
+
+    .msax-Control .msax-WidthRatio20 {
+        width: 20%;
+    }
+
+    .msax-Control .msax-PaddingLeft10Right0 {
+        padding-left: 0.83em;
+        padding-right: 0px;
+    }
+
+    .msax-Control .msax-PaddingLeft0Right10 {
+        padding-left: 0px;
+        padding-right: 0.83em;
+    }
+
+    .msax-Control .msax-PaddingLeft10Right10 {
+        padding-left: 0.83em;
+        padding-right: 0.83em;
+    }
+
+    .msax-Control .msax-DisableTable,
+    .msax-Control .msax-DisableRow,
+    .msax-Control .msax-DisableCell {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}

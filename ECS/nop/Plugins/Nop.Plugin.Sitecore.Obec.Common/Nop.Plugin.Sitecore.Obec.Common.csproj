@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Nop.Plugin.Sitecore.Commerce.Common</RootNamespace>
     <AssemblyName>Nop.Plugin.Sitecore.Obec.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\CustomerNotExistException.cs" />
-    <Compile Include="Extensions\PaymentExtensions.cs" />
     <Compile Include="Helpers\CustomerHelper.cs" />
     <Compile Include="Models\AddressModel.cs" />
     <Compile Include="Models\AddressTypeModel.cs" />
@@ -62,6 +61,7 @@
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\PaymentInfoModel.cs" />
     <Compile Include="Models\Response.cs" />
+    <Compile Include="Models\ResponseT.cs" />
     <Compile Include="Models\ShipmentModel.cs" />
     <Compile Include="Models\ShippingMethodModel.cs" />
     <Compile Include="Models\ShoppingCartItemModel.cs" />
