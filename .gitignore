@@ -131,7 +131,7 @@
 /Website/.vs
 /Website/bin
 /Website/obj
-/Sitecore.Commerce.PaymentService/obj/Debug
+/Sitecore.Commerce.PaymentService/obj
 /Sitecore.Commerce.PaymentService.dacpac/bin
 /Sitecore.Commerce.PaymentService.dacpac/obj
 /Website/Tests/bin
@@ -139,3 +139,11 @@
 /packages
 /Website/packages
 /Sitecore.Commerce.PaymentService/bin
+/Sitecore.Commerce.PaymentService.dacpac/Sitecore.Commerce.PaymentService.dacpac.dbmdl
+/ECS/nop/Plugins/Nop.Plugin.Sitecore.Obec.Payments.SamplePaymentService/bin
+/ECS/nop/Plugins/Nop.Plugin.Sitecore.Obec.Payments.SamplePaymentService/obj
+/ECS/nop/Plugins/Nop.Plugin.Sitecore.Obec.Payments.SamplePaymentService/Plugin/Nop.Plugin.Sitecore.Obec.Payments.SamplePaymentService.dll
+/Website/Nop/bin
+/Website/Nop/obj
+/Website/Nop/Tests/bin
+/Website/Nop/Tests/obj
