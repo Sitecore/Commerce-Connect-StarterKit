@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="IShippingService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The Customers interface.
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,15 +18,25 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Shipping
 {
-  using System;
-  using System.Collections.Generic;
-  using System.ServiceModel;
-  using Common.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.ServiceModel;
+    using Common.Models;
 
-  [ServiceContract]
-  public interface IShippingService
-  {
-    [OperationContract]
-    Response<IList<ShippingMethodModel>> GetShippingMethods(ShoppingCartModel shoppingCartModel, string storeName = "", AddressModel addressModel = null);
-  }
+    /// <summary>
+    /// The shipping service interface.
+    /// </summary>
+    [ServiceContract]
+    public interface IShippingService
+    {
+        /// <summary>
+        /// Gets the shipping methods.
+        /// </summary>
+        /// <param name="shoppingCartModel">The shopping cart.</param>
+        /// <param name="storeName">The store name.</param>
+        /// <param name="addressModel">The address.</param>
+        /// <returns>A service response.</returns>
+        [OperationContract]
+        Response<IList<ShippingMethodModel>> GetShippingMethods(ShoppingCartModel shoppingCartModel, string storeName = "", AddressModel addressModel = null);
+    }
 }

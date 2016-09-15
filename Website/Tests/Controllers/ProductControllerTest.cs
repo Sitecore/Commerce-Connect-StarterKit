@@ -1,11 +1,11 @@
-// ---------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ProductControllerTest.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Defines the ProductControllerTest type.
 // </summary>
-// ---------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -82,6 +82,11 @@ namespace Sitecore.Commerce.StarterKit.Tests.Controllers
         private readonly IInventoryService _inventoryService;
 
         /// <summary>
+        /// The catalog service.
+        /// </summary>
+        private readonly ICatalogService _catalogService;
+
+        /// <summary>
         /// The obec context.
         /// </summary>
         private readonly CommerceContextBase _obecContext;
@@ -98,13 +103,14 @@ namespace Sitecore.Commerce.StarterKit.Tests.Controllers
             this.pricingService = Substitute.For<IPricingService>();
             this.contentSearchHelper = Substitute.For<ContentSearchHelper>();
             this._inventoryService = Substitute.For<IInventoryService>();
+            this._catalogService = Substitute.For<ICatalogService>();
             this._obecContext = Substitute.For<CommerceContextBase>();
 
             var httpContext = Substitute.For<HttpContextBase>();
             httpContext.Request.Url.Returns(new Uri("http://host/path"));
             httpContext.Request.QueryString.Returns(new NameValueCollection());
 
-            this.controller = new ProductController(this.productService, this.pricingService, this.contentSearchHelper, this._inventoryService);
+            this.controller = new ProductController(this.productService, this.pricingService, this.contentSearchHelper, this._inventoryService, this._catalogService);
             this.controller.ControllerContext = new ControllerContext(httpContext, new RouteData(), this.controller);
         }
 

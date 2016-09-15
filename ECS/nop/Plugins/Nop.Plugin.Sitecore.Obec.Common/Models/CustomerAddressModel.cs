@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="CustomerAddressModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The CustomerAddressModel class.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the CustomerAddressModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,12 +16,24 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Common.Models
 {
-  public class CustomerAddressModel
-  {
-    public string Id { get; set; }
+    /// <summary>
+    /// customer addres model.
+    /// </summary>
+    public class CustomerAddressModel
+    {
+        /// <summary>
+        /// Gets or sets the ID.
+        /// </summary>
+        public string Id { get; set; }
 
-    public string Name { get; set; }
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        public string Name { get; set; }
 
-    public AddressTypeModel AddressType { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets the address type.
+        /// </summary>
+        public AddressTypeModel AddressType { get; set; }
+    }
 }

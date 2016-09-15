@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="AddressTypeModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The AddressTypeModel class.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the AddressTypeModel enum.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,9 +16,19 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Common.Models
 {
-  public enum AddressTypeModel
-  {
-    Billing = 2,
-    Shipping = 1
-  }
+    /// <summary>
+    /// Specifies an address type.
+    /// </summary>
+    public enum AddressTypeModel
+    {
+        /// <summary>
+        /// Specifies a billing address.
+        /// </summary>
+        Billing = 2,
+
+        /// <summary>
+        /// Specifies a shipping address.
+        /// </summary>
+        Shipping = 1
+    }
 }

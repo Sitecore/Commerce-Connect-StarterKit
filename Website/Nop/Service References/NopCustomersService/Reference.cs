@@ -27,6 +27,9 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.NopCustomersService {
         private bool ActiveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AdminContentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Sitecore.Commerce.Connectors.NopCommerce.NopCustomersService.AddressModel BillingAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -72,6 +75,19 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.NopCustomersService {
                 if ((this.ActiveField.Equals(value) != true)) {
                     this.ActiveField = value;
                     this.RaisePropertyChanged("Active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AdminContent {
+            get {
+                return this.AdminContentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AdminContentField, value) != true)) {
+                    this.AdminContentField = value;
+                    this.RaisePropertyChanged("AdminContent");
                 }
             }
         }

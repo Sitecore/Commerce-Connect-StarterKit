@@ -1,3 +1,14 @@
+<!--
+// Copyright 2016 Sitecore Corporation A/S
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+// except in compliance with the License. You may obtain a copy of the License at
+//       http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software distributed under the
+// License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+// either express or implied. See the License for the specific language governing permissions
+// and limitations under the License.
+-->
 <configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
   <sitecore>
     <pipelines>
@@ -109,26 +120,20 @@
 
       <commerce.wishLists.addLinesToWishList>
         <!-- Add lines to wishlist from NopCommerce e-commerce system side. -->
-		<processor type="Sitecore.Commerce.Pipelines.WishLists.AddLinesToWishList.TriggerLinesAddedToWishListPageEvent, Sitecore.Commerce">
-          <patch:delete/>
-        </processor>
-        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Wishlists.AddLinesToWishlist.AddLinesToWishlist, Sitecore.Commerce.Connectors.NopCommerce"/>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Wishlists.AddLinesToWishlist.AddLinesToWishlist, Sitecore.Commerce.Connectors.NopCommerce"
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.WishLists.AddLinesToWishList.TriggerLinesAddedToWishListPageEvent, Sitecore.Commerce']"/>
       </commerce.wishLists.addLinesToWishList>
 
       <commerce.wishLists.removeWishListLines>
-        <processor type="Sitecore.Commerce.Pipelines.WishLists.RemoveWishListLines.TriggerLinesRemovedFromWishListPageEvent, Sitecore.Commerce">
-          <patch:delete/>
-        </processor>
-		<!-- Remove lines from wishlist from NopCommerce e-commerce system side. -->
-        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.WishLists.RemoveWishlistLines.RemoveWishlistLines, Sitecore.Commerce.Connectors.NopCommerce" />
+		  <!-- Remove lines from wishlist from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.WishLists.RemoveWishlistLines.RemoveWishlistLines, Sitecore.Commerce.Connectors.NopCommerce" 
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.WishLists.RemoveWishListLines.TriggerLinesRemovedFromWishListPageEvent, Sitecore.Commerce']"/>
       </commerce.wishLists.removeWishListLines>
 
       <commerce.wishLists.updateWishListLines>
-        <processor type="Sitecore.Commerce.Pipelines.WishLists.UpdateWishListLines.TriggerLinesUpdatedOnWishListPageEvent, Sitecore.Commerce">
-          <patch:delete/>
-        </processor>
-		<!-- Update lines of wishlist from NopCommerce e-commerce system side. -->
-        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.WishLists.UpdateLinesOnWishlist.UpdateLinesOnWishlist, Sitecore.Commerce.Connectors.NopCommerce" />
+		  <!-- Update lines of wishlist from NopCommerce e-commerce system side. -->
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.WishLists.UpdateLinesOnWishlist.UpdateLinesOnWishlist, Sitecore.Commerce.Connectors.NopCommerce" 
+                   patch:before="processor[@type='Sitecore.Commerce.Pipelines.WishLists.UpdateWishListLines.TriggerLinesUpdatedOnWishListPageEvent, Sitecore.Commerce']"/>
       </commerce.wishLists.updateWishListLines>
 
       <commerce.prices.getCartTotal>
@@ -376,6 +381,27 @@
         </processor>
       </commerce.customers.updateCustomerParties>
 
+      <commerce.customers.addCustomerPaymentInfo>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.AddCustomerPaymentInfo, Sitecore.Commerce.Connectors.NopCommerce"
+                     patch:before="processor[@type='Sitecore.Commerce.Pipelines.Customers.AddPaymentInfoToSitecore, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.addCustomerPaymentInfo>
+
+      <commerce.customers.removeCustomerPaymentInfo>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.RemoveCustomerPaymentInfo, Sitecore.Commerce.Connectors.NopCommerce"
+                     patch:before="processor[@type='Sitecore.Commerce.Pipelines.Customers.AddPaymentInfoToSitecore, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.removeCustomerPaymentInfo>
+
+      <commerce.customers.updateCustomerPaymentInfo>
+        <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers.UpdateCustomerPaymentInfo, Sitecore.Commerce.Connectors.NopCommerce"
+                     patch:before="processor[@type='Sitecore.Commerce.Pipelines.Customers.AddPaymentInfoToSitecore, Sitecore.Commerce']">
+          <param ref="entityFactory" />
+        </processor>
+      </commerce.customers.updateCustomerPaymentInfo>
+
       <commerce.payments.getPaymentOptions>
         <!-- Gets payment options from configuration.
             Allows system know what payment options are being supported. -->
@@ -393,17 +419,12 @@
               Mapping allows to understand which methods correspond certain payment option type and select only them. -->
         <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Payments.GetPaymentMethods.GetPaymentMethods, Sitecore.Commerce.Connectors.NopCommerce" >
           <mapping hint="raw:Map">
-            <map paymentOptionValue="0" systemName="Payments.CashOnDelivery" methodName="Cash On Delivery (COD)" />
-            <map paymentOptionValue="0" systemName="Payments.Manual" methodName="Credit Card" />
-            <map paymentOptionValue="0" systemName="Payments.AuthorizeNet" methodName="Credit Card" />
-            <map paymentOptionValue="0" systemName="Payments.PayPalDirect" methodName="Credit Card" />
-            <map paymentOptionValue="0" systemName="Payments.GoogleCheckout" methodName="Google Checkout" />
-            <map paymentOptionValue="0" systemName="Payments.PayPalStandard" methodName="PayPal Standard" />
             <map paymentOptionValue="1" systemName="Payments.Manual" methodName="Credit Card" />
             <map paymentOptionValue="1" systemName="Payments.AuthorizeNet" methodName="Credit Card" />
             <map paymentOptionValue="1" systemName="Payments.PayPalDirect" methodName="Credit Card" />
             <map paymentOptionValue="4" systemName="Payments.GoogleCheckout" methodName="Google Checkout" />
             <map paymentOptionValue="4" systemName="Payments.PayPalStandard" methodName="PayPal Standard" />
+            <map paymentOptionValue="4" systemName="Payments.SamplePaymentService" methodName="SamplePaymentService" />
           </mapping>
         </processor>
       </commerce.payments.getPaymentMethods>
@@ -425,9 +446,6 @@
               Mapping allows to understand which methods correspond certain shipping option type and select only them. -->
         <processor type="Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Shipping.GetShippingMethods.GetShippingMethods, Sitecore.Commerce.Connectors.NopCommerce" >
           <mapping hint="raw:Map">
-            <map shippingOptionValue="0" systemName="Shipping.FixedRate" methodName="By Ground" />
-            <map shippingOptionValue="0" systemName="Shipping.FixedRate" methodName="By Air" />
-            <map shippingOptionValue="0" systemName="Shipping.FixedRate" methodName="In-Store Pickup" />
             <map shippingOptionValue="1" systemName="Shipping.FixedRate" methodName="By Ground" />
             <map shippingOptionValue="1" systemName="Shipping.FixedRate" methodName="By Air" />
             <map shippingOptionValue="2" systemName="Shipping.FixedRate" methodName="In-Store Pickup" />

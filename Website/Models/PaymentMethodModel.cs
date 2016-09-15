@@ -1,11 +1,9 @@
-﻿// ---------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="PaymentMethodModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The PaymentMethodModel class.
-// </summary>
-// ---------------------------------------------------------------------
+// <summary>Defines the PaymentMethodModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,12 +16,24 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  public class PaymentMethodModel
-  {
-    public string Name { get; set; }
+    /// <summary>
+    /// Represents payment method information.
+    /// </summary>
+    public class PaymentMethodModel
+    {
+        /// <summary>
+        /// Gets or sets the payment method name.
+        /// </summary>
+        public string Name { get; set; }
 
-    public string SystemName { get; set; }
+        /// <summary>
+        /// Gets or sets the system name.
+        /// </summary>
+        public string SystemName { get; set; }
 
-    public bool Selected { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets a value indicating whether the payment method is selected.
+        /// </summary>
+        public bool Selected { get; set; }
+    }
 }

@@ -1,11 +1,9 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ShippingMethodModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The ShippingMethodModel class.
-// </summary>
-// ----------------------------------------------------------------------------------------------
+// <summary>Defines the ShippingMethodModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -16,19 +14,32 @@
 // either express or implied. See the License for the specific language governing permissions 
 // and limitations under the License.
 // ---------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  public class ShippingMethodModel
-  {
-    public string Name { get; set; }
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
 
-    public string SystemName { get; set; }
+    /// <summary>
+    /// Represents shipping method information.
+    /// </summary>
+    public class ShippingMethodModel
+    {
+        /// <summary>
+        /// Gets or sets the shipping method name.
+        /// </summary>
+        public string Name { get; set; }
 
-    public bool Selected { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets the system name.
+        /// </summary>
+        public string SystemName { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the shipping method is selected.
+        /// </summary>
+        public bool Selected { get; set; }
+    }
 }

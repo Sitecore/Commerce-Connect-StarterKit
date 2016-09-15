@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
-// <copyright file="ObecCartsPermissionProvider.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ObecWishlistsPermissionProvider.cs" company="Sitecore Corporation">
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
-//   Class for ObecCartsPermissionProvider
+//   Class for ObecWishlistsPermissionProvider
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -23,6 +23,9 @@ namespace Nop.Plugin.Sitecore.Commerce.Wishlists.Security
   using Core.Domain.Security;
   using Services.Security;
 
+    /// <summary>
+    /// The Wish lists permission provider.
+    /// </summary>
   public class ObecWishlistsPermissionProvider : IPermissionProvider
   {
       public static readonly PermissionRecord AccessWebService = new PermissionRecord { Name = "Plugins. Access Synchronize Service", SystemName = "AccessSitecoreCommerceProductsService", Category = "Plugin" };
@@ -30,7 +33,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Wishlists.Security
     /// <summary>
     /// Gets the permissions.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>The permission records.</returns>
     public virtual IEnumerable<PermissionRecord> GetPermissions()
     {
       return new[] 
@@ -42,7 +45,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Wishlists.Security
     /// <summary>
     /// Gets the default permissions.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>The default permission records.</returns>
     public virtual IEnumerable<DefaultPermissionRecord> GetDefaultPermissions()
     {
       return Enumerable.Empty<DefaultPermissionRecord>();
@@ -60,6 +63,5 @@ namespace Nop.Plugin.Sitecore.Commerce.Wishlists.Security
       //    },
       //};
     }
-
   }
 }

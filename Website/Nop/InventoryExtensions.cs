@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="InventoryExtensions.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The inventory extensions.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -16,13 +16,14 @@
 // either express or implied. See the License for the specific language governing permissions 
 // and limitations under the License.
 // ---------------------------------------------------------------------
-using Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService;
-using Sitecore.Commerce.Entities.Inventory;
-using Sitecore.Diagnostics;
-using StockStatus = Sitecore.Commerce.Entities.Inventory.StockStatus;
 
 namespace Sitecore.Commerce.Connectors.NopCommerce
 {
+    using Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService;
+    using Sitecore.Commerce.Entities.Inventory;
+    using Sitecore.Diagnostics;
+    using StockStatus = Sitecore.Commerce.Entities.Inventory.StockStatus;
+    
     /// <summary>
     /// The inventory extensions.
     /// </summary>

@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ChangeLinesProcessor.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The change lines processor.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -57,7 +57,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.Common
         using (var client = this.GetClient())
         {
           // Check that NopCommerce instance contains cart with specified id and if not stop adding cart lines.
-          var cartModel = client.GetCart(Guid.Parse(cart.ExternalId),cart.ShopName);
+          var cartModel = client.GetCart(Guid.Parse(cart.ExternalId), cart.ShopName);
           if (cartModel != null)
           {
             // Adds all specified cart lines to cart on NopCommerce instance side.
@@ -92,7 +92,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Carts.Common
     /// <param name="cartModel">The cart model.</param>
     /// <param name="client">The client.</param>
     /// <param name="cartLine">The cart line.</param>
-    /// <returns>The </returns>
+    /// <returns>The shopping cart model.</returns>
     protected abstract ShoppingCartModel ChangeLines(ShoppingCartModel cartModel, ICartsServiceChannel client, CartLine cartLine);
   }
 }

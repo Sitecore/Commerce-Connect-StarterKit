@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="PaymentOptionModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the PaymentOptionModel type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the PaymentOptionModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,11 +16,19 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Payments.Models
 {
-  public class PaymentOptionModel
-  {
-    public string ShopName { get; set; }
+    /// <summary>
+    /// The payment option model.
+    /// </summary>
+    public class PaymentOptionModel
+    {
+        /// <summary>
+        /// Gets or sets the shop name.
+        /// </summary>
+        public string ShopName { get; set; }
 
-    public string Name { get; set; }
-
-  }
+        /// <summary>
+        /// Gets or sets the payment option name.
+        /// </summary>
+        public string Name { get; set; }
+    }
 }

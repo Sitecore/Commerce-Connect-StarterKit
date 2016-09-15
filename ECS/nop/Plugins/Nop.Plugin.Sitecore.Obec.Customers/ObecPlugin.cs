@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ObecPlugin.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The ObecPlugin class.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the ObecPlugin class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,30 +16,32 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Customers
 {
-  using System.Web.Routing;
+    using System.Web.Routing;
+    using Core.Plugins;
+    using Services.Common;
 
-  using Core.Plugins;
-  using Services.Common;
-
-  public class ObecPlugin : BasePlugin, IMiscPlugin
-  {
     /// <summary>
-    /// The get configuration route.
+    /// The Commerce Connect plugin.
     /// </summary>
-    /// <param name="actionName">
-    /// The action name.
-    /// </param>
-    /// <param name="controllerName">
-    /// The controller name.
-    /// </param>
-    /// <param name="routeValues">
-    /// The route values.
-    /// </param>
-    public void GetConfigurationRoute(out string actionName, out string controllerName, out RouteValueDictionary routeValues)
+    public class ObecPlugin : BasePlugin, IMiscPlugin
     {
-      actionName = "Configure";
-      controllerName = "SitecoreObecCustomers";
-      routeValues = new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Sitecore.Commerce.Customers.Controllers" }, { "area", null } };
+        /// <summary>
+        /// The get configuration route.
+        /// </summary>
+        /// <param name="actionName">
+        /// The action name.
+        /// </param>
+        /// <param name="controllerName">
+        /// The controller name.
+        /// </param>
+        /// <param name="routeValues">
+        /// The route values.
+        /// </param>
+        public void GetConfigurationRoute(out string actionName, out string controllerName, out RouteValueDictionary routeValues)
+        {
+            actionName = "Configure";
+            controllerName = "SitecoreObecCustomers";
+            routeValues = new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Sitecore.Commerce.Customers.Controllers" }, { "area", null } };
+        }
     }
-  }
 }

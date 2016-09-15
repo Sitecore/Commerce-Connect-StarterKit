@@ -1,11 +1,9 @@
-﻿// ---------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ProductPagingModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The ProductPagingModel class.
-// </summary>
-// ---------------------------------------------------------------------
+// <summary>Defines the ProductPagingModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,19 +16,37 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  public class ProductPagingModel
-  {
-    public ProductPagingModel(int pageIndex, int pageSize, int totalCount)
+    /// <summary>
+    /// Represents product paging information.
+    /// </summary>
+    public class ProductPagingModel
     {
-      this.PageIndex = pageIndex;
-      this.PageSize = pageSize;
-      this.TotalCount = totalCount;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProductPagingModel"/> class.
+        /// </summary>
+        /// <param name="pageIndex">The page index.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <param name="totalCount">The total count.</param>
+        public ProductPagingModel(int pageIndex, int pageSize, int totalCount)
+        {
+            this.PageIndex = pageIndex;
+            this.PageSize = pageSize;
+            this.TotalCount = totalCount;
+        }
+
+        /// <summary>
+        /// Gets the page index.
+        /// </summary>
+        public int PageIndex { get; private set; }
+
+        /// <summary>
+        /// Gets the page size.
+        /// </summary>
+        public int PageSize { get; private set; }
+
+        /// <summary>
+        /// Gets the total count.
+        /// </summary>
+        public int TotalCount { get; private set; }
     }
-
-    public int PageIndex { get; private  set; }
-
-    public int PageSize { get; private set; }
-
-    public int TotalCount { get; private set; }
-  }
 }

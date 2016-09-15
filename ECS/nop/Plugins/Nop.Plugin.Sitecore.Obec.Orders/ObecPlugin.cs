@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ObecPlugin.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Defines the ObecPlugin type.
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -22,6 +22,9 @@ namespace Nop.Plugin.Sitecore.Commerce.Orders
     using Core.Plugins;
     using Services.Common;
 
+    /// <summary>
+    /// The Connect plugin.
+    /// </summary>
     public class ObecPlugin : BasePlugin, IMiscPlugin
     {
         /// <summary>
@@ -30,8 +33,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Orders
         /// <param name="actionName">Action name</param>
         /// <param name="controllerName">Controller name</param>
         /// <param name="routeValues">Route values</param>
-        public void GetConfigurationRoute(out string actionName, out string controllerName,
-            out RouteValueDictionary routeValues)
+        public void GetConfigurationRoute(out string actionName, out string controllerName, out RouteValueDictionary routeValues)
         {
             actionName = "Configure";
             controllerName = "SitecoreObecOrders";

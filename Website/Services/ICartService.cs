@@ -1,6 +1,6 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ICartService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Provides basic cart operations for the "Autohaus" web-store visitors.
@@ -8,7 +8,7 @@
 //   allows MVC controllers to use lite version of the cart management API
 //   that satisfies their needs.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -111,21 +111,24 @@ namespace Sitecore.Commerce.StarterKit.Services
     /// <summary>
     /// Add address
     /// </summary>
-    /// <param name="party"></param>
+    /// <param name="party">The party to add.</param>
+    /// <returns>
+    /// The addresses
+    /// </returns>
     IEnumerable<Party> AddAddress(Party party);
 
     /// <summary>
     /// Set billing address to cart
     /// </summary>
-    /// <param name="cartParty"></param>
-    /// <returns></returns>
+    /// <param name="cartParty">The cart party.</param>
+    /// <returns>True if the operation succeeded, otherwise false.</returns>
     bool SetBillingAddressToCart(CartParty cartParty);
 
     /// <summary>
     /// Set shipping address to cart
     /// </summary>
-    /// <param name="cartParty"></param>
-    /// <returns></returns>
+    /// <param name="cartParty">The cart party.</param>
+    /// <returns>True if the operation succeeded, otherwise false.</returns>
     bool SetShippingAddressToCart(CartParty cartParty);
 
     /// <summary>
@@ -155,34 +158,34 @@ namespace Sitecore.Commerce.StarterKit.Services
     /// <summary>
     /// Set shipping method to cart
     /// </summary>
-    /// <param name="shippingInfo"></param>
-    /// <returns></returns>
+    /// <param name="shippingInfo">The shipping information.</param>
+    /// <returns>True if the operation succeeded, otherwise false.</returns>
     bool SetShippingMethodToCart(ShippingInfo shippingInfo);
 
     /// <summary>
     /// Set shipping method to cart
     /// </summary>
-    /// <param name="paymentInfo"></param>
-    /// <returns></returns>
+    /// <param name="paymentInfo">The payment information.</param>
+    /// <returns>True if the operation succeeded, otherwise false.</returns>
     bool SetPaymentMethodToCart(PaymentInfo paymentInfo);
 
     /// <summary>
     /// Update parties
     /// </summary>
-    /// <param name="parties"></param>
-    /// <returns></returns>
+    /// <param name="parties">The list of addresses.</param>
+    /// <returns>True if the operation succeeded, otherwise false.</returns>
     bool UpdateAddresses(List<Party> parties);
 
     /// <summary>
     /// Set shipping method from cart
     /// </summary>
-    /// <returns>ShippingInfo</returns>
+    /// <returns>The shipping information.</returns>
     ShippingInfo GetShippingInfo();
 
     /// <summary>
     /// Get payment method from cart
     /// </summary>
-    /// <returns>PaymentInfo</returns>
+    /// <returns>The payment information.</returns>
     PaymentInfo GetPaymentInfo();
 
     /// <summary>
@@ -194,15 +197,15 @@ namespace Sitecore.Commerce.StarterKit.Services
     /// <summary>
     /// Create wishlist for visitor.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>The new wish list.</returns>
     WishList CreateWishList();
 
     /// <summary>
     /// Add to wishlist.
     /// </summary>
-    /// <param name="productId"></param>
-    /// <param name="quantity"></param>
-    /// <returns></returns>
+    /// <param name="productId">The product ID.</param>
+    /// <param name="quantity">The quantity.</param>
+    /// <returns>The updated wish list.</returns>
     WishList AddToWishList([NotNull] string productId, uint quantity);
 
     /// <summary>
@@ -222,10 +225,9 @@ namespace Sitecore.Commerce.StarterKit.Services
     /// <summary>
     /// Remove line from wishlist
     /// </summary>
-    /// <param name="lineId"></param>
-    /// <returns></returns>
+    /// <param name="lineId">The wish list line ID.</param>
+    /// <returns>The updated wish list.</returns>
     WishList RemoveLineFromWishlist([NotNull] string lineId);
-
 
     /// <summary>
     /// Merges the wishlists
@@ -239,9 +241,9 @@ namespace Sitecore.Commerce.StarterKit.Services
     /// <summary>
     /// Merges the wishlists
     /// </summary>
-    /// <param name="userWishlist"></param>
-    /// <param name="anonymousWishlist"></param>
-    /// <returns></returns>
+    /// <param name="userWishlist">The registered user wish list.</param>
+    /// <param name="anonymousWishlist">The anonymous user wish list.</param>
+    /// <returns>The merged wishlist.</returns>
     WishList MergeWishlist([NotNull] WishList userWishlist, [NotNull] WishList anonymousWishlist);
   }
 }

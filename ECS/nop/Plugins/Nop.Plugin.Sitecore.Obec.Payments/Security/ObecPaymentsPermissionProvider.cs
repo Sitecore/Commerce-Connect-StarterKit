@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
-// <copyright file="ObecCustomersPermissionProvider.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ObecPaymentsPermissionProvider.cs" company="Sitecore Corporation">
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The ObecCustomersPermissionProvider class.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the ObecPaymentsPermissionProvider class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,48 +16,50 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Payments.Security
 {
-  using System.Collections.Generic;
-  using System.Linq;
-  using Core.Domain.Security;
-  using Services.Security;
-
-  public class ObecCustomersPermissionProvider : IPermissionProvider
-  {
-    public static readonly PermissionRecord AccessWebService = new PermissionRecord { Name = "Plugins. Access Payments Service", SystemName = "AccessSitecoreObecPaymentsService", Category = "Plugin" };
+    using System.Collections.Generic;
+    using System.Linq;
+    using Core.Domain.Security;
+    using Services.Security;
 
     /// <summary>
-    /// Gets the permissions.
+    /// The payments permission provider.
     /// </summary>
-    /// <returns></returns>
-    public virtual IEnumerable<PermissionRecord> GetPermissions()
+    public class ObecPaymentsPermissionProvider : IPermissionProvider
     {
-      return new[] 
+        public static readonly PermissionRecord AccessWebService = new PermissionRecord { Name = "Plugins. Access Payments Service", SystemName = "AccessSitecoreObecPaymentsService", Category = "Plugin" };
+
+        /// <summary>
+        /// Gets the permissions.
+        /// </summary>
+        /// <returns>The permissions.</returns>
+        public virtual IEnumerable<PermissionRecord> GetPermissions()
+        {
+            return new[] 
             {
                 AccessWebService
             };
+        }
+
+        /// <summary>
+        /// Gets the default permissions.
+        /// </summary>
+        /// <returns>The default permissions.</returns>
+        public virtual IEnumerable<DefaultPermissionRecord> GetDefaultPermissions()
+        {
+            return Enumerable.Empty<DefaultPermissionRecord>();
+
+            //uncomment code below in order to give appropriate permissions to admin by default
+            //return new[] 
+            //{
+            //    new DefaultPermissionRecord 
+            //    {
+            //        CustomerRoleSystemName = SystemCustomerRoleNames.Administrators,
+            //        PermissionRecords = new[] 
+            //        {
+            //            AccessWebService,
+            //        }
+            //    },
+            //};
+        }
     }
-
-    /// <summary>
-    /// Gets the default permissions.
-    /// </summary>
-    /// <returns></returns>
-    public virtual IEnumerable<DefaultPermissionRecord> GetDefaultPermissions()
-    {
-      return Enumerable.Empty<DefaultPermissionRecord>();
-
-      //uncomment code below in order to give appropriate permissions to admin by default
-      //return new[] 
-      //{
-      //    new DefaultPermissionRecord 
-      //    {
-      //        CustomerRoleSystemName = SystemCustomerRoleNames.Administrators,
-      //        PermissionRecords = new[] 
-      //        {
-      //            AccessWebService,
-      //        }
-      //    },
-      //};
-    }
-
-  }
 }

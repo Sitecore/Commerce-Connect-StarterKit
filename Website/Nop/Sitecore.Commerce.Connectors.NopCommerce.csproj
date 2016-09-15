@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sitecore.Commerce.Connectors.NopCommerce</RootNamespace>
     <AssemblyName>Sitecore.Commerce.Connectors.NopCommerce</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -65,6 +65,9 @@
   <ItemGroup>
     <Compile Include="Pipelines\Carts\MergeCart\MergeCart.cs" />
     <Compile Include="Pipelines\Carts\GetCarts\FindCart.cs" />
+    <Compile Include="Pipelines\Customers\AddCustomerPaymentInfo.cs" />
+    <Compile Include="Pipelines\Customers\RemoveCustomerPaymentInfo.cs" />
+    <Compile Include="Pipelines\Customers\UpdateCustomerPaymentInfo.cs" />
     <Compile Include="Pipelines\Orders\SubmitOrder\SubmitOrder.cs" />
     <Compile Include="Pipelines\Orders\CancelOrder\CancelOrder.cs" />
     <Compile Include="ShippingInfoExtensions.cs" />

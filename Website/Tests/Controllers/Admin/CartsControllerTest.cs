@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="CartsControllerTest.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The carts controller test.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -45,7 +45,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Controllers.Admin
       var cartService = Substitute.For<CartServiceProvider>();
       var carts = new[] { new Cart { ExternalId = "1001" }, new Cart { ExternalId = "1002" } };
 
-      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.ShopName == "mystore")).Returns(new GetCartsResult { Carts = carts });
+      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.Shop.Name == "mystore")).Returns(new GetCartsResult { Carts = carts });
 
       CartsController controller = new CartsController(cartService);
 
@@ -73,8 +73,8 @@ namespace Sitecore.Commerce.StarterKit.Tests.Controllers.Admin
       var carts2 = new[] { new Cart { ExternalId = "1001", UserId = "Stan" } };
       var carts = carts1.Union(carts2);
 
-      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.ShopName == "mystore")).Returns(new GetCartsResult { Carts = carts });
-      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.ShopName == "mystore" && r.UserIds.Contains("Bob"))).Returns(new GetCartsResult { Carts = carts1 });
+      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.Shop.Name == "mystore")).Returns(new GetCartsResult { Carts = carts });
+      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.Shop.Name == "mystore" && r.UserIds.Contains("Bob"))).Returns(new GetCartsResult { Carts = carts1 });
 
       CartsController controller = new CartsController(cartService);
 
@@ -102,8 +102,8 @@ namespace Sitecore.Commerce.StarterKit.Tests.Controllers.Admin
       var carts2 = new[] { new Cart { ExternalId = "1001", CustomerId = "Stan" } };
       var carts = carts1.Union(carts2);
 
-      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.ShopName == "mystore")).Returns(new GetCartsResult { Carts = carts });
-      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.ShopName == "mystore" && r.CustomerIds.Contains("Bob"))).Returns(new GetCartsResult { Carts = carts1 });
+      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.Shop.Name == "mystore")).Returns(new GetCartsResult { Carts = carts });
+      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.Shop.Name == "mystore" && r.CustomerIds.Contains("Bob"))).Returns(new GetCartsResult { Carts = carts1 });
 
       CartsController controller = new CartsController(cartService);
 
@@ -131,8 +131,8 @@ namespace Sitecore.Commerce.StarterKit.Tests.Controllers.Admin
       var carts2 = new[] { new Cart { ExternalId = "1001", Name = "Stan" } };
       var carts = carts1.Union(carts2);
 
-      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.ShopName == "mystore")).Returns(new GetCartsResult { Carts = carts });
-      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.ShopName == "mystore" && r.Names.Contains("Bob"))).Returns(new GetCartsResult { Carts = carts1 });
+      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.Shop.Name == "mystore")).Returns(new GetCartsResult { Carts = carts });
+      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.Shop.Name == "mystore" && r.Names.Contains("Bob"))).Returns(new GetCartsResult { Carts = carts1 });
 
       CartsController controller = new CartsController(cartService);
 
@@ -160,8 +160,8 @@ namespace Sitecore.Commerce.StarterKit.Tests.Controllers.Admin
       var carts2 = new[] { new Cart { ExternalId = "1001", Status = "Stan" } };
       var carts = carts1.Union(carts2);
 
-      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.ShopName == "mystore")).Returns(new GetCartsResult { Carts = carts });
-      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.ShopName == "mystore" && r.Statuses.Contains("Bob"))).Returns(new GetCartsResult { Carts = carts1 });
+      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.Shop.Name == "mystore")).Returns(new GetCartsResult { Carts = carts });
+      cartService.GetCarts(Arg.Is<GetCartsRequest>(r => r.Shop.Name == "mystore" && r.Statuses.Contains("Bob"))).Returns(new GetCartsResult { Carts = carts1 });
 
       CartsController controller = new CartsController(cartService);
 

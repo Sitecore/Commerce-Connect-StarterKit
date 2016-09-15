@@ -1,11 +1,9 @@
-﻿// ---------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ProductSortingItem.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The ProductSortingItem class.
-// </summary>
-// ---------------------------------------------------------------------
+// <summary>Defines the ProductSortingItem class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,46 +16,61 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  using Glass.Sitecore.Mapper.Configuration;
-  using Glass.Sitecore.Mapper.Configuration.Attributes;
+    using Glass.Sitecore.Mapper.Configuration;
+    using Glass.Sitecore.Mapper.Configuration.Attributes;
 
-  [SitecoreClass]
-  public class ProductSortingItem
-  {
-    private string field;
-    private string direction;
-
-    [SitecoreInfo(SitecoreInfoType.DisplayName)]
-    public virtual string DisplayName { get; set; }
-
-    [SitecoreField]
-    public virtual string Field
+    /// <summary>
+    /// Represents product sorting information.
+    /// </summary>
+    [SitecoreClass]
+    public class ProductSortingItem
     {
-      get
-      {
-        return this.field;
-      }
-      set
-      {
-        this.field = value.ToLowerInvariant();
-      }
-    }
+        private string field;
+        private string direction;
 
-    [SitecoreField]
-    public virtual string Direction
-    {
-      get
-      {
-        if (!string.IsNullOrEmpty(this.direction))
+        /// <summary>
+        /// Gets or sets the display name.
+        /// </summary>
+        [SitecoreInfo(SitecoreInfoType.DisplayName)]
+        public virtual string DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the field name.
+        /// </summary>
+        [SitecoreField]
+        public virtual string Field
         {
-          return this.direction;
+            get
+            {
+                return this.field;
+            }
+
+            set
+            {
+                this.field = value.ToLowerInvariant();
+            }
         }
-        return "asc";
-      }
-      set
-      {
-        this.direction = value.ToLowerInvariant();
-      }
+
+        /// <summary>
+        /// Gets or sets the sort direction.
+        /// </summary>
+        [SitecoreField]
+        public virtual string Direction
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(this.direction))
+                {
+                    return this.direction;
+                }
+
+                return "asc";
+            }
+
+            set
+            {
+                this.direction = value.ToLowerInvariant();
+            }
+        }
     }
-  }
 }

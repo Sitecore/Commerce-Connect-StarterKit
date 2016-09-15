@@ -1,11 +1,9 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="RemoveCustomerParties.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The RemoveCustomerParties class.
-// </summary>
-// ----------------------------------------------------------------------------------------------
+// <summary>Defines the RemoveCustomerParties class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,32 +16,46 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers
 {
-  using System;
-  using System.Linq;
-  using Sitecore.Commerce.Connectors.NopCommerce.NopCustomersService;
-  using Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Common;
-  using Sitecore.Commerce.Entities;
-  using Sitecore.Commerce.Pipelines;
-  using Sitecore.Commerce.Services.Customers;
-  using Sitecore.Diagnostics;
+    using System;
+    using System.Linq;
+    using Sitecore.Commerce.Connectors.NopCommerce.NopCustomersService;
+    using Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Common;
+    using Sitecore.Commerce.Entities;
+    using Sitecore.Commerce.Pipelines;
+    using Sitecore.Commerce.Services.Customers;
+    using Sitecore.Diagnostics;
 
-  public class RemoveCustomerParties : NopProcessor<ICustomersServiceChannel>
+    /// <summary>
+    /// The remove customer parties processor.
+    /// </summary>
+    public class RemoveCustomerParties : NopProcessor<ICustomersServiceChannel>
     {
-        public IEntityFactory EntityFactory { get; private set; }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemoveCustomerParties"/> class.
+        /// </summary>
+        /// <param name="entityFactory">The entity factory.</param>
         public RemoveCustomerParties(IEntityFactory entityFactory)
         {
             EntityFactory = entityFactory;
         }
 
+        /// <summary>
+        /// Gets the entity factory.
+        /// </summary>
+        public IEntityFactory EntityFactory { get; private set; }
+
+        /// <summary>
+        /// Processes the arguments.
+        /// </summary>
+        /// <param name="args">The pipeline arguments.</param>
         public override void Process(ServicePipelineArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
 
             RemoveCustomerPartiesRequest request = (RemoveCustomerPartiesRequest)args.Request;
-            CustomerPartiesResult result = (CustomerPartiesResult) args.Result; //- there is no RemovePartiesResult in Services.Customers
+            CustomerPartiesResult result = (CustomerPartiesResult)args.Result; //- there is no RemovePartiesResult in Services.Customers
 
-            using (ICustomersServiceChannel channel = base.GetClient())
+            using (ICustomersServiceChannel channel = this.GetClient())
             {
                 Guid customerId;
                 try
@@ -70,7 +82,6 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Customers
                 //    result.Success = false;
                 //    result.SystemMessages.Add(new SystemMessage { Message = "Error occuder while adding parties to Cusomer " + request.CommerceCustomer.ExternalId });
                 //}
-                 
             }
         }
     }

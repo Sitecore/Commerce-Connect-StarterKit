@@ -9,6 +9,7 @@
     // either express or implied. See the License for the specific language governing permissions
     // and limitations under the License.
     // -------------------------------------------------------------------------------------------*@
+@using System.Web.Optimization
 
 @Html.Partial("CheckoutArrows")
 
@@ -29,6 +30,8 @@
   }
 </div>
 
+@Scripts.Render("~/bundles/obec/paymentservice")
+
 <script type="text/javascript">
     
     function updateWizard(context) {
@@ -48,5 +51,7 @@
             cinfirmApi.showProducts();
         }
     }
+
+    registerEventListener();
 
 </script>

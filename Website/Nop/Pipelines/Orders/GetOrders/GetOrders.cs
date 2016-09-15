@@ -1,9 +1,9 @@
-﻿//-----------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="GetOrders.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>The GetOrders class.</summary>
-//-----------------------------------------------------------------------
+// <summary>Defines the GetOrders class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -49,7 +49,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Orders.GetOrders
         var orders = new ReadOnlyCollection<OrderHeader>(ordersHeaders);
         result.OrderHeaders = orders;
 
-        var ordersModels = client.GetOrders(Guid.Parse(request.CustomerID), request.ShopName);
+        var ordersModels = client.GetOrders(Guid.Parse(request.CustomerID), request.Shop.Name);
         if (ordersModels == null)
         {
           return;

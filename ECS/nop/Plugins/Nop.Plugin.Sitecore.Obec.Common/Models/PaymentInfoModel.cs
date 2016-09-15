@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="PaymentInfoModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the PaymentInfoModel type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the PaymentInfoModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,24 +16,24 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Common.Models
 {
-  using System.Runtime.Serialization;
-
-  /// <summary>
-  /// Payment info model
-  /// </summary>
-  [DataContract]
-  public class PaymentInfoModel
-  {
-    /// <summary>
-    /// Method name
-    /// </summary>
-    [DataMember]
-    public string MethodName { get; set; }
+    using System.Runtime.Serialization;
 
     /// <summary>
-    /// System name
+    /// Payment info model
     /// </summary>
-    [DataMember]
-    public string SystemName { get; set; }
-  }
+    [DataContract]
+    public class PaymentInfoModel
+    {
+        /// <summary>
+        /// Gets or sets the method name
+        /// </summary>
+        [DataMember]
+        public string MethodName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the system name
+        /// </summary>
+        [DataMember]
+        public string SystemName { get; set; }
+    }
 }

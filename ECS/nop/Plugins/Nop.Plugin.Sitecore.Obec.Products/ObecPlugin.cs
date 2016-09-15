@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ObecPlugin.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
-//   Defines the ObecPlugin type.
+//   Entry point for Commerce plugin.
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -50,7 +50,6 @@ namespace Nop.Plugin.Sitecore.Commerce.Products
         /// </summary>
         private readonly IPermissionService _permissionService;
 
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ObecPlugin" /> class.
         /// </summary>
@@ -66,8 +65,8 @@ namespace Nop.Plugin.Sitecore.Commerce.Products
         /// <param name="eventMessage">The event message.</param>
         public void HandleEvent(EntityUpdated<Product> eventMessage)
         {
-            // using eventMessage.Entity
-            // Need to call external service to handle updated product.
+            //// using eventMessage.Entity
+            //// Need to call external service to handle updated product.
 
             if (eventMessage.Entity.ProductType == ProductType.GroupedProduct)
             {
@@ -80,7 +79,6 @@ namespace Nop.Plugin.Sitecore.Commerce.Products
             {
                 UpdateProductInSitecore(eventMessage.Entity.Id.ToString(CultureInfo.InvariantCulture));
             }
-
         }
 
         /// <summary>
@@ -122,29 +120,6 @@ namespace Nop.Plugin.Sitecore.Commerce.Products
             // using eventMessage.Entity
             // Need to call external service to handle inserted product.
             UpdateProductInSitecore(eventMessage.Entity.Id.ToString(CultureInfo.InvariantCulture));
-        }
-
-
-
-
-        /// <summary>
-        /// Updates the product in sitecore.
-        /// </summary>
-        /// <param name="productId">The product id.</param>
-        private void UpdateProductInSitecore(string productId)
-        {
-            // TODO : Change following so it reads from correct config file.
-            var myBinding = new BasicHttpBinding();
-
-            var myEndpoint = new EndpointAddress(_endpointAddress);
-
-
-            var channelFactory = new ChannelFactory<IProductServiceChannel>(myBinding, myEndpoint);
-
-            using (var productsChannel = channelFactory.CreateChannel())
-            {
-                productsChannel.SynchronizeProduct(productId);
-            }
         }
 
         /// <summary>
@@ -191,6 +166,25 @@ namespace Nop.Plugin.Sitecore.Commerce.Products
             this.DeletePluginLocaleResource("Plugins.Sitecore.Obec.Products.Description4");
 
             base.Uninstall();
+        }
+
+        /// <summary>
+        /// Updates the product in sitecore.
+        /// </summary>
+        /// <param name="productId">The product id.</param>
+        private void UpdateProductInSitecore(string productId)
+        {
+            // TODO : Change following so it reads from correct config file.
+            var myBinding = new BasicHttpBinding();
+
+            var myEndpoint = new EndpointAddress(_endpointAddress);
+
+            var channelFactory = new ChannelFactory<IProductServiceChannel>(myBinding, myEndpoint);
+
+            using (var productsChannel = channelFactory.CreateChannel())
+            {
+                productsChannel.SynchronizeProduct(productId);
+            }
         }
     }
 }

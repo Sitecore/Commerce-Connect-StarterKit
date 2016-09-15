@@ -1,11 +1,9 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="GetShippingOptions.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   GetShippingOptions test class
-// </summary>
-// ----------------------------------------------------------------------------------------------
+// <summary>Defines the GetShippingOptions class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -30,16 +28,15 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Shipping.GetShippin
   using System.Collections.Generic;
   using System.Linq;
 
-
   /// <summary>
   /// Defines the pipeline processor that gets shipping options.
   /// </summary>
   public class GetShippingOptions : NopProcessor<IShippingServiceChannel>
   {
     /// <summary>
-    /// ShippingOptionList
+    /// The shipping option list.
     /// </summary>
-    protected readonly Dictionary<int,ShippingOption> ShippingOptionList;
+    protected readonly Dictionary<int, ShippingOption> ShippingOptionList;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GetShippingOptions"/> class.
@@ -64,7 +61,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Shipping.GetShippin
     /// <summary>
     /// Add shipping optin by configuration setting
     /// </summary>
-    /// <param name="configNode"></param>
+    /// <param name="configNode">The configuration node.</param>
     public virtual void AddShippingOption(XmlNode configNode)
     {
       Assert.ArgumentNotNull(configNode, "configNode");
@@ -96,7 +93,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Shipping.GetShippin
             shippingOption.Name = Globalization.Translate.Text(Texts.EmailDelivery);
             shippingOption.Description = Globalization.Translate.Text(Texts.EmailDelivery);
             break;
-          default :
+          default:
             shippingOption.ShippingOptionType = ShippingOptionType.None;
             shippingOption.Name = Globalization.Translate.Text(Texts.NoDeliveryPreference);
             shippingOption.Description = Globalization.Translate.Text(Texts.NoDeliveryPreference);

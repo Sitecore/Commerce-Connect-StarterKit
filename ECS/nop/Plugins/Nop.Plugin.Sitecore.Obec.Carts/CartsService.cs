@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------
-// <copyright file="CartService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CartsService.cs" company="Sitecore Corporation">
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
-//   The implementation of Cart Service.
+//   The implementation of Carts Service.
 // </summary>
-// -----------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -56,7 +56,6 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
         /// </summary>
         private readonly IPaymentService paymentService;
 
-
         /// <summary>
         /// Initializes a new instance of the <see cref="CartsService"/> class.
         /// </summary>
@@ -78,11 +77,11 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
             return base.GetCarts();
         }
 
-
         /// <summary>
         /// Gets the carts by customer id.
         /// </summary>
         /// <param name="customerId">The customer id.</param>
+        /// <param name="storeName">The store name.</param>
         /// <returns>List of <see cref="ShoppingCartModel"/></returns>
         [WebMethod(EnableSession = false)]
         public virtual ShoppingCartModel GetCart(Guid customerId, string storeName = null)
@@ -104,6 +103,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
         /// Creates the cart by customer id.
         /// </summary>
         /// <param name="customerId">The customer id.</param>
+        /// <returns>The shopping cart.</returns>
         [WebMethod(EnableSession = false)]
         public virtual ShoppingCartModel CreateCart(Guid customerId)
         {
@@ -113,9 +113,9 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
         /// <summary>
         /// Adds the product by product variant id to cart.
         /// </summary>
+        /// <param name="customerId">The customer ID.</param>
         /// <param name="externalProductId">The external product id.</param>
         /// <param name="quantity">The quantity.</param>
-        /// <param name="customerCart">The customer cart.</param>
         /// <returns>
         /// Instance of <see cref="ShoppingCartModel" />
         /// </returns>
@@ -128,8 +128,8 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
         /// <summary>
         /// Removes the product by product variant id from cart.
         /// </summary>
+        /// <param name="customerId">The custommer ID.</param>
         /// <param name="externalProductId">The external product id.</param>
-        /// <param name="customerCart">The customer cart.</param>
         /// <returns>
         /// Instance of <see cref="ShoppingCartModel" />
         /// </returns>
@@ -142,9 +142,9 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
         /// <summary>
         /// Updates the quantity by external product id on cart.
         /// </summary>
+        /// <param name="customerId">THe customer ID.</param>
         /// <param name="externalProductId">The external product id.</param>
         /// <param name="newQuantity">The new quantity.</param>
-        /// <param name="customerCart">The customer cart.</param>
         /// <returns>
         /// Instance of <see cref="ShoppingCartModel" />
         /// </returns>
@@ -165,7 +165,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
         [WebMethod(EnableSession = false)]
         public virtual Response AddAddresses(CustomerAddressModel[] addresses, Guid customerId)
         {
-            var customer = this.customerService.GetCustomerByGuid(customerId);
+            var customer = this.CustomerService.GetCustomerByGuid(customerId);
             if (customer == null)
             {
                 return new Response()
@@ -197,7 +197,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
 
             try
             {
-                this.customerService.UpdateCustomer(customer);
+                this.CustomerService.UpdateCustomer(customer);
             }
             catch (Exception)
             {
@@ -207,6 +207,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
                     Success = false
                 };
             }
+
             return new Response() { Message = "Success", Success = true };
         }
 
@@ -221,7 +222,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
         [WebMethod(EnableSession = false)]
         public Response RemoveAddresses(CustomerAddressModel[] addresses, Guid customerId)
         {
-            var customer = this.customerService.GetCustomerByGuid(customerId);
+            var customer = this.CustomerService.GetCustomerByGuid(customerId);
             if (customer == null)
             {
                 return new Response()
@@ -233,7 +234,6 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
 
             foreach (var address in addresses)
             {
-
                 if ((address.AddressType == AddressTypeModel.Shipping) && (customer.ShippingAddress != null))
                 {
                     customer.ShippingAddress = null;
@@ -246,7 +246,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
 
             try
             {
-                this.customerService.UpdateCustomer(customer);
+                this.CustomerService.UpdateCustomer(customer);
             }
             catch (Exception)
             {
@@ -256,17 +256,17 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
                     Success = false
                 };
             }
+
             return new Response() { Message = "Success", Success = true };
         }
-
 
         /// <summary>
         /// Add payment method info
         /// </summary>
-        /// <param name="customerId"></param>
-        /// <param name="paymentInfoModel"></param>
-        /// <param name="storeName"></param>
-        /// <returns></returns>
+        /// <param name="customerId">The customer ID.</param>
+        /// <param name="paymentInfoModel">The payment information.</param>
+        /// <param name="storeName">The store name.</param>
+        /// <returns>A service response.</returns>
         [WebMethod(EnableSession = false)]
         public Response<PaymentInfoModel> AddPaymentInfo(Guid customerId, PaymentInfoModel paymentInfoModel, string storeName)
         {
@@ -279,7 +279,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
                 };
             }
 
-            var customer = this.customerService.GetCustomerByGuid(customerId);
+            var customer = this.CustomerService.GetCustomerByGuid(customerId);
             if (customer == null)
             {
                 return new Response<PaymentInfoModel>
@@ -317,9 +317,10 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
                 return new Response<PaymentInfoModel>
                 {
                     Success = false,
-                    Message =
-                      string.Format("Couldn't find payment method. System Name: {0}, Method Name: {1}",
-                        paymentInfoModel.SystemName, paymentInfoModel.MethodName)
+                    Message = string.Format(
+                        "Couldn't find payment method. System Name: {0}, Method Name: {1}",
+                        paymentInfoModel.SystemName,
+                        paymentInfoModel.MethodName)
                 };
             }
 
@@ -350,10 +351,10 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
         /// <summary>
         /// Remove payment info
         /// </summary>
-        /// <param name="customerId"></param>
-        /// <param name="paymentInfoModel"></param>
-        /// <param name="storeName"></param>
-        /// <returns></returns>
+        /// <param name="customerId">The customer ID.</param>
+        /// <param name="paymentInfoModel">The payment information.</param>
+        /// <param name="storeName">The store name.</param>
+        /// <returns>A service response.</returns>
         [WebMethod(EnableSession = false)]
         public virtual Response RemovePaymentInfo(Guid customerId, PaymentInfoModel paymentInfoModel, string storeName)
         {
@@ -366,7 +367,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
                 };
             }
 
-            var customer = this.customerService.GetCustomerByGuid(customerId);
+            var customer = this.CustomerService.GetCustomerByGuid(customerId);
             if (customer == null)
             {
                 return new Response
@@ -414,6 +415,13 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
             };
         }
 
+        /// <summary>
+        /// adds shipping information.
+        /// </summary>
+        /// <param name="customerId">The customer ID.</param>
+        /// <param name="shippingMethodModel">The shipping method model.</param>
+        /// <param name="storeName">The store name.</param>
+        /// <returns>A service response.</returns>
         [WebMethod(EnableSession = false)]
         public Response AddShippingInfo(Guid customerId, ShippingMethodModel shippingMethodModel, string storeName)
         {
@@ -427,40 +435,61 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
             return this.UpdateShippingInfo(customerId, option, storeName);
         }
 
+        /// <summary>
+        /// Removes shipping information.
+        /// </summary>
+        /// <param name="customerId">The customer ID.</param>
+        /// <param name="storeName">The store name.</param>
+        /// <returns>A service response.</returns>
         [WebMethod(EnableSession = false)]
         public Response RemoveShippingInfo(Guid customerId, string storeName)
         {
             return this.UpdateShippingInfo(customerId, null, storeName);
         }
-      
-      [WebMethod(EnableSession = false)]
-      public Response MigrateShoppingCart(Guid fromCustomerId, Guid toCustomerId, bool includeCouponCodes)
-      {
-        var fromCustomer = this.customerService.GetCustomerByGuid(fromCustomerId);
-        var toCustomer = this.customerService.GetCustomerByGuid(toCustomerId);
 
-        if (fromCustomer == null)
+        /// <summary>
+        /// Migrates a shopping cart from one customer to another.
+        /// </summary>
+        /// <param name="fromCustomerId">The source customer ID.</param>
+        /// <param name="toCustomerId">The destination customer ID.</param>
+        /// <param name="includeCouponCodes">Specifies whether coupon codes will be included in the migrated cart.</param>
+        /// <returns>A service response.</returns>
+        [WebMethod(EnableSession = false)]
+        public Response MigrateShoppingCart(Guid fromCustomerId, Guid toCustomerId, bool includeCouponCodes)
         {
-          return new Response { Success = false, Message = "fromCustomer could not be found" };
-        }
-        if (toCustomer == null)
-        {
-          return new Response { Success = false, Message = "toCustomer could not be found" };
+            var fromCustomer = this.CustomerService.GetCustomerByGuid(fromCustomerId);
+            var toCustomer = this.CustomerService.GetCustomerByGuid(toCustomerId);
+
+            if (fromCustomer == null)
+            {
+                return new Response { Success = false, Message = "fromCustomer could not be found" };
+            }
+
+            if (toCustomer == null)
+            {
+                return new Response { Success = false, Message = "toCustomer could not be found" };
+            }
+
+            try
+            {
+                this.ShoppingCartService.MigrateShoppingCart(fromCustomer, toCustomer, includeCouponCodes);
+            }
+            catch (Exception ex)
+            {
+                return new Response { Success = false, Message = ex.Message };
+            }
+
+            return new Response() { Success = true };
         }
 
-        try
-        {
-          this.shoppingCartService.MigrateShoppingCart(fromCustomer, toCustomer, includeCouponCodes);
-        }
-        catch (Exception ex)
-        {
-          return new Response { Success = false, Message = ex.Message };
-        }
-
-        return new Response() { Success = true };
-      }
-
-      protected virtual Response UpdateShippingInfo(Guid customerId, ShippingOption shippingOption, string storeName)
+        /// <summary>
+        /// Updates shipping information.
+        /// </summary>
+        /// <param name="customerId">The customer id.</param>
+        /// <param name="shippingOption">The shipping option.</param>
+        /// <param name="storeName">The store name.</param>
+        /// <returns>A service response.</returns>
+        protected virtual Response UpdateShippingInfo(Guid customerId, ShippingOption shippingOption, string storeName)
         {
             if (string.IsNullOrEmpty(storeName))
             {
@@ -471,7 +500,7 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
                 };
             }
 
-            var customer = this.customerService.GetCustomerByGuid(customerId);
+            var customer = this.CustomerService.GetCustomerByGuid(customerId);
             if (customer == null)
             {
                 return new Response
@@ -483,7 +512,6 @@ namespace Nop.Plugin.Sitecore.Commerce.Carts
 
             var store = this.storeService.GetAllStores()
                .FirstOrDefault(s => s.Name.Equals(storeName, StringComparison.InvariantCultureIgnoreCase));
-
 
             var storeId = (store == null) ? 0 : store.Id;
 

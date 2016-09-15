@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="StockInformationUpdateModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the StockInformationUpdateModel class.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the StockInformationUpdateModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,33 +16,35 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Inventory.Models
 {
-  using System.Collections.Generic;
-
-  public class StockInformationUpdateModel
-  {
+    using System.Collections.Generic;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="StockInformationUpdateModel"/> class.
+    /// Represents a stock information update.
     /// </summary>
-    public StockInformationUpdateModel()
+    public class StockInformationUpdateModel
     {
-      StockInformationUpdateLocation = new List<StockInformationUpdateLocationModel>();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StockInformationUpdateModel"/> class.
+        /// </summary>
+        public StockInformationUpdateModel()
+        {
+            this.StockInformationUpdateLocation = new List<StockInformationUpdateLocationModel>();
+        }
+
+        /// <summary>
+        /// Gets or sets the product identifier.
+        /// </summary>
+        /// <value>
+        /// The product identifier.
+        /// </value>
+        public string ProductId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the stock information update location.
+        /// </summary>
+        /// <value>
+        /// The stock information update location.
+        /// </value>
+        public IList<StockInformationUpdateLocationModel> StockInformationUpdateLocation { get; set; }
     }
-
-    /// <summary>
-    /// Gets or sets the product identifier.
-    /// </summary>
-    /// <value>
-    /// The product identifier.
-    /// </value>
-    public string ProductId { get; set; }
-
-    /// <summary>
-    /// Gets or sets the stock information update location.
-    /// </summary>
-    /// <value>
-    /// The stock information update location.
-    /// </value>
-    public IList<StockInformationUpdateLocationModel> StockInformationUpdateLocation { get; set; }
-  }
 }

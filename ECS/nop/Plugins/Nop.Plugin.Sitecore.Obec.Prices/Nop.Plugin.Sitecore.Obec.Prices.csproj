@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Nop.Plugin.Sitecore.Commerce.Prices</RootNamespace>
     <AssemblyName>Nop.Plugin.Sitecore.Obec.Prices</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -94,7 +94,7 @@
     <Compile Include="ObecPlugin.cs" />
     <Compile Include="PricesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
+ </ItemGroup>
   <ItemGroup>
     <Content Include="Description.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -1,11 +1,9 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ShippingInfoModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The ShippingInfoModel class.
-// </summary>
-// ----------------------------------------------------------------------------------------------
+// <summary>Defines the ShippingInfoModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,12 +16,24 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  public class ShippingInfoModel
-  {
-    public string OptionName { get; set; }
+    /// <summary>
+    /// Represents shipping information.
+    /// </summary>
+    public class ShippingInfoModel
+    {
+        /// <summary>
+        /// Gets or sets the shipping option name.
+        /// </summary>
+        public string OptionName { get; set; }
 
-    public int OptionType { get; set; }
+        /// <summary>
+        /// Gets or sets the shipping option type.
+        /// </summary>
+        public int OptionType { get; set; }
 
-    public bool Selected { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets a value indicating whether the shipping information is selected.
+        /// </summary>
+        public bool Selected { get; set; }
+    }
 }

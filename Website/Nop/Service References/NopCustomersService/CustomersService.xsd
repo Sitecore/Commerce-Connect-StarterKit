@@ -4,6 +4,7 @@
   <xs:complexType name="CustomerModel">
     <xs:sequence>
       <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AdminContent" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="BillingAddress" nillable="true" type="tns:AddressModel" />
       <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />

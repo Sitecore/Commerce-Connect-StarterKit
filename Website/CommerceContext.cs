@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
-// <copyright file="ObecContext.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CommerceContext.cs" company="Sitecore Corporation">
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
-//   Defines the class which allows to determine obec context.
+//   Defines the CommerceContext class.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -38,6 +38,36 @@ namespace Sitecore.Commerce.StarterKit
         private IWindsorContainer _windsorContainer;
 
         /// <summary>
+        /// Retrieves the ID  of the currently selected product.
+        /// </summary>
+        /// <returns>The ID of the currently selected product.</returns>
+        public override string ProductId
+        {
+            get
+            {
+                var catalogItemUrlData = this.ProductHelper.GetCatalogItemIdFromIncomingRequest();
+                if (catalogItemUrlData != null && catalogItemUrlData.ItemType == CatalogItemType.Product)
+                {
+                    return catalogItemUrlData.CatalogItemId;
+                }
+
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Retrieves the name  of the currently selected inventory location.
+        /// </summary>
+        /// <returns>The name of the currently selected inventory location.</returns>
+        public override string InventoryLocation
+        {
+            get
+            {
+                return string.Empty;
+            }
+        }
+
+        /// <summary>
         /// Gets the windsor container.
         /// </summary>
         /// <value>The windsor container.</value>
@@ -53,30 +83,6 @@ namespace Sitecore.Commerce.StarterKit
         private ProductHelper ProductHelper
         {
             get { return this._productHelper ?? (this._productHelper = this.WindsorContainer.Resolve<ProductHelper>()); }
-        }
-
-        /// <summary>
-        /// Retrieves the ID  of the currently selected product.
-        /// </summary>
-        /// <returns>The ID of the currently selected product.</returns>
-        public override string ProductId
-        {
-            get
-            {
-                return this.ProductHelper.GetProductIdFromIncomingRequest();
-            }
-        }
-
-        /// <summary>
-        /// Retrieves the name  of the currently selected inventory location.
-        /// </summary>
-        /// <returns>The name of the currently selected inventory location.</returns>
-        public override string InventoryLocation
-        {
-            get
-            {
-                return string.Empty;
-            }
         }
     }
 }

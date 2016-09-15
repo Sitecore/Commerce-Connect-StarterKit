@@ -1,11 +1,9 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="UserInfoModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   The UserInfoModel class.
-// </summary>
-// ----------------------------------------------------------------------------------------------
+// <summary>Defines the UserInfoModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,18 +16,26 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Models
 {
-  using System.Collections.Generic;
-  using System.Collections.ObjectModel;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using Sitecore.Commerce.Entities.Orders;
 
-  using Sitecore.Commerce.Entities.Orders;
-
-  public class UserInfoModel
-  {
-    public UserInfoModel()
+    /// <summary>
+    /// Represents user information.
+    /// </summary>
+    public class UserInfoModel
     {
-      this.Orders = new Collection<OrderHeader>();
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserInfoModel"/> class.
+        /// </summary>
+        public UserInfoModel()
+        {
+            this.Orders = new Collection<OrderHeader>();
+        }
 
-    public IReadOnlyCollection<OrderHeader> Orders { get; set; } 
-  }
+        /// <summary>
+        /// Gets or sets the orders.
+        /// </summary>
+        public IReadOnlyCollection<OrderHeader> Orders { get; set; }
+    }
 }

@@ -1,11 +1,11 @@
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="InventoryService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The inventory service.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -61,7 +61,7 @@ namespace Sitecore.Commerce.StarterKit.Services
         /// <returns>The products stock information.</returns>
         public List<StockInformation> GetStockInformation(string shopName, IEnumerable<string> productIds, StockDetailsLevel detailsLevel, string location, string visitorId)
         {
-            var request = new GetStockInformationRequest(shopName, productIds.Select(pid => new InventoryProduct {ProductId = pid}).ToList(), detailsLevel) { Location = location, VisitorId = visitorId };
+            var request = new GetStockInformationRequest(shopName, productIds.Select(pid => new InventoryProduct { ProductId = pid }).ToList(), detailsLevel) { Location = location, VisitorId = visitorId };
             GetStockInformationResult result = this._serviceProvider.GetStockInformation(request);
             var stockInfos = new List<StockInformation>();
             if (result == null)
@@ -69,7 +69,7 @@ namespace Sitecore.Commerce.StarterKit.Services
                 return stockInfos;
             }
 
-            foreach (var stockInfo in productIds.Select(id => (result.StockInformation.FirstOrDefault(i => i.Product.ProductId.Equals(id, System.StringComparison.OrdinalIgnoreCase)) ?? new StockInformation { Product = new InventoryProduct {ProductId = id }})).Where(stockInfo => !stockInfos.Contains(stockInfo)))
+            foreach (var stockInfo in productIds.Select(id => (result.StockInformation.FirstOrDefault(i => i.Product.ProductId.Equals(id, System.StringComparison.OrdinalIgnoreCase)) ?? new StockInformation { Product = new InventoryProduct { ProductId = id } })).Where(stockInfo => !stockInfos.Contains(stockInfo)))
             {
                 stockInfos.Add(stockInfo);
             }
@@ -95,7 +95,7 @@ namespace Sitecore.Commerce.StarterKit.Services
                 return orderableInfos;
             }
 
-            foreach (var orderableInfo in productIds.Select(id => (result.OrderableInformation.FirstOrDefault(i => i.Product.ProductId.Equals(id, System.StringComparison.OrdinalIgnoreCase)) ?? new OrderableInformation { Product = new InventoryProduct{ ProductId = id }})).Where(orderableInfo => !orderableInfos.Contains(orderableInfo)))
+            foreach (var orderableInfo in productIds.Select(id => (result.OrderableInformation.FirstOrDefault(i => i.Product.ProductId.Equals(id, System.StringComparison.OrdinalIgnoreCase)) ?? new OrderableInformation { Product = new InventoryProduct { ProductId = id } })).Where(orderableInfo => !orderableInfos.Contains(orderableInfo)))
             {
                 orderableInfos.Add(orderableInfo);
             }
@@ -121,7 +121,7 @@ namespace Sitecore.Commerce.StarterKit.Services
                 return orderableInfos;
             }
 
-            foreach (var orderableInfo in productIds.Select(id => (result.OrderableInformation.FirstOrDefault(i => i.Product.ProductId.Equals(id, System.StringComparison.OrdinalIgnoreCase)) ?? new OrderableInformation { Product = new InventoryProduct { ProductId = id }})).Where(orderableInfo => !orderableInfos.Contains(orderableInfo)))
+            foreach (var orderableInfo in productIds.Select(id => (result.OrderableInformation.FirstOrDefault(i => i.Product.ProductId.Equals(id, System.StringComparison.OrdinalIgnoreCase)) ?? new OrderableInformation { Product = new InventoryProduct { ProductId = id } })).Where(orderableInfo => !orderableInfos.Contains(orderableInfo)))
             {
                 orderableInfos.Add(orderableInfo);
             }
@@ -151,8 +151,7 @@ namespace Sitecore.Commerce.StarterKit.Services
         public void VisitorSignUpForStockNotification(string shopName, string productId, string location, System.DateTime? interestDate)
         {
             var visitorId = this._contactFactory.GetContact();
-            // TODO should user commerce user
-            var request = new VisitorSignUpForStockNotificationRequest(shopName, visitorId, Context.User.Profile.Email, new InventoryProduct{ ProductId = productId }) { Location = location, InterestDate = interestDate };
+            var request = new VisitorSignUpForStockNotificationRequest(shopName, visitorId, Context.User.Profile.Email, new InventoryProduct { ProductId = productId }) { Location = location, InterestDate = interestDate };
             this._serviceProvider.VisitorSignUpForStockNotification(request);
         }
     }

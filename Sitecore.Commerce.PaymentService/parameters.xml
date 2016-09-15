@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+  <parameter name="IIS Web Application Name" defaultValue="Sitecore.Commerce.PaymentService" tags="IisApp">
+    <parameterEntry match="Sitecore.Commerce.PaymentService" scope="IisApp" kind="ProviderPath"/>
+    <parameterEntry match="Sitecore.Commerce.PaymentService" scope="setAcl" kind="ProviderPath"/>
+  </parameter>
+  <parameter name="Application Pool" defaultValue="DefaultAppPool" >
+    <parameterEntry kind="DeploymentObjectAttribute" scope="application" match="application/@applicationPool" />
+  </parameter>
+  <parameter name="Payment Service Connection String"
+    description="The connection string to the Payment Service database."
+    defaultValue="Data Source=localhost;Initial Catalog=CardPaymentAcceptConnect;Integrated Security=True;"
+    tags="SqlConnectionString">
+    <parameterEntry
+      kind="XmlFile"
+      scope="Web.config"
+      match="/configuration/connectionStrings/add[@name='CardPaymentAcceptConnect']/@connectionString" />
+  </parameter>
+</parameters>

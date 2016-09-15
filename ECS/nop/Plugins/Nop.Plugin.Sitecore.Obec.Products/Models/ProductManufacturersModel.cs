@@ -1,11 +1,9 @@
-﻿// -----------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ProductManufacturersModel.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
-// <summary>
-//   Defines the ProductManufacturersModel type.
-// </summary>
-// -----------------------------------------------------------------
+// <summary>Defines the ProductManufacturersModel class.</summary>
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,24 +16,27 @@
 // -----------------------------------------------------------------
 namespace Nop.Plugin.Sitecore.Commerce.Products.Models
 {
-  using System.Collections.Generic;
-
-  public class ProductManufacturersModel
-  {
-    /// <summary>
-    /// Gets or sets the product id.
-    /// </summary>
-    /// <value>
-    /// The product id.
-    /// </value>
-    public string ProductId { get; set; }
+    using System.Collections.Generic;
 
     /// <summary>
-    /// Gets or sets the manufacturers.
+    /// Represents a product's manufacturers.
     /// </summary>
-    /// <value>
-    /// The manufacturers.
-    /// </value>
-    public IList<ManufacturerModel> Manufacturers { get; set; }
-  }
+    public class ProductManufacturersModel
+    {
+        /// <summary>
+        /// Gets or sets the product id.
+        /// </summary>
+        /// <value>
+        /// The product id.
+        /// </value>
+        public string ProductId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the manufacturers.
+        /// </summary>
+        /// <value>
+        /// The manufacturers.
+        /// </value>
+        public IList<ManufacturerModel> Manufacturers { get; set; }
+    }
 }

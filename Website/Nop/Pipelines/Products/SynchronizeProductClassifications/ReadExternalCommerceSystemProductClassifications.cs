@@ -1,11 +1,11 @@
-﻿// ---------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ReadExternalCommerceSystemProductClassifications.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   The read external commerce system product classifications.
 // </summary>
-// ---------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -45,7 +45,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Products.Synchroniz
     private readonly string productClassificationGroupExternalId;
 
     /// <summary>
-    /// Initializes an instance of the <see cref="ReadExternalCommerceSystemProductClassifications"/> class.
+    /// Initializes a new instance of the <see cref="ReadExternalCommerceSystemProductClassifications"/> class.
     /// </summary>
     /// <param name="productClassificationGroupName">
     /// The product classification group name.

@@ -1,11 +1,11 @@
-﻿// ----------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="IProductService.cs" company="Sitecore Corporation">
-//     Copyright (c) Sitecore Corporation 1999-2016
+//   Copyright (c) Sitecore Corporation 1999-2016
 // </copyright>
 // <summary>
 //   Provides basic product management operations.
 // </summary>
-// ----------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // Copyright 2016 Sitecore Corporation A/S
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
 // except in compliance with the License. You may obtain a copy of the License at
@@ -18,85 +18,90 @@
 // ---------------------------------------------------------------------
 namespace Sitecore.Commerce.StarterKit.Services
 {
-  using System.Collections.Generic;
-  using Sitecore;
-  using Sitecore.Commerce.StarterKit.Models;
-  using Sitecore.ContentSearch.Utilities;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-
-  /// <summary>
-  /// Provides basic product management operations.
-  /// </summary>
-  public interface IProductService
-  {
-    /// <summary>
-    /// The read product.
-    /// </summary>
-    /// <param name="productId">The product id.</param>
-    /// <returns>The <see cref="Item" />.</returns>
-    [CanBeNull]
-    Item ReadProduct([NotNull] string productId);
+    using System.Collections.Generic;
+    using Sitecore;
+    using Sitecore.Commerce.StarterKit.Models;
+    using Sitecore.ContentSearch.Utilities;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
 
     /// <summary>
-    /// Gets the products.
+    /// Provides basic product management operations.
     /// </summary>
-    /// <param name="searchStringModel">The search string model.</param>
-    /// <param name="page"></param>
-    /// <param name="pageSize"></param>
-    /// <returns>The list of the product items.</returns>
-    [NotNull]
-    IEnumerable<Item> GetProducts(IEnumerable<SearchStringModel> searchStringModel);
+    public interface IProductService
+    {
+        /// <summary>
+        /// The read product.
+        /// </summary>
+        /// <param name="productId">The product id.</param>
+        /// <returns>The <see cref="Item" />.</returns>
+        [CanBeNull]
+        Item ReadProduct([NotNull] string productId);
 
-    [NotNull]
-    PagedList<Item> GetProducts(IEnumerable<SearchStringModel> searchStringModel, int page, int pageSize);
+        /// <summary>
+        /// Gets the products.
+        /// </summary>
+        /// <param name="searchStringModel">The search string model.</param>
+        /// <returns>The list of the product items.</returns>
+        [NotNull]
+        IEnumerable<Item> GetProducts(IEnumerable<SearchStringModel> searchStringModel);
 
-    /// <summary>
-    /// Get category ID by external id
-    /// </summary>
-    /// <param name="categoryExternalId">The category external id</param>
-    /// <returns>Category ID</returns>
-    [CanBeNull]
-    Item GetCategory([NotNull] string categoryExternalId);
+        /// <summary>
+        /// Gets the products.
+        /// </summary>
+        /// <param name="searchStringModel">The search string model.</param>
+        /// <param name="page">The page number.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <returns>A paged list of products.</returns>
+        [NotNull]
+        PagedList<Item> GetProducts(IEnumerable<SearchStringModel> searchStringModel, int page, int pageSize);
 
-    /// <summary>
-    /// Get related categories IDs
-    /// </summary>
-    /// <param name="categoryId">Category ID</param>
-    /// <returns>Category IDs</returns>
-    [NotNull]
-    List<Item> GetRelatedCategories([NotNull] ID categoryId);
+        /// <summary>
+        /// Get category ID by external id
+        /// </summary>
+        /// <param name="categoryExternalId">The category external id</param>
+        /// <returns>Category ID</returns>
+        [CanBeNull]
+        Item GetCategory([NotNull] string categoryExternalId);
 
-    /// <summary>
-    /// Get Resources items by product id  
-    /// </summary>
-    /// <param name="productId"></param>
-    /// <returns></returns>
-    [CanBeNull]
-    List<Item> GetResources([NotNull] string productId);
+        /// <summary>
+        /// Get related categories IDs
+        /// </summary>
+        /// <param name="categoryId">Category ID</param>
+        /// <returns>Category IDs</returns>
+        [NotNull]
+        List<Item> GetRelatedCategories([NotNull] ID categoryId);
 
-    /// <summary>
-    /// Get Resources items by product item
-    /// </summary>
-    /// <param name="productItem"></param>
-    /// <returns></returns>
-    [CanBeNull]
-    List<Item> GetResources([NotNull] Item productItem);
+        /// <summary>
+        /// Get Resources items by product id  
+        /// </summary>
+        /// <param name="productId">The product id.</param>
+        /// <returns>The product resources.</returns>
+        [CanBeNull]
+        List<Item> GetResources([NotNull] string productId);
 
-    /// <summary>
-    /// Get Image by product item
-    /// </summary>
-    /// <param name="productItem"></param>
-    /// <returns></returns>
-    [NotNull]
-    string GetImage([NotNull] Item productItem);
+        /// <summary>
+        /// Get Resources items by product item
+        /// </summary>
+        /// <param name="productItem">The product item.</param>
+        /// <returns>The product resources.</returns>
+        [CanBeNull]
+        List<Item> GetResources([NotNull] Item productItem);
 
-    /// <summary>
-    /// Get Images by product item
-    /// </summary>
-    /// <param name="productItem"></param>
-    /// <returns></returns>
-    [NotNull]
-    List<string> GetImages([NotNull] Item productItem);
-  }
+        /// <summary>
+        /// Get Image by product item
+        /// </summary>
+        /// <param name="productItem">The product item.</param>
+        /// <returns>The product image.</returns>
+        [NotNull]
+        string GetImage([NotNull] Item productItem);
+
+        /// <summary>
+        /// Get Images by product item
+        /// </summary>
+        /// <param name="productItem">The product item.</param>
+        /// <returns>The product images.</returns>
+        [NotNull]
+        List<string> GetImages([NotNull] Item productItem);
+    }
 }
