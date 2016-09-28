@@ -87,9 +87,9 @@ namespace Sitecore.Commerce.StarterKit.Tests.Controllers
         private readonly ICatalogService _catalogService;
 
         /// <summary>
-        /// The obec context.
+        /// The Commerce context.
         /// </summary>
-        private readonly CommerceContextBase _obecContext;
+        private readonly CommerceContextBase _commerceContext;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductControllerTest"/> class. 
@@ -104,7 +104,7 @@ namespace Sitecore.Commerce.StarterKit.Tests.Controllers
             this.contentSearchHelper = Substitute.For<ContentSearchHelper>();
             this._inventoryService = Substitute.For<IInventoryService>();
             this._catalogService = Substitute.For<ICatalogService>();
-            this._obecContext = Substitute.For<CommerceContextBase>();
+            this._commerceContext = Substitute.For<CommerceContextBase>();
 
             var httpContext = Substitute.For<HttpContextBase>();
             httpContext.Request.Url.Returns(new Uri("http://host/path"));

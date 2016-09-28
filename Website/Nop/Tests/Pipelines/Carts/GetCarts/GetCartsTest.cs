@@ -89,10 +89,10 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Tests.Pipelines.Carts.GetCart
     }
 
     /// <summary>
-    /// Should map nop carts to obec carts.
+    /// Should map nop carts to Commerce carts.
     /// </summary>
     [Fact]
-    public void ShouldMapNopCartsToObecCarts()
+    public void ShouldMapNopCartsToCommerceCarts()
     {
       // arrange
       var cartModels = new[] { new ShoppingCartModel { ShoppingItems = new ShoppingCartItemModel[0] }, new ShoppingCartModel { ShoppingItems = new ShoppingCartItemModel[0] } };

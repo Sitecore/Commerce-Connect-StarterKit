@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Nop.Plugin.Sitecore.Commerce.Inventory.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Nop.Plugin.Sitecore.Commerce.Inventory.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="ArrayOfStockInformationModel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="StockInformationModel" nillable="true" type="tns:StockInformationModel" />

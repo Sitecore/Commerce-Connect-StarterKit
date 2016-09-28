@@ -204,7 +204,7 @@
     <Compile Include="App_Start\BootstrapBundleConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\GlassMapperConfig.cs" />
-    <Compile Include="App_Start\ObecBundleConfig.cs" />
+    <Compile Include="App_Start\CommerceBundleConfig.cs" />
     <Compile Include="App_Start\WindsorConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\CartsController.cs" />

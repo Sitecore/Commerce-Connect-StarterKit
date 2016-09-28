@@ -32,12 +32,12 @@ namespace Sitecore.Commerce.Connectors.NopCommerce
     public static class OrderExtensions
     {
         /// <summary>
-        /// Converts NopCommerce order line model to the OBEC cart line.
+        /// Converts NopCommerce order line model to the Commerce cart line.
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns>The cart line.</returns>
         [NotNull]
-        public static CartLine ToObecOrderLine([NotNull] this ShoppingCartItemModel model)
+        public static CartLine ToCommerceOrderLine([NotNull] this ShoppingCartItemModel model)
         {
             Assert.ArgumentNotNull(model, "model");
             return new CartLine
@@ -108,7 +108,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce
             var orderLines = new List<CartLine>();
             foreach (var model in orderModel.OrderItems)
             {
-                CartLine line = model.ToObecOrderLine();
+                CartLine line = model.ToCommerceOrderLine();
                 orderLines.Add(
                   new CartLine
                   {

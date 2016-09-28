@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProductService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ecommerce/ProductService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ecommerce/ProductService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ecommerce/ProductService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProductService_SynchronizeProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_SynchronizeProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_SynchronizeProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_SynchronizeProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_SynchronizeProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeProductList" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_SynchronizeProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeProductListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProductService">
+    <wsdl:operation name="SynchronizeProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/SynchronizeProduct" message="tns:IProductService_SynchronizeProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/SynchronizeProductResponse" message="tns:IProductService_SynchronizeProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/SynchronizeProducts" message="tns:IProductService_SynchronizeProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/SynchronizeProductsResponse" message="tns:IProductService_SynchronizeProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeProductList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/SynchronizeProductList" message="tns:IProductService_SynchronizeProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/SynchronizeProductListResponse" message="tns:IProductService_SynchronizeProductList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IProductService" type="tns:IProductService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SynchronizeProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/SynchronizeProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeProducts">
+      <soap:operation soapAction="http://tempuri.org/IProductService/SynchronizeProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeProductList">
+      <soap:operation soapAction="http://tempuri.org/IProductService/SynchronizeProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductService">
+    <wsdl:port name="BasicHttpBinding_IProductService" binding="tns:BasicHttpBinding_IProductService">
+      <soap:address location="http://ecommerce/ProductService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

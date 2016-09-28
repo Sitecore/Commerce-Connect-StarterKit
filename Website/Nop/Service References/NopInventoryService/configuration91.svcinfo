@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IInventoryService" contract="NopInventoryService.IInventoryService" bindingType="basicHttpBinding" address="http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc" bindingConfiguration="BasicHttpBinding_IInventoryService">
+    <endpoint name="BasicHttpBinding_IInventoryService" contract="NopInventoryService.IInventoryService" bindingType="basicHttpBinding" address="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc" bindingConfiguration="BasicHttpBinding_IInventoryService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://ecommercenop/Plugins/Sitecore.Obec.Inventory/Remote/InventoryService.svc</serializedValue>
+          <serializedValue>http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
