@@ -31,12 +31,12 @@ namespace Sitecore.Commerce.Connectors.NopCommerce
   public static class WishlistExtensions
   {
     /// <summary>
-    /// Converts NopCommerce wishlist line model to the OBEC cart line.
+    /// Converts NopCommerce wishlist line model to the Commerce cart line.
     /// </summary>
     /// <param name="model">The model.</param>
     /// <returns>The WishlistLine.</returns>
     [NotNull]
-    public static CartLine ToObecCartLine([NotNull] this ShoppingCartItemModel model)
+    public static CartLine ToCommerceCartLine([NotNull] this ShoppingCartItemModel model)
     {
       Assert.ArgumentNotNull(model, "model");
       return new CartLine
@@ -61,7 +61,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce
       var wishlistlines = new List<WishListLine>();
       foreach (var wishlistItemModel in wishlistModel.ShoppingItems)
       {
-        CartLine line = wishlistItemModel.ToObecCartLine();
+        CartLine line = wishlistItemModel.ToCommerceCartLine();
         wishlistlines.Add(new WishListLine()
         {
           ExternalId = line.ExternalCartLineId,

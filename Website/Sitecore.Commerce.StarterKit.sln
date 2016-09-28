@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B2B8CB66-C1A2-4760-BAD2-CCA3CC9A7AC0}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,23 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B2B8CB
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Config", "App_Config", "{AA7B6EA0-AF4E-4737-8D2D-5F594EDD34AE}"
-	ProjectSection(SolutionItems) = preProject
-		Website\App_Config\Sitecore.Commerce.Connectors.NopCommerce.config = Website\App_Config\Sitecore.Commerce.Connectors.NopCommerce.config
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Include", "Include", "{3437F84A-B6A8-4F5A-8E8F-BD47840A8952}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Connectors", "Connectors", "{93C447F9-4679-40A5-9AC0-461F67FCBD64}"
 	ProjectSection(SolutionItems) = preProject
-		App_Config\Include\Connectors\Sitecore.Commerce.Connectors.NopCommerce.config.disabled = App_Config\Include\Connectors\Sitecore.Commerce.Connectors.NopCommerce.config.disabled
-		App_Config\Include\Connectors\Sitecore.Commerce.Connectors.NopCommerce.NoEAStateStorage.config.disabled = App_Config\Include\Connectors\Sitecore.Commerce.Connectors.NopCommerce.NoEAStateStorage.config.disabled
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StarterKit", "StarterKit", "{7DC01557-0ADD-4DEA-B6FF-BDC116F45041}"
-	ProjectSection(SolutionItems) = preProject
+		App_Config\Include\Sitecore.Commerce.config = App_Config\Include\Sitecore.Commerce.config
 		App_Config\Include\StarterKit\Sitecore.Commerce.StarterKit.config = App_Config\Include\StarterKit\Sitecore.Commerce.StarterKit.config
-		App_Config\Include\StarterKit\Sitecore.Commerce.StarterKit.Lucene.config = App_Config\Include\StarterKit\Sitecore.Commerce.StarterKit.Lucene.config
-		App_Config\Include\StarterKit\Sitecore.Commerce.StarterKit.Solr.config.disabled = App_Config\Include\StarterKit\Sitecore.Commerce.StarterKit.Solr.config.disabled
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Commerce.StarterKit", "Sitecore.Commerce.StarterKit.csproj", "{207E9436-59A3-4350-91AD-BA0AC3600FD5}"
@@ -34,10 +22,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Commerce.StarterKi
 	ProjectSection(ProjectDependencies) = postProject
 		{207E9436-59A3-4350-91AD-BA0AC3600FD5} = {207E9436-59A3-4350-91AD-BA0AC3600FD5}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Commerce.PaymentService", "..\Sitecore.Commerce.PaymentService\Sitecore.Commerce.PaymentService.csproj", "{2925B50B-918B-45BE-A5DB-7E60E2DCDB46}"
-EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Sitecore.Commerce.PaymentService.dacpac", "..\Sitecore.Commerce.PaymentService.dacpac\Sitecore.Commerce.PaymentService.dacpac.sqlproj", "{DEEB074D-6272-43FD-A29A-3BF165EB9D15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,23 +37,11 @@ Global
 		{F2E7F7E8-643A-4085-B566-DFA6CAE6C848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2E7F7E8-643A-4085-B566-DFA6CAE6C848}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2E7F7E8-643A-4085-B566-DFA6CAE6C848}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2925B50B-918B-45BE-A5DB-7E60E2DCDB46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2925B50B-918B-45BE-A5DB-7E60E2DCDB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2925B50B-918B-45BE-A5DB-7E60E2DCDB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2925B50B-918B-45BE-A5DB-7E60E2DCDB46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DEEB074D-6272-43FD-A29A-3BF165EB9D15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DEEB074D-6272-43FD-A29A-3BF165EB9D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DEEB074D-6272-43FD-A29A-3BF165EB9D15}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{DEEB074D-6272-43FD-A29A-3BF165EB9D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DEEB074D-6272-43FD-A29A-3BF165EB9D15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DEEB074D-6272-43FD-A29A-3BF165EB9D15}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3437F84A-B6A8-4F5A-8E8F-BD47840A8952} = {AA7B6EA0-AF4E-4737-8D2D-5F594EDD34AE}
-		{93C447F9-4679-40A5-9AC0-461F67FCBD64} = {3437F84A-B6A8-4F5A-8E8F-BD47840A8952}
-		{7DC01557-0ADD-4DEA-B6FF-BDC116F45041} = {3437F84A-B6A8-4F5A-8E8F-BD47840A8952}
 	EndGlobalSection
 EndGlobal

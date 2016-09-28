@@ -1,0 +1,8 @@
+Group: Sitecore
+FriendlyName: Commerce Wishlists Web Services
+SystemName: Sitecore.Commerce.Wishlists
+Version: 1.00
+SupportedVersions: 3.10
+Author: Sitecore
+DisplayOrder: 2
+FileName: Nop.Plugin.Sitecore.Commerce.Wishlists.dll

@@ -75,9 +75,9 @@ namespace Sitecore.Commerce.StarterKit.Controllers
         private readonly IInventoryService _inventoryService;
 
         /// <summary>
-        /// The obec context.
+        /// The Commerce context.
         /// </summary>
-        private readonly CommerceContextBase _obecContext;
+        private readonly CommerceContextBase _commerceContext;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductController" /> class.
@@ -93,7 +93,7 @@ namespace Sitecore.Commerce.StarterKit.Controllers
             this.contentSearchHelper = contentSearchHelper;
             this._inventoryService = inventoryService;
             this._catalogService = catalogService;
-            this._obecContext = (CommerceContextBase)Factory.CreateObject(Constants.CommerceContext, true);
+            this._commerceContext = (CommerceContextBase)Factory.CreateObject(Constants.CommerceContext, true);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Sitecore.Commerce.StarterKit.Controllers
 
             var price = this.pricingService.GetProductPrice(id);
             var ids = new List<string> { id };
-            var stockInfos = this._inventoryService.GetStockInformation(Context.Site.Name, ids, StockDetailsLevel.All, this._obecContext.InventoryLocation, string.Empty);
+            var stockInfos = this._inventoryService.GetStockInformation(Context.Site.Name, ids, StockDetailsLevel.All, this._commerceContext.InventoryLocation, string.Empty);
             var stockInfo = stockInfos.FirstOrDefault();
             OrderableInformation orderableInfo = null;
 
@@ -132,11 +132,11 @@ namespace Sitecore.Commerce.StarterKit.Controllers
             {
                 if (Equals(stockInfo.Status, StockStatus.PreOrderable))
                 {
-                    orderableInfo = this._inventoryService.GetPreOrderableInformation(Context.Site.Name, ids, string.Empty, this._obecContext.InventoryLocation).FirstOrDefault();
+                    orderableInfo = this._inventoryService.GetPreOrderableInformation(Context.Site.Name, ids, string.Empty, this._commerceContext.InventoryLocation).FirstOrDefault();
                 }
                 else if (Equals(stockInfo.Status, StockStatus.BackOrderable))
                 {
-                    orderableInfo = this._inventoryService.GetBackOrderableInformation(Context.Site.Name, ids, string.Empty, this._obecContext.InventoryLocation).FirstOrDefault();
+                    orderableInfo = this._inventoryService.GetBackOrderableInformation(Context.Site.Name, ids, string.Empty, this._commerceContext.InventoryLocation).FirstOrDefault();
                 }
 
                 this._inventoryService.VisitedProductStockStatus(Context.Site.Name, stockInfo, string.Empty);
@@ -210,7 +210,7 @@ namespace Sitecore.Commerce.StarterKit.Controllers
             var productIds = pagedProducts.List.Select(p => p["ExternalID"]).ToList();
 
             var prices = this.pricingService.GetProductBulkPrices(productIds);
-            var stockInfos = this._inventoryService.GetStockInformation(Context.Site.Name, productIds, StockDetailsLevel.All, this._obecContext.InventoryLocation, string.Empty);
+            var stockInfos = this._inventoryService.GetStockInformation(Context.Site.Name, productIds, StockDetailsLevel.All, this._commerceContext.InventoryLocation, string.Empty);
 
             var productModels = pagedProducts.List.Select(p => this.GetProductModel(p, prices[p["ExternalID"]], stockInfos.FirstOrDefault(i => i.Product.ProductId.Equals(p["ExternalID"], StringComparison.OrdinalIgnoreCase))));
 

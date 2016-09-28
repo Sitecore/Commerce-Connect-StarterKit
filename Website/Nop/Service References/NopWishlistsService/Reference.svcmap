@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Obec.Wishlists/Remote/WishlistsService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Wishlists/Remote/WishlistsService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WishlistsService.disco" MetadataType="Disco" ID="b498eca3-16f6-48e4-ab2f-ec6dbfd34fc0" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Wishlists/Remote/WishlistsService.svc?disco" />
-    <MetadataFile FileName="WishlistsService3.xsd" MetadataType="Schema" ID="8f7eaf26-6423-4db4-aa97-bcd08c65c2e6" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Wishlists/Remote/WishlistsService.svc?xsd=xsd3" />
-    <MetadataFile FileName="WishlistsService.wsdl" MetadataType="Wsdl" ID="da7e5a88-c28d-496c-b64f-a901ffa0be31" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Wishlists/Remote/WishlistsService.svc?wsdl" />
-    <MetadataFile FileName="WishlistsService.xsd" MetadataType="Schema" ID="5f50ff05-99cc-458b-96bd-00d4dae26190" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Wishlists/Remote/WishlistsService.svc?xsd=xsd0" />
-    <MetadataFile FileName="WishlistsService1.xsd" MetadataType="Schema" ID="abcb755c-f8d7-49ef-8634-c4fb9ba34277" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Wishlists/Remote/WishlistsService.svc?xsd=xsd2" />
-    <MetadataFile FileName="WishlistsService2.xsd" MetadataType="Schema" ID="2b0efab9-3252-4996-8933-aaa322d051a8" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Wishlists/Remote/WishlistsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WishlistsService.disco" MetadataType="Disco" ID="b498eca3-16f6-48e4-ab2f-ec6dbfd34fc0" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Wishlists/Remote/WishlistsService.svc?disco" />
+    <MetadataFile FileName="WishlistsService3.xsd" MetadataType="Schema" ID="8f7eaf26-6423-4db4-aa97-bcd08c65c2e6" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Wishlists/Remote/WishlistsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="WishlistsService.wsdl" MetadataType="Wsdl" ID="da7e5a88-c28d-496c-b64f-a901ffa0be31" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Wishlists/Remote/WishlistsService.svc?wsdl" />
+    <MetadataFile FileName="WishlistsService.xsd" MetadataType="Schema" ID="5f50ff05-99cc-458b-96bd-00d4dae26190" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Wishlists/Remote/WishlistsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WishlistsService1.xsd" MetadataType="Schema" ID="abcb755c-f8d7-49ef-8634-c4fb9ba34277" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Wishlists/Remote/WishlistsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WishlistsService2.xsd" MetadataType="Schema" ID="2b0efab9-3252-4996-8933-aaa322d051a8" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Wishlists/Remote/WishlistsService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

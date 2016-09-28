@@ -29,7 +29,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetStockI
     using System.Linq;
     using StockInformationModel = Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService.StockInformationModel;
     using StockStatusNop = Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService.StockStatus;
-    using StockStatusObec = Sitecore.Commerce.Entities.Inventory.StockStatus;
+    using StockStatusCommerce = Sitecore.Commerce.Entities.Inventory.StockStatus;
 
     /// <summary>
     /// The pipeline processor that gets stock information for products in NOP commerce.
@@ -91,9 +91,9 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetStockI
         }
 
         /// <summary>
-        /// Populates an OBEC <see cref="StockInformation"/> entity based on a NOP <see cref="StockInformationModel"/> model.
+        /// Populates an Commerce <see cref="StockInformation"/> entity based on a NOP <see cref="StockInformationModel"/> model.
         /// </summary>
-        /// <param name="entity">The OBEC <see cref="StockInformation"/> entity to populate.</param>
+        /// <param name="entity">The Commerce <see cref="StockInformation"/> entity to populate.</param>
         /// <param name="model">The NOP <see cref="StockInformationModel"/> model.</param>
         /// <param name="detailsLevel">The stock information details level to retrieved.</param>
         protected virtual void PopulateStockInformation([NotNull] StockInformation entity, [NotNull] StockInformationModel model, StockDetailsLevel detailsLevel)
@@ -121,13 +121,13 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetStockI
         }
 
         /// <summary>
-        /// Gets a <see cref="StockStatusObec"/> entity that represents a <see cref="StockStatusNop"/> enum value.
+        /// Gets a <see cref="StockStatusCommerce"/> entity that represents a <see cref="StockStatusNop"/> enum value.
         /// </summary>
         /// <param name="modelStatus">The <see cref="StockStatusNop"/> to convert.</param>
-        /// <returns>The converted <see cref="StockStatusObec"/> entity.</returns>
-        protected virtual StockStatusObec GetStockStatus(StockStatusNop modelStatus)
+        /// <returns>The converted <see cref="StockStatusCommerce"/> entity.</returns>
+        protected virtual StockStatusCommerce GetStockStatus(StockStatusNop modelStatus)
         {
-            return new StockStatusObec((int)modelStatus, modelStatus.ToString());
+            return new StockStatusCommerce((int)modelStatus, modelStatus.ToString());
         }
     }
 }

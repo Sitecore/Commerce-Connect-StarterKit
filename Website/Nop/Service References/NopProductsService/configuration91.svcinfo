@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IProductsService" contract="NopProductsService.IProductsService" bindingType="basicHttpBinding" address="http://ecommercenop/Plugins/Sitecore.Obec.Products/Remote/ProductsService.svc" bindingConfiguration="BasicHttpBinding_IProductsService">
+    <endpoint name="BasicHttpBinding_IProductsService" contract="NopProductsService.IProductsService" bindingType="basicHttpBinding" address="http://ecommercenop/Plugins/Sitecore.Commerce.Products/Remote/ProductsService.svc" bindingConfiguration="BasicHttpBinding_IProductsService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://ecommercenop/Plugins/Sitecore.Obec.Products/Remote/ProductsService.svc</serializedValue>
+          <serializedValue>http://ecommercenop/Plugins/Sitecore.Commerce.Products/Remote/ProductsService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

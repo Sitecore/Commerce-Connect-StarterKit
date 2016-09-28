@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Obec.Shipping/Remote/ShippingService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Shipping/Remote/ShippingService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ShippingService2.xsd" MetadataType="Schema" ID="dfec48b4-2126-43c6-8f48-217ad4ee5424" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Shipping/Remote/ShippingService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ShippingService3.xsd" MetadataType="Schema" ID="2b26a58f-3641-4e26-83a3-3cd7cadb987f" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Shipping/Remote/ShippingService.svc?xsd=xsd3" />
-    <MetadataFile FileName="ShippingService.xsd" MetadataType="Schema" ID="7ebb1df0-a23c-4887-853a-f2d1ffb55bce" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Shipping/Remote/ShippingService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ShippingService.disco" MetadataType="Disco" ID="45a290e3-05ed-49fa-ba62-374c4ce8be14" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Shipping/Remote/ShippingService.svc?disco" />
-    <MetadataFile FileName="ShippingService.wsdl" MetadataType="Wsdl" ID="1cb35200-e45f-4324-bbfb-1c47f7265c82" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Shipping/Remote/ShippingService.svc?wsdl" />
-    <MetadataFile FileName="ShippingService1.xsd" MetadataType="Schema" ID="17a71a04-863a-492d-9d9e-616354c1d681" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Obec.Shipping/Remote/ShippingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ShippingService2.xsd" MetadataType="Schema" ID="dfec48b4-2126-43c6-8f48-217ad4ee5424" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Shipping/Remote/ShippingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ShippingService3.xsd" MetadataType="Schema" ID="2b26a58f-3641-4e26-83a3-3cd7cadb987f" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Shipping/Remote/ShippingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ShippingService.xsd" MetadataType="Schema" ID="7ebb1df0-a23c-4887-853a-f2d1ffb55bce" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Shipping/Remote/ShippingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ShippingService.disco" MetadataType="Disco" ID="45a290e3-05ed-49fa-ba62-374c4ce8be14" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Shipping/Remote/ShippingService.svc?disco" />
+    <MetadataFile FileName="ShippingService.wsdl" MetadataType="Wsdl" ID="1cb35200-e45f-4324-bbfb-1c47f7265c82" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Shipping/Remote/ShippingService.svc?wsdl" />
+    <MetadataFile FileName="ShippingService1.xsd" MetadataType="Schema" ID="17a71a04-863a-492d-9d9e-616354c1d681" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Shipping/Remote/ShippingService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -94,10 +94,10 @@ namespace Sitecore.Commerce.StarterKit.Tests.Infrastructure
     }
 
     /// <summary>
-    /// Should resolve dependency from OBEC assembly.
+    /// Should resolve dependency from Commerce assembly.
     /// </summary>
     [Fact]
-    public void ShouldResolveDependencyFromObecAssembly()
+    public void ShouldResolveDependencyFromCommerceAssembly()
     {
       // arrange
       this.container.Install(new DependenciesInstaller());

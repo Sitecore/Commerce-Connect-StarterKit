@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Nop.Plugin.Sitecore.Commerce.Products.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="Nop_Plugin_Sitecore_Commerce_Products_Endpoint" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://ecommerceobec/productservice.svc</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>

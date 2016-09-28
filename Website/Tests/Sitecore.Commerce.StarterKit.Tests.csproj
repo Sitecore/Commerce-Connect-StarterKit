@@ -152,7 +152,7 @@
     <Compile Include="FakeContact.cs" />
     <Compile Include="FakeContactIdentifiers.cs" />
     <Compile Include="Models\ProductModelTest.cs" />
-    <Compile Include="ObecContextTest.cs" />
+    <Compile Include="CommerceContextTest.cs" />
     <Compile Include="Services\AccountServiceTest.cs" />
     <Compile Include="Services\CartsServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

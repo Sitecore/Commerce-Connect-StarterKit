@@ -29,7 +29,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetStockI
     using System.Linq;
     using StockInformationModel = Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService.StockInformationModel;
     using StockStatusNop = Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService.StockStatus;
-    using StockStatusObec = Sitecore.Commerce.Entities.Inventory.StockStatus;
+    using StockStatusCommerce = Sitecore.Commerce.Entities.Inventory.StockStatus;
 
     /// <summary>
     /// The pipeline processor that gets stock information for products in NOP commerce.
@@ -85,9 +85,9 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Pipelines.Inventory.GetStockI
         }
 
         /// <summary>
-        /// Populates an OBEC <see cref="StockInformation"/> entity based on a NOP <see cref="StockInformationModel"/> model.
+        /// Populates an Commerce <see cref="StockInformation"/> entity based on a NOP <see cref="StockInformationModel"/> model.
         /// </summary>
-        /// <param name="entity">The OBEC <see cref="StockInformation"/> entity to populate.</param>
+        /// <param name="entity">The Commerce <see cref="StockInformation"/> entity to populate.</param>
         /// <param name="model">The NOP <see cref="StockInformationModel"/> model.</param>
         protected virtual void PopulateIndexStockInformation([NotNull] IndexStockInformation entity, [NotNull] IndexStockInformationModel model)
         {
