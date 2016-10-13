@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CustomersService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Customers/Remote/CustomersService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Customers/Remote/CustomersService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Customers/Remote/CustomersService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" />
+      <xsd:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Customers/Remote/CustomersService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICustomersService_CreateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_CreateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_AddAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAddresses" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_AddAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_RemoveAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAddresses" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_RemoveAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_UpdateAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAddresses" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_UpdateAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_GetAllAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAddresses" />
+  </wsdl:message>
+  <wsdl:message name="ICustomersService_GetAllAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAddressesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICustomersService">
+    <wsdl:operation name="CreateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomersService/CreateCustomer" message="tns:ICustomersService_CreateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomersService/CreateCustomerResponse" message="tns:ICustomersService_CreateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomersService/GetCustomer" message="tns:ICustomersService_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomersService/GetCustomerResponse" message="tns:ICustomersService_GetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomersService/AddAddresses" message="tns:ICustomersService_AddAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomersService/AddAddressesResponse" message="tns:ICustomersService_AddAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomersService/RemoveAddresses" message="tns:ICustomersService_RemoveAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomersService/RemoveAddressesResponse" message="tns:ICustomersService_RemoveAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomersService/UpdateAddresses" message="tns:ICustomersService_UpdateAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomersService/UpdateAddressesResponse" message="tns:ICustomersService_UpdateAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomersService/GetAllAddresses" message="tns:ICustomersService_GetAllAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomersService/GetAllAddressesResponse" message="tns:ICustomersService_GetAllAddresses_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICustomersService" type="tns:ICustomersService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateCustomer">
+      <soap:operation soapAction="http://tempuri.org/ICustomersService/CreateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="http://tempuri.org/ICustomersService/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAddresses">
+      <soap:operation soapAction="http://tempuri.org/ICustomersService/AddAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAddresses">
+      <soap:operation soapAction="http://tempuri.org/ICustomersService/RemoveAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAddresses">
+      <soap:operation soapAction="http://tempuri.org/ICustomersService/UpdateAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAddresses">
+      <soap:operation soapAction="http://tempuri.org/ICustomersService/GetAllAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomersService">
+    <wsdl:port name="BasicHttpBinding_ICustomersService" binding="tns:BasicHttpBinding_ICustomersService">
+      <soap:address location="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Customers/Remote/CustomersService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Customers/Remote/CustomersService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CustomerModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AdminContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingAddress" nillable="true" type="tns:AddressModel" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CustomerGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsRegistered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingAddress" nillable="true" type="tns:AddressModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerModel" nillable="true" type="tns:CustomerModel" />
+  <xs:complexType name="AddressModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryThreeLetterIsoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryTwoLetterIsoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedOnUtc" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateProvinceAbbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipPostalCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressModel" nillable="true" type="tns:AddressModel" />
+  <xs:complexType name="ArrayOfAddressModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressModel" nillable="true" type="tns:AddressModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressModel" nillable="true" type="tns:ArrayOfAddressModel" />
+  <xs:complexType name="ArrayOfAddressModelResponse">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="{0}Response" Namespace="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAddressModel" Namespace="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ArrayOfAddressModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressModelResponse" nillable="true" type="tns:ArrayOfAddressModelResponse" />
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response" nillable="true" type="tns:Response" />
+</xs:schema>

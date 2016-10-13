@@ -1,8 +1,0 @@
-Group: Sitecore
-FriendlyName: Commerce Products Web Services
-SystemName: Sitecore.Commerce.Products
-Version: 1.00
-SupportedVersions: 3.10
-Author: Sitecore
-DisplayOrder: 2
-FileName: Nop.Plugin.Sitecore.Commerce.Products.dll

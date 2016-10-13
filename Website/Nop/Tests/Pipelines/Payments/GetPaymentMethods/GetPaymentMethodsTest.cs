@@ -60,7 +60,7 @@ namespace Sitecore.Commerce.Connectors.NopCommerce.Tests.Pipelines.Payments.GetP
       var result = new GetPaymentMethodsResult();
       var args = new ServicePipelineArgs(request, result);
 
-      _client.GetPaymentMethods(request.PaymentOption.ShopName).Returns(new ResponseModelOfArrayOfPaymentMethodModelQBnDdvBq()
+      _client.GetPaymentMethods(request.PaymentOption.ShopName).Returns(new ResponseModelOfArrayOfPaymentMethodModelbQtzsV6D()
       {
         Success = true,
         Result = new []

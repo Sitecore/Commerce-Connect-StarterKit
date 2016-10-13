@@ -1,0 +1,8 @@
+Group: Sitecore
+FriendlyName: Commerce Carts Web Services
+SystemName: Sitecore.Commerce.Nop.Carts
+Version: 1.00
+SupportedVersions: 3.10
+Author: Sitecore
+DisplayOrder: 2
+FileName: Sitecore.Commerce.Nop.Carts.dll

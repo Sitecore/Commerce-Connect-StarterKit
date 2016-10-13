@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Carts/Remote/CartsService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Carts/Remote/CartsService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CartsService.wsdl" MetadataType="Wsdl" ID="7378ff0a-d1ec-4819-a4d9-633848552381" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Carts/Remote/CartsService.svc?wsdl" />
-    <MetadataFile FileName="CartsService3.xsd" MetadataType="Schema" ID="3d7b6845-5026-4ef0-a996-d8b566d0a112" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Carts/Remote/CartsService.svc?xsd=xsd3" />
-    <MetadataFile FileName="CartsService.xsd" MetadataType="Schema" ID="f8c33dc6-32e3-4405-bbf9-8554b791e8fc" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Carts/Remote/CartsService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CartsService.disco" MetadataType="Disco" ID="ebddda68-1d13-4bd6-9539-d0f1f8387a68" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Carts/Remote/CartsService.svc?disco" />
-    <MetadataFile FileName="CartsService1.xsd" MetadataType="Schema" ID="a02cc89c-642b-4ddc-88c0-bd5e5e2c47e9" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Carts/Remote/CartsService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CartsService2.xsd" MetadataType="Schema" ID="b6f04591-cf41-4ce7-9f30-a34609ac3263" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Carts/Remote/CartsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CartsService4.xsd" MetadataType="Schema" ID="713e08e8-065f-4cc5-920a-62842ccf5b3a" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Carts/Remote/CartsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CartsService1.wsdl" MetadataType="Wsdl" ID="74850bd0-2ea4-4db1-b48e-c5fca7715c31" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Carts/Remote/CartsService.svc?wsdl" />
+    <MetadataFile FileName="CartsService41.xsd" MetadataType="Schema" ID="8c1e51fa-73dd-4cd3-a883-4a5d92b4e8c3" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Carts/Remote/CartsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CartsService42.xsd" MetadataType="Schema" ID="975bf3a6-7b5e-4ab0-bca7-41d01b85dbfc" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Carts/Remote/CartsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CartsService1.disco" MetadataType="Disco" ID="4c6a9d87-2235-4e61-8ac2-cb9c7d82e302" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Carts/Remote/CartsService.svc?disco" />
+    <MetadataFile FileName="CartsService43.xsd" MetadataType="Schema" ID="b5f88e4e-aa29-46dd-8e25-3cc0bf852b9a" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Carts/Remote/CartsService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

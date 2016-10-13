@@ -1,0 +1,8 @@
+Group: Sitecore
+FriendlyName: Commerce Tests Web Services
+SystemName: Sitecore.Commerce.Nop.Tests
+Version: 1.00
+SupportedVersions: 3.10
+Author: Sitecore
+DisplayOrder: 2
+FileName: Sitecore.Commerce.Nop.Tests.dll

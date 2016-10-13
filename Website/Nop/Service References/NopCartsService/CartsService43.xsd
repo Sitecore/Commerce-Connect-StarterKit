@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Carts/Remote/CartsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" />
+  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Carts/Remote/CartsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="GetCarts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCartsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="GetCartsResult" nillable="true" type="q1:ArrayOfShoppingCartModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q2:guid" />
+        <xs:element minOccurs="0" name="storeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="GetCartResult" nillable="true" type="q3:ShoppingCartModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q4:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCartResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q5:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="CreateCartResult" nillable="true" type="q6:ShoppingCartModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q7:guid" />
+        <xs:element minOccurs="0" name="externalProductId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="quantity" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="AddProductResult" nillable="true" type="q8:ShoppingCartModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q9:guid" />
+        <xs:element minOccurs="0" name="externalProductId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="RemoveProductResult" nillable="true" type="q10:ShoppingCartModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQuantity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q11:guid" />
+        <xs:element minOccurs="0" name="externalProductId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newQuantity" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQuantityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="UpdateQuantityResult" nillable="true" type="q12:ShoppingCartModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAddresses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="addresses" nillable="true" type="q13:ArrayOfCustomerAddressModel" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q14:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAddressesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="AddAddressesResult" nillable="true" type="q15:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAddresses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="addresses" nillable="true" type="q16:ArrayOfCustomerAddressModel" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q17:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAddressesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="RemoveAddressesResult" nillable="true" type="q18:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPaymentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q19:guid" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="paymentInfoModel" nillable="true" type="q20:PaymentInfoModel" />
+        <xs:element minOccurs="0" name="storeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPaymentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="AddPaymentInfoResult" nillable="true" type="q21:PaymentInfoModelResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePaymentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q22:guid" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="paymentInfoModel" nillable="true" type="q23:PaymentInfoModel" />
+        <xs:element minOccurs="0" name="storeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePaymentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="RemovePaymentInfoResult" nillable="true" type="q24:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddShippingInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q25:guid" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="shippingMethodModel" nillable="true" type="q26:ShippingMethodModel" />
+        <xs:element minOccurs="0" name="storeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddShippingInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="AddShippingInfoResult" nillable="true" type="q27:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveShippingInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerId" type="q28:guid" />
+        <xs:element minOccurs="0" name="storeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveShippingInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="RemoveShippingInfoResult" nillable="true" type="q29:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MigrateShoppingCart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="fromCustomerId" type="q30:guid" />
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="toCustomerId" type="q31:guid" />
+        <xs:element minOccurs="0" name="includeCouponCodes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MigrateShoppingCartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" minOccurs="0" name="MigrateShoppingCartResult" nillable="true" type="q32:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

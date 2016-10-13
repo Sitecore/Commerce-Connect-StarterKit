@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Products.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Products.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Products/Remote/ProductsService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ProductModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminComment" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CategoryIds" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gtin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Length" type="xs:decimal" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ManufacturerIds" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ManufacturerPartNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetaDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetaKeywords" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetaTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductGlobalSpecifications" nillable="true" type="tns:ArrayOfProductGlobalSpecificationModel" />
+      <xs:element minOccurs="0" name="ProductId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductVariantId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductVariantName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Published" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowOnHomePage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Sku" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Weight" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Width" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductModel" nillable="true" type="tns:ProductModel" />
+  <xs:complexType name="ArrayOfProductGlobalSpecificationModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductGlobalSpecificationModel" nillable="true" type="tns:ProductGlobalSpecificationModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductGlobalSpecificationModel" nillable="true" type="tns:ArrayOfProductGlobalSpecificationModel" />
+  <xs:complexType name="ProductGlobalSpecificationModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LookupValueId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LookupValueName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificationLookupId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificationLookupName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductGlobalSpecificationModel" nillable="true" type="tns:ProductGlobalSpecificationModel" />
+  <xs:complexType name="ArrayOfManufacturerModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ManufacturerModel" nillable="true" type="tns:ManufacturerModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfManufacturerModel" nillable="true" type="tns:ArrayOfManufacturerModel" />
+  <xs:complexType name="ManufacturerModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Published" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UpdatedOnUtc" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManufacturerModel" nillable="true" type="tns:ManufacturerModel" />
+  <xs:complexType name="ArrayOfCategoryModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryModel" nillable="true" type="tns:CategoryModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoryModel" nillable="true" type="tns:ArrayOfCategoryModel" />
+  <xs:complexType name="CategoryModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetaDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetaKeywords" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetaTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentCategoryId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Published" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UpdatedOnUtc" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryModel" nillable="true" type="tns:CategoryModel" />
+  <xs:complexType name="ArrayOfSpecificationLookupModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecificationLookupModel" nillable="true" type="tns:SpecificationLookupModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpecificationLookupModel" nillable="true" type="tns:ArrayOfSpecificationLookupModel" />
+  <xs:complexType name="SpecificationLookupModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificationOptions" nillable="true" type="tns:ArrayOfLookupValueModel" />
+      <xs:element minOccurs="0" name="UpdatedOnUtc" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpecificationLookupModel" nillable="true" type="tns:SpecificationLookupModel" />
+  <xs:complexType name="ArrayOfLookupValueModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LookupValueModel" nillable="true" type="tns:LookupValueModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLookupValueModel" nillable="true" type="tns:ArrayOfLookupValueModel" />
+  <xs:complexType name="LookupValueModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedOnUtc" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LookupValueModel" nillable="true" type="tns:LookupValueModel" />
+  <xs:complexType name="ArrayOfDivisionModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DivisionModel" nillable="true" type="tns:DivisionModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDivisionModel" nillable="true" type="tns:ArrayOfDivisionModel" />
+  <xs:complexType name="DivisionModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedOnUtc" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DivisionModel" nillable="true" type="tns:DivisionModel" />
+  <xs:complexType name="ProductDivisionsModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Divisions" nillable="true" type="tns:ArrayOfDivisionModel" />
+      <xs:element minOccurs="0" name="ProductId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductDivisionsModel" nillable="true" type="tns:ProductDivisionsModel" />
+  <xs:complexType name="ProductManufacturersModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Manufacturers" nillable="true" type="tns:ArrayOfManufacturerModel" />
+      <xs:element minOccurs="0" name="ProductId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductManufacturersModel" nillable="true" type="tns:ProductManufacturersModel" />
+  <xs:complexType name="ArrayOfProductTypeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductTypeModel" nillable="true" type="tns:ProductTypeModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductTypeModel" nillable="true" type="tns:ArrayOfProductTypeModel" />
+  <xs:complexType name="ProductTypeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetaDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetaKeywords" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetaTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentProductTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Published" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UpdatedOnUtc" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductTypeModel" nillable="true" type="tns:ProductTypeModel" />
+  <xs:complexType name="ProductResourceModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductResourceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Resources" nillable="true" type="tns:ArrayOfResourceModel" />
+      <xs:element minOccurs="0" name="UpdatedOnUtc" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductResourceModel" nillable="true" type="tns:ProductResourceModel" />
+  <xs:complexType name="ArrayOfResourceModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceModel" nillable="true" type="tns:ResourceModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceModel" nillable="true" type="tns:ArrayOfResourceModel" />
+  <xs:complexType name="ResourceModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BinaryData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="CreatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MimeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResourceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedOnUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceModel" nillable="true" type="tns:ResourceModel" />
+</xs:schema>

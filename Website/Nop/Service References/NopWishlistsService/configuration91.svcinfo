@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="JnyAAZZC2Hn/AsMHZuI6KhVo074=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="hI+X3KioPUvwPaAGheY+vCbXOnQ=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IWishlistsService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IWishlistsService" contract="NopWishlistsService.IWishlistsService" bindingType="basicHttpBinding" address="http://ecommercenop/Plugins/Sitecore.Commerce.Wishlists/Remote/WishlistsService.svc" bindingConfiguration="BasicHttpBinding_IWishlistsService">
+    <endpoint name="BasicHttpBinding_IWishlistsService" contract="NopWishlistsService.IWishlistsService" bindingType="basicHttpBinding" address="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Wishlists/Remote/WishlistsService.svc" bindingConfiguration="BasicHttpBinding_IWishlistsService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://ecommercenop/Plugins/Sitecore.Commerce.Wishlists/Remote/WishlistsService.svc</serializedValue>
+          <serializedValue>http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Wishlists/Remote/WishlistsService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

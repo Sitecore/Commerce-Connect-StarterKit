@@ -1,0 +1,8 @@
+﻿Group: Payment methods
+FriendlyName: SamplePaymentService
+SystemName: Payments.SamplePaymentService
+Version: 1.00
+SupportedVersions: 3.10
+Author: Sitecore
+DisplayOrder: 1
+FileName: Sitecore.Commerce.Nop.Payments.SamplePaymentService.dll

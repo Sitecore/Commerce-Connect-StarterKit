@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Payments/Remote/PaymentService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Payments/Remote/PaymentService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PaymentService.xsd" MetadataType="Schema" ID="d8dc04d3-2995-4454-832e-851ec7086432" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Payments/Remote/PaymentService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PaymentService.wsdl" MetadataType="Wsdl" ID="1e5632e2-0e4a-48bb-8974-5eda429bd3a6" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Payments/Remote/PaymentService.svc?wsdl" />
-    <MetadataFile FileName="PaymentService1.xsd" MetadataType="Schema" ID="73ec1190-4202-43fc-95f2-07dbf43a2e44" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Payments/Remote/PaymentService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PaymentService2.xsd" MetadataType="Schema" ID="55672e70-bb78-41a4-af96-b6c01350a980" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Payments/Remote/PaymentService.svc?xsd=xsd2" />
-    <MetadataFile FileName="PaymentService.disco" MetadataType="Disco" ID="f2fca245-0b69-44d8-88ec-eede56bf579c" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Payments/Remote/PaymentService.svc?disco" />
+    <MetadataFile FileName="PaymentService1.disco" MetadataType="Disco" ID="77c02a54-25c7-484f-9f01-9f74ad1864be" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Payments/Remote/PaymentService.svc?disco" />
+    <MetadataFile FileName="PaymentService3.xsd" MetadataType="Schema" ID="9b36e232-322b-40b0-afe9-566789b2eac6" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Payments/Remote/PaymentService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PaymentService31.xsd" MetadataType="Schema" ID="73d983c5-ff98-4953-8699-a3e78753267b" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Payments/Remote/PaymentService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PaymentService32.xsd" MetadataType="Schema" ID="c94d6911-2552-41ad-b2e6-a54d71d2f64a" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Payments/Remote/PaymentService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PaymentService1.wsdl" MetadataType="Wsdl" ID="462dbc3f-9ddd-4af0-8e84-d6cedd488685" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Payments/Remote/PaymentService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -18,16 +18,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Orders/Remote/OrdersService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Orders/Remote/OrdersService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="OrdersService.xsd" MetadataType="Schema" ID="5415dd27-6f51-42f7-8f59-c7839686c1be" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Orders/Remote/OrdersService.svc?xsd=xsd2" />
-    <MetadataFile FileName="OrdersService3.xsd" MetadataType="Schema" ID="8a288c22-3efa-4a1e-872b-267afe5fcf76" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Orders/Remote/OrdersService.svc?xsd=xsd3" />
-    <MetadataFile FileName="OrdersService.wsdl" MetadataType="Wsdl" ID="2a93f87b-4d8e-4f9a-8936-30a437f911c4" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Orders/Remote/OrdersService.svc?wsdl" />
-    <MetadataFile FileName="OrdersService.disco" MetadataType="Disco" ID="94a81c1c-b1e2-477a-86da-a069de9b2e41" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Orders/Remote/OrdersService.svc?disco" />
-    <MetadataFile FileName="OrdersService4.xsd" MetadataType="Schema" ID="5da8637c-4aee-44c5-9ca3-6180905f46ee" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Orders/Remote/OrdersService.svc?xsd=xsd4" />
-    <MetadataFile FileName="OrdersService1.xsd" MetadataType="Schema" ID="2904dcee-854c-4eca-8902-e3694248c881" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Orders/Remote/OrdersService.svc?xsd=xsd0" />
-    <MetadataFile FileName="OrdersService2.xsd" MetadataType="Schema" ID="7c44810c-174d-474d-87c6-7670509b6d19" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Orders/Remote/OrdersService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OrdersService5.xsd" MetadataType="Schema" ID="fe02c480-5364-4a14-bae0-70bec06357cb" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Orders/Remote/OrdersService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OrdersService51.xsd" MetadataType="Schema" ID="b5daec2c-9431-4a1e-9402-ce9d164b7a1b" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Orders/Remote/OrdersService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OrdersService52.xsd" MetadataType="Schema" ID="26a0b882-d58d-45f5-b0e3-82ffdaa9f522" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Orders/Remote/OrdersService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OrdersService53.xsd" MetadataType="Schema" ID="0ef197ac-7833-4ee8-b922-48916fb8e1c0" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Orders/Remote/OrdersService.svc?xsd=xsd3" />
+    <MetadataFile FileName="OrdersService1.disco" MetadataType="Disco" ID="8072660a-de2b-4702-99a2-f3851bb24eb3" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Orders/Remote/OrdersService.svc?disco" />
+    <MetadataFile FileName="OrdersService1.wsdl" MetadataType="Wsdl" ID="b1ae0ffd-4a49-4cb0-ad1e-fbef8208bc4e" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Orders/Remote/OrdersService.svc?wsdl" />
+    <MetadataFile FileName="OrdersService54.xsd" MetadataType="Schema" ID="e5a823b0-0156-48b8-bb46-4d9fb94c2fd3" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Orders/Remote/OrdersService.svc?xsd=xsd4" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

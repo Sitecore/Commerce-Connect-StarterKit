@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Prices/Remote/PricesService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Prices/Remote/PricesService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PricesService.xsd" MetadataType="Schema" ID="c9607a1a-251c-46c8-8560-51a9a1edbb69" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Prices/Remote/PricesService.svc?xsd=xsd3" />
-    <MetadataFile FileName="PricesService.disco" MetadataType="Disco" ID="0bd979df-79f8-499e-a939-1b17a86adb7c" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Prices/Remote/PricesService.svc?disco" />
-    <MetadataFile FileName="PricesService.wsdl" MetadataType="Wsdl" ID="c2f98f75-e731-449d-a2b0-9b07197d653d" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Prices/Remote/PricesService.svc?wsdl" />
-    <MetadataFile FileName="PricesService1.xsd" MetadataType="Schema" ID="375af2c4-b5a0-40bd-86c6-be02e3e95963" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Prices/Remote/PricesService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PricesService2.xsd" MetadataType="Schema" ID="d2c56f2f-7fe5-4884-83d8-9f540cc0b0c2" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Prices/Remote/PricesService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PricesService3.xsd" MetadataType="Schema" ID="7b8292bc-a804-46a3-be84-19bb2264463f" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Prices/Remote/PricesService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PricesService1.wsdl" MetadataType="Wsdl" ID="bbe5b28e-d036-472e-bdea-9e0e2f25c510" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Prices/Remote/PricesService.svc?wsdl" />
+    <MetadataFile FileName="PricesService4.xsd" MetadataType="Schema" ID="40740e40-d11a-473c-b86d-239659368314" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Prices/Remote/PricesService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PricesService41.xsd" MetadataType="Schema" ID="513ed168-93b0-492a-b1cf-9af7dd6c2e25" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Prices/Remote/PricesService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PricesService42.xsd" MetadataType="Schema" ID="0c39326d-093b-4fbf-9f09-05538e79bdf0" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Prices/Remote/PricesService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PricesService43.xsd" MetadataType="Schema" ID="ef9f2423-bd08-46f6-8a8c-f3c8a833d7e0" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Prices/Remote/PricesService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PricesService1.disco" MetadataType="Disco" ID="d5154d03-eaf7-4e4e-b40c-4b7ded87f035" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Prices/Remote/PricesService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

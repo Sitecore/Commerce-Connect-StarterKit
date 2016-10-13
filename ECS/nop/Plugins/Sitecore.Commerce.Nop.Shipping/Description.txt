@@ -1,0 +1,8 @@
+﻿Group: Sitecore
+FriendlyName: Commerce Shipping Web Services
+SystemName: Sitecore.Commerce.Nop.Shipping
+Version: 1.00
+SupportedVersions: 3.10
+Author: Sitecore
+DisplayOrder: 2
+FileName: Sitecore.Commerce.Nop.Shipping.dll

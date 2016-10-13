@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Inventory/Remote/InventoryService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="InventoryService.disco" MetadataType="Disco" ID="ec170440-a970-4353-ab0a-62b9bae14b00" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc?disco" />
-    <MetadataFile FileName="InventoryService.xsd" MetadataType="Schema" ID="8a1df3ea-c536-44d3-8b7d-a37c0021d250" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc?xsd=xsd0" />
-    <MetadataFile FileName="InventoryService1.xsd" MetadataType="Schema" ID="904008da-96f3-4951-aba0-e9b1f7793219" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc?xsd=xsd2" />
-    <MetadataFile FileName="InventoryService.wsdl" MetadataType="Wsdl" ID="2d71c47e-4bdb-4af4-8239-4f28a7872db1" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc?wsdl" />
-    <MetadataFile FileName="InventoryService2.xsd" MetadataType="Schema" ID="8c95a6a0-71ae-4622-8ad5-f3a51a667482" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc?xsd=xsd1" />
-    <MetadataFile FileName="InventoryService3.xsd" MetadataType="Schema" ID="c60cf1c2-7450-4696-b2f5-54695595cd04" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc?xsd=xsd3" />
+    <MetadataFile FileName="InventoryService1.disco" MetadataType="Disco" ID="b970d047-85a5-4b98-82d9-97d217c03ad8" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Inventory/Remote/InventoryService.svc?disco" />
+    <MetadataFile FileName="InventoryService1.wsdl" MetadataType="Wsdl" ID="636b9141-6a05-4765-9c31-a6c6cc342133" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Inventory/Remote/InventoryService.svc?wsdl" />
+    <MetadataFile FileName="InventoryService4.xsd" MetadataType="Schema" ID="04e27910-36bd-48b2-93de-0bad4916a458" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Inventory/Remote/InventoryService.svc?xsd=xsd1" />
+    <MetadataFile FileName="InventoryService41.xsd" MetadataType="Schema" ID="f8bd4bfe-3fa8-4cb3-8b10-b0dfe84e45b3" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Inventory/Remote/InventoryService.svc?xsd=xsd3" />
+    <MetadataFile FileName="InventoryService42.xsd" MetadataType="Schema" ID="d58c683d-400e-4410-9330-fb37126cc84f" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Inventory/Remote/InventoryService.svc?xsd=xsd2" />
+    <MetadataFile FileName="InventoryService43.xsd" MetadataType="Schema" ID="ea274253-04fd-41c8-b5e9-1aa868e4bcb5" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Inventory/Remote/InventoryService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

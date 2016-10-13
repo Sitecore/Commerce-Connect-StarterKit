@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WishlistsService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Wishlists/Remote/WishlistsService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Wishlists/Remote/WishlistsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Wishlists/Remote/WishlistsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Common.Models" />
+      <xsd:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Wishlists/Remote/WishlistsService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWishlistsService_GetWishlists_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWishlists" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_GetWishlists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWishlistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_GetWishlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWishlist" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_GetWishlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWishlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_DeleteWishlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWishlist" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_DeleteWishlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWishlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_CreateWishlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWishlist" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_CreateWishlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWishlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_RemoveProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_RemoveProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_UpdateQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IWishlistsService_UpdateQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuantityResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWishlistsService">
+    <wsdl:operation name="GetWishlists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWishlistsService/GetWishlists" message="tns:IWishlistsService_GetWishlists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWishlistsService/GetWishlistsResponse" message="tns:IWishlistsService_GetWishlists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWishlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWishlistsService/GetWishlist" message="tns:IWishlistsService_GetWishlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWishlistsService/GetWishlistResponse" message="tns:IWishlistsService_GetWishlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWishlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWishlistsService/DeleteWishlist" message="tns:IWishlistsService_DeleteWishlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWishlistsService/DeleteWishlistResponse" message="tns:IWishlistsService_DeleteWishlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWishlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWishlistsService/CreateWishlist" message="tns:IWishlistsService_CreateWishlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWishlistsService/CreateWishlistResponse" message="tns:IWishlistsService_CreateWishlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWishlistsService/AddProduct" message="tns:IWishlistsService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWishlistsService/AddProductResponse" message="tns:IWishlistsService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWishlistsService/RemoveProduct" message="tns:IWishlistsService_RemoveProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWishlistsService/RemoveProductResponse" message="tns:IWishlistsService_RemoveProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWishlistsService/UpdateQuantity" message="tns:IWishlistsService_UpdateQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWishlistsService/UpdateQuantityResponse" message="tns:IWishlistsService_UpdateQuantity_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWishlistsService" type="tns:IWishlistsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWishlists">
+      <soap:operation soapAction="http://tempuri.org/IWishlistsService/GetWishlists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWishlist">
+      <soap:operation soapAction="http://tempuri.org/IWishlistsService/GetWishlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWishlist">
+      <soap:operation soapAction="http://tempuri.org/IWishlistsService/DeleteWishlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWishlist">
+      <soap:operation soapAction="http://tempuri.org/IWishlistsService/CreateWishlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/IWishlistsService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProduct">
+      <soap:operation soapAction="http://tempuri.org/IWishlistsService/RemoveProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantity">
+      <soap:operation soapAction="http://tempuri.org/IWishlistsService/UpdateQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WishlistsService">
+    <wsdl:port name="BasicHttpBinding_IWishlistsService" binding="tns:BasicHttpBinding_IWishlistsService">
+      <soap:address location="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Wishlists/Remote/WishlistsService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

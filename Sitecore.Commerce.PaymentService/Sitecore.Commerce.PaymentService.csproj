@@ -32,6 +32,7 @@
     <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
     <SourceAnalysisEnabled>true</SourceAnalysisEnabled>
     <PublishProfile>$(ProjectDir)Properties\PublishProfiles\Local.Debug.pubxml</PublishProfile>
+    <DocumentationFile>bin\Sitecore.Commerce.PaymentService.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -48,6 +49,7 @@
     <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <PublishProfile>$(ProjectDir)Properties\PublishProfiles\Local.Release.pubxml</PublishProfile>
+    <DocumentationFile>bin\Sitecore.Commerce.PaymentService.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />

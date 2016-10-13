@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Prices/Remote/PricesService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Prices/Remote/PricesService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Prices.Models" />
+  <xs:element name="GetProductPrices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="externalproductIds" nillable="true" type="q1:ArrayOfstring" />
+        <xs:element minOccurs="0" name="priceType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductPricesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Sitecore.Commerce.Nop.Prices.Models" minOccurs="0" name="GetProductPricesResult" nillable="true" type="q2:ArrayOfProductPriceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="externalProductId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priceType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductPriceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetProductPriceResult" nillable="true" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

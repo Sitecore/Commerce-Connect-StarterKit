@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="FE1C3QZei+z5KI2vXuFYPSA3MAo=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="sbgbOA9heSuDySt2joL2HPeEcPw=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IInventoryService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IInventoryService" contract="NopInventoryService.IInventoryService" bindingType="basicHttpBinding" address="http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc" bindingConfiguration="BasicHttpBinding_IInventoryService">
+    <endpoint name="BasicHttpBinding_IInventoryService" contract="NopInventoryService.IInventoryService" bindingType="basicHttpBinding" address="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Inventory/Remote/InventoryService.svc" bindingConfiguration="BasicHttpBinding_IInventoryService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://ecommercenop/Plugins/Sitecore.Commerce.Inventory/Remote/InventoryService.svc</serializedValue>
+          <serializedValue>http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Inventory/Remote/InventoryService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

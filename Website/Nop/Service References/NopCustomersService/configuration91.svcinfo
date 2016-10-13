@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="SDUZWYvQr42WLvF3pWySsANJ6f0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="JqnYreFAfwJqD1jIn07WKClqyGo=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICustomersService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ICustomersService" contract="NopCustomersService.ICustomersService" bindingType="basicHttpBinding" address="http://ecommercenop/Plugins/Sitecore.Commerce.Customers/Remote/CustomersService.svc" bindingConfiguration="BasicHttpBinding_ICustomersService">
+    <endpoint name="BasicHttpBinding_ICustomersService" contract="NopCustomersService.ICustomersService" bindingType="basicHttpBinding" address="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Customers/Remote/CustomersService.svc" bindingConfiguration="BasicHttpBinding_ICustomersService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://ecommercenop/Plugins/Sitecore.Commerce.Customers/Remote/CustomersService.svc</serializedValue>
+          <serializedValue>http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Customers/Remote/CustomersService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

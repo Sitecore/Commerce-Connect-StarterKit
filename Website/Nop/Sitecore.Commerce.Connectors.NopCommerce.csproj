@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Sitecore.Commerce.Connectors.NopCommerce.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,6 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\Sitecore.Commerce.Connectors.NopCommerce.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -205,17 +207,17 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\NopCartsService\CartsService.wsdl" />
-    <None Include="Service References\NopCartsService\CartsService.xsd">
+    <None Include="Service References\NopCartsService\CartsService1.wsdl" />
+    <None Include="Service References\NopCartsService\CartsService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopCartsService\CartsService1.xsd">
+    <None Include="Service References\NopCartsService\CartsService41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopCartsService\CartsService2.xsd">
+    <None Include="Service References\NopCartsService\CartsService42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopCartsService\CartsService3.xsd">
+    <None Include="Service References\NopCartsService\CartsService43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NopCartsService\Sitecore.Commerce.Connectors.NopCommerce.NopCartsService.PaymentInfoModelResponse.datasource">
@@ -227,17 +229,17 @@
     <None Include="Service References\NopCartsService\Sitecore.Commerce.Connectors.NopCommerce.NopCartsService.ShoppingCartModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\NopCustomersService\CustomersService.wsdl" />
-    <None Include="Service References\NopCustomersService\CustomersService.xsd">
+    <None Include="Service References\NopCustomersService\CustomersService1.wsdl" />
+    <None Include="Service References\NopCustomersService\CustomersService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopCustomersService\CustomersService1.xsd">
+    <None Include="Service References\NopCustomersService\CustomersService41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopCustomersService\CustomersService2.xsd">
+    <None Include="Service References\NopCustomersService\CustomersService42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopCustomersService\CustomersService3.xsd">
+    <None Include="Service References\NopCustomersService\CustomersService43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NopCustomersService\Sitecore.Commerce.Connectors.NopCommerce.NopCustomersService.ArrayOfAddressModelResponse.datasource">
@@ -249,17 +251,17 @@
     <None Include="Service References\NopCustomersService\Sitecore.Commerce.Connectors.NopCommerce.NopCustomersService.Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\NopInventoryService\InventoryService.wsdl" />
-    <None Include="Service References\NopInventoryService\InventoryService.xsd">
+    <None Include="Service References\NopInventoryService\InventoryService1.wsdl" />
+    <None Include="Service References\NopInventoryService\InventoryService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopInventoryService\InventoryService1.xsd">
+    <None Include="Service References\NopInventoryService\InventoryService41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopInventoryService\InventoryService2.xsd">
+    <None Include="Service References\NopInventoryService\InventoryService42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopInventoryService\InventoryService3.xsd">
+    <None Include="Service References\NopInventoryService\InventoryService43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NopInventoryService\Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService.IndexStockInformationModel1.datasource">
@@ -274,65 +276,65 @@
     <None Include="Service References\NopInventoryService\Sitecore.Commerce.Connectors.NopCommerce.NopInventoryService.StockInformationUpdateModel1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\NopOrdersService\OrdersService.wsdl" />
-    <None Include="Service References\NopOrdersService\OrdersService.xsd">
+    <None Include="Service References\NopOrdersService\OrdersService1.wsdl" />
+    <None Include="Service References\NopOrdersService\OrdersService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopOrdersService\OrdersService1.xsd">
+    <None Include="Service References\NopOrdersService\OrdersService51.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopOrdersService\OrdersService2.xsd">
+    <None Include="Service References\NopOrdersService\OrdersService52.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopOrdersService\OrdersService3.xsd">
+    <None Include="Service References\NopOrdersService\OrdersService53.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopOrdersService\OrdersService4.xsd">
+    <None Include="Service References\NopOrdersService\OrdersService54.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NopOrdersService\Sitecore.Commerce.Connectors.NopCommerce.NopOrdersService.OrderModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\NopPaymentService\PaymentService.wsdl" />
-    <None Include="Service References\NopPaymentService\PaymentService.xsd">
+    <None Include="Service References\NopPaymentService\PaymentService1.wsdl" />
+    <None Include="Service References\NopPaymentService\PaymentService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopPaymentService\PaymentService1.xsd">
+    <None Include="Service References\NopPaymentService\PaymentService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopPaymentService\PaymentService2.xsd">
+    <None Include="Service References\NopPaymentService\PaymentService32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopPaymentService\Sitecore.Commerce.Connectors.NopCommerce.NopPaymentService.ResponseModelOfArrayOfPaymentMethodModelQBnDdvBq.datasource">
+    <None Include="Service References\NopPaymentService\Sitecore.Commerce.Connectors.NopCommerce.NopPaymentService.ResponseModelOfArrayOfPaymentMethodModelbQtzsV6D.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\NopPricesService\PricesService.wsdl" />
-    <None Include="Service References\NopPricesService\PricesService.xsd">
+    <None Include="Service References\NopPricesService\PricesService1.wsdl" />
+    <None Include="Service References\NopPricesService\PricesService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopPricesService\PricesService1.xsd">
+    <None Include="Service References\NopPricesService\PricesService41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopPricesService\PricesService2.xsd">
+    <None Include="Service References\NopPricesService\PricesService42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopPricesService\PricesService3.xsd">
+    <None Include="Service References\NopPricesService\PricesService43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NopPricesService\Sitecore.Commerce.Connectors.NopCommerce.NopPricesService.ProductPriceModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\NopProductsService\ProductsService.wsdl" />
-    <None Include="Service References\NopProductsService\ProductsService.xsd">
+    <None Include="Service References\NopProductsService\ProductsService1.wsdl" />
+    <None Include="Service References\NopProductsService\ProductsService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopProductsService\ProductsService1.xsd">
+    <None Include="Service References\NopProductsService\ProductsService41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopProductsService\ProductsService2.xsd">
+    <None Include="Service References\NopProductsService\ProductsService42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopProductsService\ProductsService3.xsd">
+    <None Include="Service References\NopProductsService\ProductsService43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.CategoryModel.datasource">
@@ -368,17 +370,17 @@
     <None Include="Service References\NopProductsService\Sitecore.Commerce.Connectors.NopCommerce.NopProductsService.SpecificationLookupModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\NopShippingService\ShippingService.wsdl" />
-    <None Include="Service References\NopShippingService\ShippingService.xsd">
+    <None Include="Service References\NopShippingService\ShippingService1.wsdl" />
+    <None Include="Service References\NopShippingService\ShippingService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopShippingService\ShippingService1.xsd">
+    <None Include="Service References\NopShippingService\ShippingService41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopShippingService\ShippingService2.xsd">
+    <None Include="Service References\NopShippingService\ShippingService42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopShippingService\ShippingService3.xsd">
+    <None Include="Service References\NopShippingService\ShippingService43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NopShippingService\Sitecore.Commerce.Connectors.NopCommerce.NopShippingService.ArrayOfShippingMethodModelResponse.datasource">
@@ -387,17 +389,17 @@
     <None Include="Service References\NopWishlistsService\Sitecore.Commerce.Connectors.NopCommerce.NopWishlistsService.ShoppingCartModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\NopWishlistsService\WishlistsService.wsdl" />
-    <None Include="Service References\NopWishlistsService\WishlistsService.xsd">
+    <None Include="Service References\NopWishlistsService\WishlistsService1.wsdl" />
+    <None Include="Service References\NopWishlistsService\WishlistsService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopWishlistsService\WishlistsService1.xsd">
+    <None Include="Service References\NopWishlistsService\WishlistsService41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopWishlistsService\WishlistsService2.xsd">
+    <None Include="Service References\NopWishlistsService\WishlistsService42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NopWishlistsService\WishlistsService3.xsd">
+    <None Include="Service References\NopWishlistsService\WishlistsService43.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -438,9 +440,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\NopInventoryService\InventoryService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\NopInventoryService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -465,9 +464,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\NopPaymentService\PaymentService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\NopPaymentService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -478,9 +474,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\NopShippingService\ShippingService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\NopShippingService\configuration91.svcinfo" />
@@ -507,9 +500,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\NopWishlistsService\WishlistsService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\NopWishlistsService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -520,21 +510,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\NopCartsService\CartsService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\NopCustomersService\CustomersService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\NopPricesService\PricesService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\NopProductsService\ProductsService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\NopOrdersService\OrdersService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\NopOrdersService\configuration91.svcinfo" />
@@ -550,6 +525,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="License.txt" />
+    <None Include="Service References\NopWishlistsService\WishlistsService1.disco" />
+    <None Include="Service References\NopShippingService\ShippingService1.disco" />
+    <None Include="Service References\NopProductsService\ProductsService1.disco" />
+    <None Include="Service References\NopPricesService\PricesService1.disco" />
+    <None Include="Service References\NopPaymentService\PaymentService1.disco" />
+    <None Include="Service References\NopOrdersService\OrdersService1.disco" />
+    <None Include="Service References\NopInventoryService\InventoryService1.disco" />
+    <None Include="Service References\NopCustomersService\CustomersService1.disco" />
+    <None Include="Service References\NopCartsService\CartsService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

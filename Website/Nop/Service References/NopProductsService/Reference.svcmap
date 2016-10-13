@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Products/Remote/ProductsService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Products/Remote/ProductsService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ProductsService.xsd" MetadataType="Schema" ID="6abb8c20-c0f7-41af-aff7-84283e3bdbae" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Products/Remote/ProductsService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ProductsService1.xsd" MetadataType="Schema" ID="eb064f86-a452-4df1-8821-9603d0aec608" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Products/Remote/ProductsService.svc?xsd=xsd3" />
-    <MetadataFile FileName="ProductsService2.xsd" MetadataType="Schema" ID="19807e30-c3da-4464-ab0a-e8d3997462b7" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Products/Remote/ProductsService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ProductsService3.xsd" MetadataType="Schema" ID="857859c8-dc3e-41c4-8362-9c336f35c310" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Products/Remote/ProductsService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ProductsService.wsdl" MetadataType="Wsdl" ID="cc9d43ec-eb91-44e1-97b5-714ff8fdf8da" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Products/Remote/ProductsService.svc?wsdl" />
-    <MetadataFile FileName="ProductsService.disco" MetadataType="Disco" ID="40edcd00-00a7-43fd-8eea-d314871dbadd" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Products/Remote/ProductsService.svc?disco" />
+    <MetadataFile FileName="ProductsService4.xsd" MetadataType="Schema" ID="9f86df15-7ba4-44a7-af92-329c6295c2c2" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Products/Remote/ProductsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ProductsService41.xsd" MetadataType="Schema" ID="96dae370-4c4e-4f6a-9abc-00686d09a9d7" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Products/Remote/ProductsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProductsService42.xsd" MetadataType="Schema" ID="e73783b5-c6ad-48e7-b149-382dd2b1bbf0" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Products/Remote/ProductsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProductsService1.wsdl" MetadataType="Wsdl" ID="ed8aab83-6eb9-4cf7-8a4c-31d23de79156" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Products/Remote/ProductsService.svc?wsdl" />
+    <MetadataFile FileName="ProductsService1.disco" MetadataType="Disco" ID="f0759a39-e6c6-4f6f-88fd-7026c2f3c289" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Products/Remote/ProductsService.svc?disco" />
+    <MetadataFile FileName="ProductsService43.xsd" MetadataType="Schema" ID="2acb9dc0-cbd0-48cb-9ad5-be2a38229826" SourceId="1" SourceUrl="http://ecommercenop/Plugins/Sitecore.Commerce.Nop.Products/Remote/ProductsService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
