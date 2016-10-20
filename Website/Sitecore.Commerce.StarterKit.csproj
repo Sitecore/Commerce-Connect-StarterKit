@@ -429,12 +429,12 @@
   <PropertyGroup>
     <PostBuildEvent>IF EXIST "$(ProjectDir)\App_Config\Include\StarterKit\Sitecore.Commerce.StarterKit.config.disabled" RENAME "$(ProjectDir)\App_Config\Include\StarterKit\Sitecore.Commerce.StarterKit.config.disabled" "Sitecore.Commerce.StarterKit.config"
 
-XCOPY /y $(ProjectDir)$(OutDir)Sitecore.Mvc.dll $(ProjectDir)Tests\bin\Debug\
-XCOPY /y $(ProjectDir)$(OutDir)Sitecore.Mvc.*.dll $(ProjectDir)Tests\bin\Debug\
-XCOPY /y $(ProjectDir)$(OutDir)System.Web.WebPages*.dll $(ProjectDir)Tests\bin\Debug\
+XCOPY /y "$(ProjectDir)$(OutDir)Sitecore.Mvc.dll" "$(ProjectDir)Tests\bin\Debug\"
+XCOPY /y "$(ProjectDir)$(OutDir)Sitecore.Mvc.*.dll" "$(ProjectDir)Tests\bin\Debug\"
+XCOPY /y "$(ProjectDir)$(OutDir)System.Web.WebPages*.dll" "$(ProjectDir)Tests\bin\Debug\"
 </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>IF "$(ProjectDir)" == "$(SolutionDir)" XCOPY /y /i /s $(ProjectDir)packages $(ProjectDir)..\packages</PreBuildEvent>
+    <PreBuildEvent>IF "$(ProjectDir)" == "$(SolutionDir)" XCOPY /y /i /s "$(ProjectDir)packages" "$(ProjectDir)..\packages"</PreBuildEvent>
   </PropertyGroup>
 </Project>
